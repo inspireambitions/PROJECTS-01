@@ -1,0 +1,30 @@
+source_url,target_url,action,note
+https://inspireambitions.com/uae-labour-law-guide-expats/,https://inspireambitions.com/uae-labour-law/,301,Old broad guide folds into new hub
+https://inspireambitions.com/uae-labour-law-working-hours/,https://inspireambitions.com/uae-labour-law/working-hours-overtime/,301,Spec-named source
+https://inspireambitions.com/overtime-calculation-uae/,https://inspireambitions.com/uae-labour-law/working-hours-overtime/,301,Article (not the calculator) folds into overtime spoke
+https://inspireambitions.com/uae-overtime-law-calculation-2026/,https://inspireambitions.com/uae-labour-law/working-hours-overtime/,301,Duplicate overtime-law intent
+https://inspireambitions.com/uae-annual-leave-law-2026/,https://inspireambitions.com/uae-labour-law/annual-leave-entitlement/,301,Annual leave duplicate
+https://inspireambitions.com/uae-annual-leave-entitlement-law-vs-employer-practices/,https://inspireambitions.com/uae-labour-law/annual-leave-entitlement/,301,Annual leave duplicate (best content salvaged into spoke)
+https://inspireambitions.com/sick-leave-uae/,https://inspireambitions.com/uae-labour-law/sick-leave-rules/,301,Sick leave duplicate
+https://inspireambitions.com/maternity-leave-uae-2026/,https://inspireambitions.com/uae-labour-law/maternity-paternity-leave/,301,Maternity duplicate
+https://inspireambitions.com/uae-termination-law-compensation-2026/,https://inspireambitions.com/uae-labour-law/termination-rules/,301,Termination duplicate
+https://inspireambitions.com/uae-labour-law-notice-period-2026/,https://inspireambitions.com/uae-labour-law/termination-rules/,301,Notice period intent covered inside termination spoke
+https://inspireambitions.com/uae-probation-period-2026/,https://inspireambitions.com/uae-labour-law/contract-types-explained/,301,Probation intent covered inside contract-types spoke
+https://inspireambitions.com/uae-probation-period-labour-law-2026/,https://inspireambitions.com/uae-labour-law/contract-types-explained/,301,Probation duplicate
+KEEP-DO-NOT-REDIRECT,,,---- tools and calculators: wrap and link live ----
+https://inspireambitions.com/uae-labour-law-quick-answers-v1/,,KEEP,Spec tool - link from hub
+https://inspireambitions.com/uae-notice-period-calculator/,,KEEP,Spec tool - link from termination-rules
+https://inspireambitions.com/uae-probation-period-rights-checker/,,KEEP,Spec tool - link from contract-types-explained
+https://inspireambitions.com/overtime-calculator-uae/,,KEEP,Live calculator - link from working-hours-overtime (distinct from the article)
+OUT-OF-SCOPE,,,---- belongs to other folders: do NOT touch in Folder 1 ----
+https://inspireambitions.com/uae-mohre-labour-complaint-filing-guide-2026/,,FLAG,Labour-law topic but no matching spoke - propose to Codex as link-from-hub or 7th spoke
+https://inspireambitions.com/wps-uae-2026-employer-guide/,,DEFER,Employer-side WPS - link from hub only; belongs to Recruitment slot 10
+https://inspireambitions.com/uae-end-of-service-calculator/,,DEFER,Final Settlement slot 12
+https://inspireambitions.com/uae-gratuity-calculator/,,DEFER,Final Settlement slot 12
+https://inspireambitions.com/uae-end-of-service-gratuity-calculator-2026/,,DEFER,Final Settlement slot 12
+https://inspireambitions.com/uae-end-of-service-gratuity-calculation-mistakes/,,DEFER,Final Settlement slot 12
+https://inspireambitions.com/end-of-service-gratuity-uae-what-nobody-in-hr-will-tell-you/,,DEFER,Final Settlement slot 12
+https://inspireambitions.com/uae-internship-regulations-2026-mohre-guide/,,DEFER,Internships slot 4
+https://inspireambitions.com/termination-letter-template/,,DEFER,Employer template - Recruitment slot 10
+https://inspireambitions.com/employee-termination-letter-templates/,,DEFER,Employer template - Recruitment slot 10
+https://inspireambitions.com/what-is-kuwait-labour-law/,,DEFER,Non-UAE - GCC Recruitment slot 10 labour-law spoke

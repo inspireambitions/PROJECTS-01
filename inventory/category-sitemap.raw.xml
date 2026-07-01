@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This sitemap was dynamically generated on 27/06/2026 at 5:04 am by All in One SEO Pro v4.9.9 - the original SEO plugin for WordPress. -->
+
+<?xml-stylesheet type="text/xsl" href="https://inspireambitions.com/default-sitemap.xsl?sitemap=category"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+	<url>
+		<loc><![CDATA[https://inspireambitions.com/category/career-hub/people-ambitions/]]></loc>
+		<lastmod><![CDATA[2026-04-29T13:40:01+00:00]]></lastmod>
+		<changefreq><![CDATA[monthly]]></changefreq>
+		<priority><![CDATA[0.3]]></priority>
+	</url>
+	<url>
+		<loc><![CDATA[https://inspireambitions.com/category/career-hub/career-tips/]]></loc>
+		<lastmod><![CDATA[2026-06-22T05:00:43+00:00]]></lastmod>
+		<changefreq><![CDATA[monthly]]></changefreq>
+		<priority><![CDATA[0.3]]></priority>
+	</url>
+</urlset>
