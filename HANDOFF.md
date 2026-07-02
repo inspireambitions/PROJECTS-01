@@ -20,7 +20,17 @@ This project only works from a session that has **direct shell/filesystem access
 
 GA4 flagged "Page not found – Inspire Ambitions" as the single most-viewed page on the site for 30 June (32 views, +88% day-over-day) and 1 July continued showing individual dead URLs. Cross-checked against `inventory/content-urls.txt` (the crawled site inventory) and every existing `redirects/*.csv`: at least 8 real, previously-live URLs are now 404ing and were **not** covered by Folder 11's partial redirect sweep (the ~44-URL mapping was explicitly flagged as incomplete against a 3,000+ URL swamp — this is exactly that gap surfacing as live traffic loss).
 
-Mapped and written to **`redirects/aioseo-import-404-fix-2026-07-02.csv`** (not yet imported — same AIOSEO admin-UI limitation as every other redirect CSV in this repo):
+**➡️ IMPORT THIS ONE FILE: `redirects/MERGED-all-redirects.csv`** (built 2 July). AIOSEO
+*overwrites* the whole redirect table on import — it does not merge — so importing the 12
+CSVs one by one would leave only the last file's rules. The merged file consolidates all 12
+(11 folder CSVs + the 404 fix) into a single deduplicated import: **202 unique rows**, 2
+source-URL collisions auto-resolved (later file wins), 0 redirect chains, all rows well-formed.
+Before importing: **export the site's existing redirects first as a backup**, and if any of
+those are real/unrelated to this project, append them into the merged file so the import
+doesn't wipe them. The individual `aioseo-import-folder-*.csv` files are kept for reference.
+
+The 404-fix subset alone is still in **`redirects/aioseo-import-404-fix-2026-07-02.csv`** (not
+yet imported — same AIOSEO admin-UI limitation as every other redirect CSV in this repo):
 
 | Old URL | New target | Confidence |
 |---|---|---|
@@ -55,7 +65,7 @@ Mapped and written to **`redirects/aioseo-import-404-fix-2026-07-02.csv`** (not 
 | 8 | Working in Saudi Arabia | ✅ LIVE | 47633 |
 | 9 | Abu Dhabi Careers | ✅ LIVE | 47652 |
 | 10 | GCC Recruitment | ✅ LIVE | 47545 (pillar, expanded from Slot 4 placeholder) |
-| 11 | GCC Interview Answers | 🟡 **DRAFT, built, awaiting your approval to publish** | 47709 |
+| 11 | GCC Interview Answers | 🟡 **DRAFT — quality fixes applied 2 July (anecdote count + gender balance), lint clean, ready to publish** | 47709 |
 | 12 | UAE Final Settlement | ⬜ **Not started** | — |
 
 **Total live: 67 SEO pages across 10 clusters. 149 old duplicate posts neutralised** (pointed via canonical tag at their replacement page, so nothing on the site competes with itself in search).
@@ -67,8 +77,11 @@ Mapped and written to **`redirects/aioseo-import-404-fix-2026-07-02.csv`** (not 
 1. **Approve Slot 11 for publish.** Say "yes" / "approved" / "publish it" and a new session will run the standard publish → verify → canonical-sweep sequence (documented below).
 2. **Build Slot 12 — UAE Final Settlement.** The last folder. Per the playbook it should stay small (2–4 pages): hub `/uae-final-settlement/` + `what-youre-owed/`, `unused-leave-payout/`, `before-you-sign/`, `delayed-or-unpaid/`. It should **wrap, not rebuild**, the existing gratuity calculator tools already on the site (link to them): `/uae-gratuity-calculator/`, `/uae-end-of-service-calculator/`, `/uae-end-of-service-gratuity-calculator-2026/`, `/uae-end-of-service-gratuity-calculation-mistakes/`, `/end-of-service-gratuity-uae-what-nobody-in-hr-will-tell-you/`.
 3. **Batch-import all 11 redirect CSVs** via the AIOSEO admin UI (this is a manual, human-only step — see "Known limitation" below). Not urgent since canonicals already prevent duplicate-content harm, but it completes proper 301 authority transfer.
-4. **Give a final read-through** to the `[VERIFY ANECDOTE]`-flagged composited stories across Folders 2–11. You reviewed and swapped several in Folder 1 already; the rest haven't had a pass yet.
-5. **Revoke the WordPress Application Password** in `.wp-creds` once everything is signed off — it currently has full Administrator API access.
+4. **Give a final read-through** to the composited stories across Folders 2–11. You reviewed and swapped several in Folder 1 already; the rest haven't had a pass yet.
+   - **⚠️ Folder 11 verification is still OWED — and the inline reminders are now gone.** The `[VERIFY ANECDOTE]` markers were **removed from all six Folder 11 pages on 2 July** because they were inline *visible* text (`<em>[VERIFY ANECDOTE]</em>`) that would have published as literal garbage to readers. Removing them made the pages publish-clean, but it also deleted the visual flag. **Every anecdote in Folder 11 is still a composited/plausible story that Kim has NOT yet confirmed rings true — do that read-through BEFORE publishing, not after.** The stories are in `folder-11-interview-answers/0*.html` (2 per file, in `<p>` tags beginning "I once…" / "A candidate once…").
+   - Folder 11 anecdote audit (2 July): hub trimmed 3→2; hub / `01-tell-me-about-yourself` / `02-expected-salary` rebalanced to genuinely gender-mixed (had been all-female); `02` gained a real second anecdote (it had only 1). Also repaired: the newsletter-CTA 👉 emoji had been corrupted to mojibake (`ð`) on three pages during an intermediate edit — restored to the exact required CTA. All six files now pass `lint-quality.sh` clean.
+5. **Apply the `/subscribe/` page fixes** — see `subscribe-page-fixes.md` (new, 2 July). Copy + design punch list for the Hospitality Memo signup page. Needs WordPress/page-builder access; page source is not in this repo. One item (colour palette) needs a Kim decision.
+6. **Revoke the WordPress Application Password** in `.wp-creds` once everything is signed off — it currently has full Administrator API access.
 
 ---
 
