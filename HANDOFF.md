@@ -16,6 +16,29 @@ This project only works from a session that has **direct shell/filesystem access
 
 ---
 
+## 🔴 Active issue found 2 July: 404 traffic spike
+
+GA4 flagged "Page not found – Inspire Ambitions" as the single most-viewed page on the site for 30 June (32 views, +88% day-over-day) and 1 July continued showing individual dead URLs. Cross-checked against `inventory/content-urls.txt` (the crawled site inventory) and every existing `redirects/*.csv`: at least 8 real, previously-live URLs are now 404ing and were **not** covered by Folder 11's partial redirect sweep (the ~44-URL mapping was explicitly flagged as incomplete against a 3,000+ URL swamp — this is exactly that gap surfacing as live traffic loss).
+
+Mapped and written to **`redirects/aioseo-import-404-fix-2026-07-02.csv`** (not yet imported — same AIOSEO admin-UI limitation as every other redirect CSV in this repo):
+
+| Old URL | New target | Confidence |
+|---|---|---|
+| `/how-early-should-you-arrive-for-a-job-interview/` | `/gcc-interview-answers/` (hub) | No dedicated spoke covers this; hub is closest |
+| `/how-to-decline-an-interview-after-accepting-another-job/` | `/gcc-interview-answers/` (hub) | Same |
+| `/what-to-eat-before-job-interview-smart-fuel-to-perform-with-confidence/` | `/gcc-interview-answers/` (hub) | Same |
+| `/what-to-wear-to-a-hotel-job-interview/` | `/gcc-interview-answers/` (hub) | Same |
+| `/do-you-ask-about-benefits-in-a-job-interview/` | `/gcc-interview-answers/expected-salary/` | Direct topical match (compensation) |
+| `/how-to-provide-references-for-a-job-interview/` | `/gcc-interview-answers/` (hub) | No dedicated spoke |
+| `/hospitality-career-path/` | `/gcc-recruitment-guide/internships/hospitality/` | Confirmed live target — same one used repeatedly in `aioseo-import-folder-04.csv` |
+| `/rta-theory-test-questions-and-answers-pdf/` | `/` (homepage) | Unrelated topic (UAE driving theory test) — no matching content exists anywhere in the 10 live folders. User chose homepage over leaving it 404. |
+
+**This is very likely not the full list** — only checked the specific paths visible in the GA4 screenshots provided. The underlying problem (interview-question swamp only ~1.5% mapped) is unresolved; treat this CSV as a patch, not a fix. A proper fix means finishing the full crawl-and-map of the 3,000+ near-duplicate posts referenced in `folder-11-interview-answers/HANDOFF-to-codex.md`.
+
+**Still blocked on:** actually importing this (and all other) redirect CSVs requires the WordPress admin UI (AIOSEO → Redirects → Import/Export). No session in this chain has had that access yet.
+
+---
+
 ## Where things stand
 
 **10 of 12 playbook folders are LIVE on inspireambitions.com.** Folder 11 is built and sitting in WordPress as drafts, awaiting approval to publish. Folder 12 has not been started — it is the last one in the original playbook.
