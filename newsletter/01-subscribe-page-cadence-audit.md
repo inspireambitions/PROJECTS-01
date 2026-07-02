@@ -15,29 +15,26 @@ to some readers).
 The hero and the signup card both already say "every other Sunday, 6:00 AM
 GST" and "Free · Every other Sunday." No change needed there.
 
-## Problem 1 — SEO/meta layer contradicts the page (factual error, high priority)
+## Problem 1 — SEO/meta layer contradicted the page (factual error) — FIXED 2026-07-02
 
-Set via All in One SEO Pro on this page (post ID 428, AIOSEO meta fields).
-The same string is reused across four fields, so one fix in AIOSEO's page
-description field corrects all four automatically:
+Stored in AIOSEO's own table (`wpof_aioseo_posts`, row id 8483, post_id
+428), not in postmeta. The same string was reused across three columns
+(`description`, `og_description`, `twitter_description`), and the JSON-LD
+`WebPage.description` is derived from the same value, so one update
+corrected all four surfaces at once.
 
-| Field | Current text |
-|---|---|
-| Meta description (`aioseo_meta_data.description`) | "A weekly briefing for hospitality professionals across the UAE and GCC. Salaries, hiring trends, labour rights, and the moves shaping your next role." |
-| `og:description` | same string |
-| `twitter:description` | same string |
-| JSON-LD `WebPage.description` (schema, auto-derived) | same string |
+| Field | Old text | New text (live now) |
+|---|---|---|
+| `description` | "A weekly briefing for hospitality professionals across the UAE and GCC. Salaries, hiring trends, labour rights, and the moves shaping your next role." | "A career briefing for hospitality professionals across the UAE and GCC, every other Sunday. Salaries, hiring trends, labour rights, and the moves shaping your next role." |
+| `og_description` | same old string | same new string |
+| `twitter_description` | same old string | same new string |
+| JSON-LD `WebPage.description` | same old string | same new string |
 
-**Proposed replacement** (same length class, same keywords, fixes the
-cadence claim):
-
-> "A career briefing for hospitality professionals across the UAE and GCC, every other Sunday. Salaries, hiring trends, labour rights, and the moves shaping your next role."
-
-This is a one-field edit in AIOSEO's page-level SEO settings for the
-Subscribe page (or via `aioseo_meta_data.description` through the REST
-API / WP-CLI `option`/postmeta update). It touches a shared SEO plugin
-surface, so **do not apply until Kim approves the exact replacement text
-above.**
+Kim approved this exact replacement text on 2026-07-02. Applied via a
+direct `UPDATE` on `wpof_aioseo_posts WHERE post_id = 428` (approved
+through WPVibe's browser approval flow, since it's a direct DB write) and
+verified live afterwards by re-fetching `/wp/v2/pages/428` — all four
+fields now show the corrected text with no "weekly" mention anywhere.
 
 ## Problem 2 — on-page wording inconsistency (minor, not a factual error)
 
@@ -64,12 +61,14 @@ Resend access this session to check the actual email copy. Before editing
 the meta description above, do a quick pass on the 7 welcome emails and
 confirm none of them say "weekly" — flag any that do for the same fix.
 
-## Suggested order of operations once Kim approves
+## Remaining steps
 
-1. Fix the AIOSEO description field on the Subscribe page (fixes meta, og,
-   twitter, and JSON-LD in one edit).
+1. ~~Fix the AIOSEO description field on the Subscribe page~~ — done, see
+   Problem 1 above.
 2. Fix the four on-page wording spots (Problem 2) — small, low-risk content
-   edits inside the existing page HTML block.
+   edits inside the existing page HTML block. Not yet applied, awaiting
+   approval.
 3. Check welcome-series copy in Resend for any stray "weekly" references.
-4. Re-crawl / re-share-preview the page afterwards to confirm the new
-   og:description shows correctly on Slack/LinkedIn/WhatsApp link previews.
+4. Re-crawl / re-share-preview the page to confirm the new og:description
+   shows correctly on Slack/LinkedIn/WhatsApp link previews (share caches
+   can lag behind the live meta tag).
