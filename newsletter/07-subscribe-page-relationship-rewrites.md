@@ -154,3 +154,13 @@ AFTER:
    then run the full capture test (both forms, desktop and mobile,
    Resend contact created with name and journey tag, welcome run
    triggers).
+
+## Addendum 2026-07-03: rebrand complete on all page surfaces
+
+Meta title approved by Kim and verified live: title, og_title and
+twitter_title now read "The Hospitality Memo | The Hospitality Career
+Network". With the badge and hero eyebrow done earlier, the rebrand is
+complete across the page. Standing note: the two Resend API keys pasted
+into chat remain unrotated by Kim's choice for now; treat as a known
+open risk. Email-side work (five template edits + publish) is with Codex;
+Kim will run the live signup test after Codex finishes.
