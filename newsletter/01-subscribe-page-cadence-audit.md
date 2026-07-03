@@ -36,23 +36,18 @@ through WPVibe's browser approval flow, since it's a direct DB write) and
 verified live afterwards by re-fetching `/wp/v2/pages/428` — all four
 fields now show the corrected text with no "weekly" mention anywhere.
 
-## Problem 2 — on-page wording inconsistency (minor, not a factual error)
+## Problem 2 — on-page wording inconsistency — FIXED 2026-07-02
 
-Three spots on the live page say "twice a month" and one says "Bi-Weekly"
-instead of "every other Sunday":
+Three spots on the live page said "twice a month" and one said
+"Bi-Weekly" instead of "every other Sunday." Kim approved all four
+replacements; applied as surgical content edits to the page body and
+verified live afterwards (a follow-up search for "twice a month" on the
+page now returns zero matches).
 
-1. Signup card reassurance line: *"Sunday mornings, twice a month. Practical. No spam. Unsubscribe anytime."*
-2. Sample Memo section eyebrow label: *"Sample Bi-Weekly Memo"*
-3. About-Kim block: *"...delivered to your inbox twice a month."*
-4. Bottom CTA micro line: *"Free, twice a month. No spam. Unsubscribe anytime."*
-
-None of these are wrong exactly, but the brief asks for one consistent
-phrase across every surface. Proposed replacements, ready for approval:
-
-1. → "Every other Sunday. Practical. No spam. Unsubscribe anytime."
-2. → "A Recent Memo" (drops the cadence claim from a label where it isn't needed and removes the "bi-weekly" ambiguity entirely)
-3. → "...delivered to your inbox every other Sunday."
-4. → "Free, every other Sunday. No spam. Unsubscribe anytime."
+1. Signup card reassurance line: *"Sunday mornings, twice a month..."* → *"Every other Sunday. Practical. No spam. Unsubscribe anytime."*
+2. Sample Memo section eyebrow label: *"Sample Bi-Weekly Memo"* → *"A Recent Memo"* (drops the cadence claim from a label where it isn't needed and removes the "bi-weekly" ambiguity entirely)
+3. About-Kim block: *"...delivered to your inbox twice a month."* → *"...delivered to your inbox every other Sunday."*
+4. Bottom CTA micro line: *"Free, twice a month..."* → *"Free, every other Sunday. No spam. Unsubscribe anytime."*
 
 ## Problem 3 — welcome-series wording (unverified from this session)
 
@@ -65,9 +60,9 @@ confirm none of them say "weekly" — flag any that do for the same fix.
 
 1. ~~Fix the AIOSEO description field on the Subscribe page~~ — done, see
    Problem 1 above.
-2. Fix the four on-page wording spots (Problem 2) — small, low-risk content
-   edits inside the existing page HTML block. Not yet applied, awaiting
-   approval.
+2. ~~Fix the four on-page wording spots~~ — done, see Problem 2 above. The
+   Subscribe page now uses "every other Sunday" consistently everywhere;
+   "twice a month" and "Bi-Weekly" no longer appear on it.
 3. Check welcome-series copy in Resend for any stray "weekly" references.
 4. Re-crawl / re-share-preview the page to confirm the new og:description
    shows correctly on Slack/LinkedIn/WhatsApp link previews (share caches
