@@ -1,0 +1,34 @@
+﻿You are in repo inspireambitions/projects-01 on branch main.
+
+Work inside resend-newsletter-ops/.
+
+Read these files first:
+
+1. resend-newsletter-ops/CLAUDE.md
+2. resend-newsletter-ops/NEWSLETTER_CONTEXT.md
+3. resend-newsletter-ops/resend_newsletter.py
+
+Inspect resend_newsletter.py before running it. Confirm it does not print secrets or write live changes unless --apply --approved is used.
+
+Then run:
+
+python resend-newsletter-ops/resend_newsletter.py check
+python resend-newsletter-ops/resend_newsletter.py export-all
+
+The public newsletter page is:
+https://inspireambitions.com/subscribe/
+
+Important: the public page says Sendy, but Resend has The Hospitality Memo Welcome Sequence. Check and explain that mismatch before assuming Resend is the live sequence.
+
+Find the welcome sequence email that discusses gratuity or end-of-service benefits.
+
+Do not edit live.
+
+Show me:
+1. Automation name
+2. Template subject
+3. Template ID
+4. Current opening section
+5. The smallest before/after wording change to redirect job seekers who have not landed a role yet
+
+Follow Kim's rules: British English, no em dashes, short sentences, no employer data, and no live changes until Kim approves the exact wording.
