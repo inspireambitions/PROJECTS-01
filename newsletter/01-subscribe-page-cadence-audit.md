@@ -67,3 +67,11 @@ confirm none of them say "weekly" — flag any that do for the same fix.
 4. Re-crawl / re-share-preview the page to confirm the new og:description
    shows correctly on Slack/LinkedIn/WhatsApp link previews (share caches
    can lag behind the live meta tag).
+
+## Addendum 2026-07-03: full em-dash sweep completed
+
+All twelve remaining em dashes in the subscribe page body were replaced
+with commas, colons or full stops (approved by Kim as part of the
+relationship-rewrite work). The page body now contains zero em dashes,
+in line with the project's no-em-dash rule for public copy. Cache purged
+after the sweep.
