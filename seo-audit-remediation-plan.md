@@ -122,10 +122,17 @@ job; retiring them (redirect to the English version) is a fast technical fix. Bo
    `/hr-manager-salary-dubai-hospitality/`.
 7. **[WP] Add body text to pages with none**: `/should-i-take-this-dubai-job/`, `/tools/`,
    `/living-in-the-uae/` (plus `/bn/` `/ar/` copies of the first).
-8. **[DECISION then WP] Fix or replace 10 dead MOHRE.gov.ae government links** cited from
-   `/glossary/` as legal sources. These are external, so nobody here can "fix" the .gov.ae
-   side — replace with current working URLs to the same regulations, or cite the specific
-   Federal Decree-Law by number without a dead hyperlink.
+8. **[WP, needs live verification] Fix or replace 10 dead MOHRE.gov.ae government links**
+   cited from `/glossary/` as legal sources. Attempted tonight: WebSearch found the exact
+   same `mohre.gov.ae/assets/download/8cd7cf08/...` URL still indexed, plus a near-duplicate
+   with a different asset hash (`e82f7872`) for the same Federal Decree-Law 33 of 2021 PDF —
+   but **I could not verify either actually resolves**: both direct fetch and WebFetch return
+   403 for mohre.gov.ae from this session (a broader network restriction, not specific to
+   inspireambitions.com). Do not treat the search hits as confirmed fixes. Whoever has real
+   browser access should test both candidate URLs plus `u.ae/en/information-and-services/
+   jobs/employment-in-the-private-sector/employment-laws-and-regulations-in-the-private-sector`
+   (found via search, on the more stable u.ae government portal) as a possible replacement
+   source, then update the glossary's citations to whichever actually loads.
 9. **[WP] Fix the malformed LinkedIn URL** (`https/https://...`) linked from 3 `/about-kim/`
    language variants — likely a copy-paste error in a shared bio block.
 
