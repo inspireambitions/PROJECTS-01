@@ -60,19 +60,28 @@ job; retiring them (redirect to the English version) is a fast technical fix. Bo
    - Homepage vs `/career-hub/` vs `/career-coaching/` vs `/hospitality-career-path/` — all
      competing for "hospitality career."
    - `/tools/` vs `/career-tools/` — competing for "tools."
-   - The legacy job-interview cluster (`/uae-job-interview-guide/`,
-     `/common-job-interview-questions-answers/`, `/what-to-wear-to-a-job-interview-guide/`,
-     `/how-to-follow-up-after-a-job-interview-guide/`,
-     `/after-the-interview-offers-and-decisions/`,
-     `/job-interview-nerves-confidence-guide/`, `/industry-specific-interview-guides/`) —
-     each competing against its own `/hi/` `/bn/` `/ar/` copies, **and** overlapping with
-     Folder 11 (GCC Interview Answers), which was purpose-built to replace this exact
-     content. **[REPO]** I can extend the redirect mapping to fold these into Folder 11's
-     spokes, the same way I mapped the 8 URLs from the earlier 404 investigation — but this
-     needs your sign-off on which legacy page maps to which Folder 11 spoke, since some of
-     these (e.g. "after the interview," "follow up," "nerves and confidence") don't have a
-     direct Folder 11 equivalent yet and might need Folder 11 extended, or a decision to
-     leave them standing.
+   - **The legacy job-interview cluster — corrected after Opus review (see below).** Only
+     **`/common-job-interview-questions-answers/`** (+ its `/hi/` `/bn/` `/ar/` copies) is a
+     genuine topical match for Folder 11 (GCC Interview Answers) — it's a general Q&A
+     roundup that Folder 11's Gulf-specific answers were built to supersede, and each Folder
+     11 spoke already carries an explicit `absorbs_301` list of exactly this kind of generic
+     duplicate. **[REPO]** I'll extend the redirect mapping to fold this one page (+
+     variants) into the Folder 11 hub.
+   - **The rest of the cluster — `/uae-job-interview-guide/`, `/what-to-wear-to-a-job-
+     interview-guide/`, `/how-to-follow-up-after-a-job-interview-guide/`,
+     `/after-the-interview-offers-and-decisions/`, `/job-interview-nerves-confidence-guide/`,
+     `/industry-specific-interview-guides/` — do NOT belong redirected into Folder 11.**
+     Folder 11 covers 5 specific interview *answers*; this cluster covers interview
+     *process/logistics*, a genuinely separate topic. Confirmed two ways: (1) the offer/
+     negotiation content already has its own home — Folder 11's own expected-salary spoke
+     links offer-negotiation out to `/uae-salary-guide/negotiating-your-offer/`, a different
+     cluster entirely; (2) `folder-11-interview-answers/HANDOFF-to-codex.md` already flags
+     this exact ambiguity and tells the next session to judge "whether each maps to one of
+     these 5 spokes or is genuinely out of scope." Their real problem per the report is
+     duplicate/thin content across their own `/hi/` `/bn/` `/ar/` copies — that's the Phase 0
+     translation decision, not a Folder 11 redirect. Building a proper "interview process"
+     cluster later is legitimate future work, outside tonight's scope and outside the
+     original 12-slot playbook.
 7. **Fix the 98 identical-anchor-text problems.** Two real patterns here, not one:
    - A "related posts" widget appears to use the **publish date** as link text (e.g. "jun
      26, 2026" linking to 6 unrelated salary pages at once). That's a template/theme fix,
