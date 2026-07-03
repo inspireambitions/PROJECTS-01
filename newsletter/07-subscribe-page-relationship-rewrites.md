@@ -164,3 +164,21 @@ complete across the page. Standing note: the two Resend API keys pasted
 into chat remain unrotated by Kim's choice for now; treat as a known
 open risk. Email-side work (five template edits + publish) is with Codex;
 Kim will run the live signup test after Codex finishes.
+
+## Addendum 2026-07-03 (2): live signup test + success-message fix
+
+End-to-end signup test PASSED: Kim signed up via the live form
+(hello@helloeastafrica.com), contact created, hospitality_memo.subscribed
+fired, welcome email 1 delivered to the inbox within seconds, not spam.
+
+FINDING: the delivered email was the OLD template version (no personal
+paragraph, old signature line), meaning the send fired before Codex's
+publish completed (or publish had not run). Kim to confirm publish
+status with Codex; if published after 18:54 UTC 2026-07-03, future
+subscribers get the new version.
+
+FIX APPLIED: the signup success/error message was nearly invisible
+(pale green on cream, inline-styled by Snippet 86 JS). Added page-level
+CSS overrides using [style*] attribute selectors: success now renders as
+a bold dark-green chip with a checkmark on a light green background;
+errors render as a bold dark-red chip. No snippet change. Cache purged.
