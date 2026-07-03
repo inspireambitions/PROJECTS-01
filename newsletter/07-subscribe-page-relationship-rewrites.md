@@ -1,6 +1,20 @@
 # Subscribe page relationship rewrites — before/after drafts
 
-Status: drafted, awaiting Kim's per-edit approval. Nothing applied live.
+Status: APPLIED LIVE 2026-07-03 with Kim's approval (all five edits, plus
+rebrand: badge "THE HOSPITALITY MEMO / The Hospitality Career Network" and
+hero eyebrow updated; meta title change pending WPVibe approval panel).
+Key discovery during application: Snippet 86's handler already accepts
+`name` (Resend firstName) and `interests` (memo_interests property + event
+payload), so NO snippet edit was needed — the form change was pure page
+HTML/CSS. This also confirmed the provider path: the subscribe forms are
+rebound by Snippet 86 JS to `ia_resend_subscribe`, which writes to Resend
+and fires hospitality_memo.subscribed. Resend IS the live backend; the
+Sendy-style hidden fields (list/subform) are vestigial.
+Caveats: (1) the journey radio is not enforced by the snippet's JS
+validation (HTML `required` is neutralised by novalidate), so it is
+effectively optional — enforcing it would need a small snippet JS change;
+(2) Kim should run one real test signup to confirm the contact lands in
+Resend with first name + memo_interests and the welcome run triggers.
 Goal: shift the page from credibility to connection, per Kim's stated aim
 (relationship, loyal fans, pain points readers actually carry).
 
