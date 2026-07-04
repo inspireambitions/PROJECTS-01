@@ -286,6 +286,35 @@ These 20 rows were selected from live published posts with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A9, missing descriptions
+
+These 20 rows were selected from live published posts with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from post content samples or excerpts. All 20 rows had existing canonical targets, so row-level DB and public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 45283 | `/how-to-get-internship-dubai-no-experience/` | AIOSEO description | empty | `Get a Dubai internship with no experience by building proof, targeting realistic employers, and using a step-by-step 2026 application plan.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45284 | `/paid-internship-uae-legal-answer/` | AIOSEO description | empty | `Learn when UAE internships are paid, what the law says about stipends, and how to negotiate professionally without weakening your application.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45287 | `/uae-internship-to-full-time-job/` | AIOSEO description | empty | `Turn a UAE internship into a full-time job by showing the right behaviours, starting useful conversations, and proving hiring value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45288 | `/internship-stipends-uae-what-companies-pay/` | AIOSEO description | empty | `Compare UAE internship stipends by sector, spot weak offers, and learn what to negotiate before accepting an unpaid or low-paid placement.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45291 | `/dubai-hospitality-internship-guide-2026/` | AIOSEO description | empty | `Plan a Dubai hospitality internship in 2026, including hotel programmes, applications, first-month expectations, and career steps after.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45292 | `/uae-vs-saudi-arabia-internship-gcc-graduates/` | AIOSEO description | empty | `Compare UAE and Saudi internships for GCC graduates, including rules, stipends, sectors, career paths, and how to choose the better fit.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45297 | `/dubai-finance-banking-salary-guide-2026/` | AIOSEO description | empty | `Compare Dubai finance and banking salaries from accountant to CFO, including benefits, bonus gaps, and negotiation traps to avoid.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45298 | `/dubai-hr-people-operations-salary-guide-2026/` | AIOSEO description | empty | `Compare Dubai HR and people operations salaries from coordinator to CHRO, with market gaps, specialist skills, and package checks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45299 | `/uae-work-permit-types-employer-visa-explained/` | AIOSEO description | empty | `Understand UAE work permit types, employer visa choices, free-zone limits, and why the permit route matters if a dispute or move happens.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45300 | `/dubai-hospitality-hotel-salary-guide-2026/` | AIOSEO description | empty | `Compare Dubai hospitality and hotel salaries by role, including service charge, accommodation, meals, transport, and promotion paths.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45346 | `/uae-internship-guide-2026/` | AIOSEO description | empty | `Use the UAE Internship Guide 2026 to understand MOHRE rules, paid and unpaid placements, NAFIS, stipends, and full-time conversion.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45357 | `/ai-engineer-salary-negotiation-dubai-2026/` | AIOSEO description | empty | `Negotiate an AI engineer salary in Dubai with 2026 benchmarks, approved bands, counter-offer timing, and evidence that protects your value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45358 | `/compliance-manager-salary-difc-dubai-2026/` | AIOSEO description | empty | `Compare compliance manager salaries in DIFC Dubai, including ACAMS value, approved bands, counter-offers, and 2026 market signals.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45363 | `/family-of-4-cost-of-living-dubai-aed-25000-2026/` | AIOSEO description | empty | `Check if AED 25,000 can support a family of four in Dubai, with 2026 costs for rent, school fees, transport, and daily life.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45370 | `/difc-vs-mainland-dubai-salary-2026/` | AIOSEO description | empty | `Compare DIFC and mainland Dubai salaries, including base pay, benefits, gratuity rules, visa structure, and what affects long-term value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45411 | `/saudi-arabia-hr-manager-salary-2026/` | AIOSEO description | empty | `Review Saudi Arabia HR manager salaries for 2026, including Vision 2030 demand, experience bands, compliance skills, and package factors.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45414 | `/abu-dhabi-vs-dubai-cost-of-living-2026/` | AIOSEO description | empty | `Compare Abu Dhabi and Dubai cost of living in 2026, including rent, transport, schools, lifestyle choices, and salary planning.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45415 | `/uae-labour-law-notice-period-2026/` | AIOSEO description | empty | `Understand UAE labour law notice period rules before resigning, including probation, contract checks, handover, leave balance, and HR records.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45417 | `/finance-manager-salary-dubai-2026/` | AIOSEO description | empty | `Compare finance manager salary bands in Dubai by sector and experience, including DIFC gaps, allowances, and total compensation checks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45418 | `/uae-probation-period-labour-law-2026/` | AIOSEO description | empty | `Understand UAE probation period law in 2026, including the six-month limit, notice duties, job changes, and employee rights before leaving.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -334,6 +363,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A8 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A8 public REST verification: all 20 descriptions matched expected text.
 - Phase A batch A8 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A9 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A9 after update: missing descriptions 111, A9 descriptions present 20, A9 descriptions in 120-160 range 20.
+- Phase A batch A9 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A9 public REST verification: all 20 descriptions matched expected text.
+- Phase A batch A9 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
