@@ -492,6 +492,67 @@ The AIOSEO title format was checked before title edits. Both published posts and
 
 Cache after this sample: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A title batch T2, over-long custom titles
+
+These 50 rows were selected from live published posts and pages with custom AIOSEO titles longer than 60 characters. Pre-check confirmed all 50 selected titles were over 60 characters before update. Each new title preserves the main keyword near the front and is 60 characters or shorter.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 479 | `/career-hub/personal-development/` | AIOSEO title | `Best Self Confidence Building Program &amp; Leadership Skills` | `Self Confidence Programme and Leadership Skills` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 2210 | `/emotional-intelligence-understanding-and-developing-your-eq/` | AIOSEO title | `Emotional Intelligence in the Workplace: Real Insights (2025)` | `Emotional Intelligence at Work: Real Insights` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 2240 | `/value-examples-practical-illustrations-of-value-in-action/` | AIOSEO title | `Practical Value Example: Real-World Applications &amp; Insights` | `Practical Value Example: Real-World Uses` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 2309 | `/finance-positions-in-dubai-opportunities-and-requirements/` | AIOSEO title | `Finance Positions in Dubai – Careers, Roles &amp; Requirements` | `Finance Positions in Dubai: Careers and Requirements` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 2506 | `/sustainable-development-goals-a-comprehensive-guide-to-global-progress/` | AIOSEO title | `Sustainable Development Goals: Global Progress &amp; Roadmap to 2030` | `Sustainable Development Goals: Progress to 2030` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 2510 | `/sustainability-meaning-a-clear-and-concise-explanation/` | AIOSEO title | `Sustainability Meaning: A Clear &amp; Simple 2025 Explanation` | `Sustainability Meaning: Clear 2026 Explanation` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 2527 | `/leadership-and-development-strategies-for-effective-growth/` | AIOSEO title | `Leadership &amp; Development – Strategies for Effective Growth` | `Leadership and Development: Strategies for Growth` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 4591 | `/career-paths-for-engineers/` | AIOSEO title | `Alternative Career Paths For Engineers: Jobs Beyond The Design Desk` | `Alternative Career Paths for Engineers` | AIOSEO DB title length 38. Public REST matched expected title. |
+| 5216 | `/being-in-love-with-yourself/` | AIOSEO title | `Being in Love with Yourself: Embrace Self-Compassion &amp; Confidence` | `Being in Love with Yourself: Self-Compassion` | AIOSEO DB title length 44. Public REST matched expected title. |
+| 5296 | `/development-goals-for-managers/` | AIOSEO title | `Development Goals for Managers – Effective Leadership Strategies` | `Development Goals for Managers: Leadership Strategies` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 5303 | `/dolma-arabic-food/` | AIOSEO title | `Dolma: The Classic Arabic Stuffed Grape Leaves Recipe & Guide` | `Dolma Arabic Food: Stuffed Grape Leaves Guide` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 5312 | `/executive-assistant-career-path/` | AIOSEO title | `Executive Assistant Career Path: Where The Role Can Really Lead` | `Executive Assistant Career Path: Where It Can Lead` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 5519 | `/i-cant-love-myself/` | AIOSEO title | `I Can’t Love Myself – Overcoming Self-Doubt &amp; Finding Self-Love` | `I Can't Love Myself: Self-Doubt and Self-Love` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 5627 | `/training-courses-for-hospitality/` | AIOSEO title | `Training Courses for Hospitality | Service &amp; Leadership Skills` | `Training Courses for Hospitality: Service Skills` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 5733 | `/kubos-arabic-bread/` | AIOSEO title | `Kuboos: The Iconic Arabic Bread - Recipe, Nutrition & History` | `Kuboos Arabic Bread: Recipe, Nutrition and History` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 5783 | `/cop28-dubai-climate-summit/` | AIOSEO title | `COP28 Dubai Climate Summit: Key Outcomes &amp; Future Commitments` | `COP28 Dubai Climate Summit: Outcomes and Commitments` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 5822 | `/basic-hospitality-training/` | AIOSEO title | `Basic Hospitality Training – Essential Skills for Service Excellence` | `Basic Hospitality Training: Essential Service Skills` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 5852 | `/cleaner-jobs-in-dubai/` | AIOSEO title | `Cleaner Jobs in Dubai | Top Opportunities &amp; Career Growth` | `Cleaner Jobs in Dubai: Opportunities and Growth` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 6288 | `/alternative-internship-advice/` | AIOSEO title | `Alternative Internship Advice: Non-Traditional Work Experience` | `Alternative Internship Advice: Non-Traditional Experience` | AIOSEO DB title length 57. Public REST matched expected title. |
+| 6315 | `/career-or-job-in-hospitality/` | AIOSEO title | `Careers in Hospitality 2025 | Jobs &amp; Growth Opportunities` | `Careers in Hospitality: Jobs and Growth` | AIOSEO DB title length 39. Public REST matched expected title. |
+| 6327 | `/difference-between-a-job-and-a-career/` | AIOSEO title | `Difference Between a Job and a Career | Long-Term vs Short-Term Goals` | `Difference Between a Job and a Career` | AIOSEO DB title length 37. Public REST matched expected title. |
+| 6339 | `/emirates-internship-opportunities/` | AIOSEO title | `Emirates Internship Opportunities: Launch Your Aviation Career` | `Emirates Internship Opportunities: Aviation Careers` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 6351 | `/how-does-a-job-differ-from-a-career/` | AIOSEO title | `Job vs Career | Understanding Short-Term Work vs Long-Term Growth` | `Job vs Career: Short-Term Work and Long-Term Growth` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 6391 | `/navigating-your-path-to-professional-experience/` | AIOSEO title | `Internship Opportunities 2025 | Build Professional Experience` | `Internship Opportunities: Build Professional Experience` | AIOSEO DB title length 55. Public REST matched expected title. |
+| 6529 | `/psychology-summer-internships/` | AIOSEO title | `Psychology Summer Internships – Launch Your Mental Health Career` | `Psychology Summer Internships: Mental Health Careers` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 6594 | `/what-are-the-best-career-options-in-hotels/` | AIOSEO title | `Best Career Options in Hotels – Hospitality Jobs &amp; Growth` | `Best Career Options in Hotels: Jobs and Growth` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 6705 | `/abu-dhabi-city-population/` | AIOSEO title | `Abu Dhabi City Population | Growth &amp; Demographic Insights` | `Abu Dhabi City Population: Growth and Demographics` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 7038 | `/abu-dhabi-city-terminal-baggage-drop-timing/` | AIOSEO title | `Abu Dhabi City Terminal: Baggage Drop Timings & Check-in Guide` | `Abu Dhabi City Terminal: Baggage Drop Guide` | AIOSEO DB title length 43. Public REST matched expected title. |
+| 7070 | `/best-advice-to-give-a-new-employee/` | AIOSEO title | `Best Advice for New Employees – Navigate Week One Confidently` | `Best Advice for New Employees: Navigate Week One` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 7116 | `/best-temporary-staffing-agencies/` | AIOSEO title | `Best Temporary Staffing Agencies – Find Reliable Temp Solutions` | `Best Temporary Staffing Agencies: Reliable Temp Help` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 7183 | `/employee-favourite-things-list/` | AIOSEO title | `Employee Favourite Things List – Boost Engagement &amp; Morale` | `Employee Favourite Things List: Engagement and Morale` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 7190 | `/facts-about-hospitality-and-tourism/` | AIOSEO title | `Facts About Hospitality &amp; Tourism – Industry Insights &amp; Trends` | `Facts About Hospitality and Tourism: Industry Trends` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 7197 | `/favourite-things-list-for-co-workers/` | AIOSEO title | `Favourite Things List For Co-workers: A Simple Workplace Template` | `Favourite Things List for Co-workers: Workplace Template` | AIOSEO DB title length 56. Public REST matched expected title. |
+| 7250 | `/good-job-benefits/` | AIOSEO title | `Good Job Benefits: Boost Employee Satisfaction &amp; Retention` | `Good Job Benefits: Employee Satisfaction and Retention` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 7283 | `/hospitality-industry-quotes/` | AIOSEO title | `Hospitality Industry Quotes – Inspiration &amp; Insight for Professionals` | `Hospitality Industry Quotes: Inspiration for Professionals` | AIOSEO DB title length 58. Public REST matched expected title. |
+| 7326 | `/internships-in-dubai-for-15-year-olds/` | AIOSEO title | `Internships in Dubai for 15-16 Year Olds: Where to Apply (2026)` | `Internships in Dubai for 15-Year-Olds: Where to Apply` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 7340 | `/introduction-to-hospitality-and-tourism/` | AIOSEO title | `Introduction to Hospitality &amp; Tourism: Essential Insights` | `Introduction to Hospitality and Tourism: Essentials` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 7568 | `/hudayriyat-island-guide/` | AIOSEO title | `Hudayriyat Island Abu Dhabi Guide | Top Things to Do &amp; Places to Stay` | `Hudayriyat Island Abu Dhabi Guide: Things to Do` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 7725 | `/al-reem-island-abu-dhabi-location-map/` | AIOSEO title | `Al Reem Island Abu Dhabi Location Map – Complete Guide to Living` | `Al Reem Island Abu Dhabi Location Map Guide` | AIOSEO DB title length 43. Public REST matched expected title. |
+| 7886 | `/bridges-reem-island/` | AIOSEO title | `The Bridges Reem Island 2025 | Luxury Living &amp; Investment` | `The Bridges Reem Island: Living and Investment` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 7923 | `/bike-license-in-abu-dhabi/` | AIOSEO title | `Bike License in Abu Dhabi: Total Fees, Requirements & Steps (2026)` | `Bike Licence in Abu Dhabi: Fees and Steps` | AIOSEO DB title length 41. Public REST matched expected title. |
+| 7943 | `/eye-test-for-driving-license-abu-dhabi/` | AIOSEO title | `Eye Test for Driving License in Abu Dhabi: Cost, Locations & Requirements` | `Eye Test for Driving Licence Abu Dhabi: Cost and Locations` | AIOSEO DB title length 58. Public REST matched expected title. |
+| 8005 | `/rta-test-sample-questions/` | AIOSEO title | `RTA Test Sample Questions: Practice for Dubai Driving Exam (2026)` | `RTA Test Sample Questions: Dubai Driving Practice` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 8020 | `/rta-theory-test-questions-and-answers-pdf/` | AIOSEO title | `RTA Theory Test Questions and Answers PDF: Free Practice Guide (2026)` | `RTA Theory Test Questions and Answers PDF Guide` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 8143 | `/schools-in-mohammed-bin-zayed-city/` | AIOSEO title | `Schools in Mohammed Bin Zayed City Abu Dhabi – Education Guide` | `Schools in Mohammed Bin Zayed City Abu Dhabi Guide` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 8240 | `/address-dubai-opera/` | AIOSEO title | `Address Dubai Opera – Premier Luxury Living in Downtown Dubai` | `Address Dubai Opera: Luxury Living in Downtown Dubai` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 8917 | `/influence-of-charles-dickens/` | AIOSEO title | `Influence of Charles Dickens | Shaping Victorian Literature &amp; Society` | `Influence of Charles Dickens: Victorian Literature` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 9151 | `/advice-for-job-hunting/` | AIOSEO title | `Job Hunting in 2026: 15 Strategies That Actually Get You Hired` | `Job Hunting in 2026: Strategies That Get You Hired` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 9168 | `/different-types-of-influence/` | AIOSEO title | `Different Types of Influence | Power &amp; Leadership Dynamics` | `Different Types of Influence: Power and Leadership` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 9601 | `/best-blogs-in-canada/` | AIOSEO title | `Create the Life You Love | Steps Toward Fulfillment &amp; Growth` | `Create the Life You Love: Fulfilment and Growth` | AIOSEO DB title length 47. Public REST matched expected title. |
+
+Correction note: post 2510 was first drafted as `Sustainability Meaning: Clear 2025 Explanation`, then immediately corrected to `Sustainability Meaning: Clear 2026 Explanation` before final cache purge and verification.
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -578,6 +639,10 @@ Cache after this sample: `wp cache purge` succeeded. WPVibe reported `Purged: WP
 - Phase A title-format check: published posts and pages use `#post_title` in `aioseo_options_dynamic`, so AIOSEO is not adding a site-name suffix through the title template.
 - Phase A title sample T1 after update: over-long custom titles 238, sample titles in range 3 of 3.
 - Phase A title sample T1 public REST verification: all 3 AIOSEO titles matched expected text across posts and pages endpoints.
+- Phase A title batch T2 pre-check: all 50 selected rows had custom AIOSEO titles longer than 60 characters before update.
+- Phase A title batch T2 after update: over-long custom titles 188, T2 titles in range 50 of 50.
+- Phase A title batch T2 row-level DB verification: 50 rows returned with title lengths 37-58 after final correction.
+- Phase A title batch T2 public REST verification: all 50 AIOSEO titles rendered as expected across posts and pages endpoints.
 
 ## Open Decisions
 
