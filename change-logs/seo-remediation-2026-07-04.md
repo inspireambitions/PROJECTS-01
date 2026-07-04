@@ -170,6 +170,35 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A5, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Existing canonical targets and `noindex` robots settings were preserved where present.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 22732 | `/cv-writing-create-a-resume/` | AIOSEO description | empty | `Use professional CV writing support to present your skills, achievements, and experience in a clearer format that attracts hiring managers.` | AIOSEO DB updated. Existing canonical target present. |
+| 22737 | `/internship-guidance-launch-your-professional/` | AIOSEO description | empty | `Get internship guidance for applications, placement planning, workplace confidence, and turning early experience into career progress.` | AIOSEO DB updated. Existing canonical target present. |
+| 24403 | `/can-a-career-coach-help-me-find-a-job/` | AIOSEO description | empty | `Learn how a career coach can support your job search, sharpen your strategy, improve interviews, and turn effort into clearer action.` | AIOSEO DB updated. Existing canonical target present. |
+| 24413 | `/what-to-do-if-you-can-t-find-a-job/` | AIOSEO description | empty | `Learn what to do if you cannot find a job, including when to change strategy, improve applications, track results, and rebuild momentum.` | AIOSEO DB updated. Existing canonical target present. |
+| 24434 | `/why-is-it-so-hard-to-find-a-job/` | AIOSEO description | empty | `Understand why finding a job feels hard, from low response rates and hidden hiring to relocation pressure, networking, and better search tactics.` | AIOSEO DB updated. Existing canonical target present. |
+| 24443 | `/how-to-find-a-job-with-no-experience/` | AIOSEO description | empty | `Learn how to find a job with no experience by using projects, study, volunteering, transferable skills, and targeted applications.` | AIOSEO DB updated. Existing canonical target present. |
+| 24452 | `/how-long-does-it-take-to-find-a-job/` | AIOSEO description | empty | `See how long a job search can take, why timelines vary, and how a focused plan helps you move from uncertainty to stronger offers.` | AIOSEO DB updated. Existing canonical target present. |
+| 24457 | `/how-to-find-a-job-you-love/` | AIOSEO description | empty | `Learn how to find a job you love by clarifying strengths, testing options, avoiding blind quits, and building a practical career roadmap.` | AIOSEO DB updated. Existing canonical target present. |
+| 24475 | `/memberships/` | AIOSEO description | empty | `Browse the Inspire Ambitions membership catalog to review available learning options, account access, and career-growth resources.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 24476 | `/purchase/` | AIOSEO description | empty | `Use the Inspire Ambitions purchase page to complete course or membership checkout, review your order, and access the next step.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 25002 | `/my-dashboard/` | AIOSEO description | empty | `Use your Inspire Ambitions dashboard to access learning resources, review account details, track progress, and continue your career development.` | AIOSEO DB updated. |
+| 25123 | `/quiz-maker/` | AIOSEO description | empty | `Use the Quiz Maker page for Inspire Ambitions assessments, learning prompts, and structured questions that support personal development.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 25227 | `/dashboard/` | AIOSEO description | empty | `Open the dashboard page to manage learning activity, access site tools, review progress, and return to your Inspire Ambitions resources.` | AIOSEO DB updated. Existing `noindex` preserved. |
+| 25228 | `/student-registration/` | AIOSEO description | empty | `Register as a student on Inspire Ambitions to access learning resources, manage your profile, and begin course or coaching activity.` | AIOSEO DB updated. Existing `noindex` preserved. |
+| 25229 | `/instructor-registration/` | AIOSEO description | empty | `Register as an instructor on Inspire Ambitions to set up your profile, manage teaching access, and support learners through the platform.` | AIOSEO DB updated. |
+| 25230 | `/cart/` | AIOSEO description | empty | `Use the Inspire Ambitions cart to review selected resources, update items, check totals, and move to checkout when ready.` | AIOSEO DB updated. |
+| 25546 | `/tutor-certificate/` | AIOSEO description | empty | `View the Tutor Certificate page for course completion records, learner proof, certificate access, and related Tutor LMS details.` | AIOSEO DB updated. |
+| 25547 | `/tutor-certificate-2/` | AIOSEO description | empty | `Access Tutor Certificate details for learner achievements, completion records, certificate display, and course proof on Inspire Ambitions.` | AIOSEO DB updated. Existing `noindex` preserved. |
+| 26160 | `/a-good-weakness-to-say-in-a-job-interview/` | AIOSEO description | empty | `Choose a good weakness for a job interview with examples that sound honest, show self-awareness, and prove real improvement.` | AIOSEO DB updated. Existing canonical target present. |
+| 26164 | `/how-do-you-introduce-yourself-in-a-job-interview/` | AIOSEO description | empty | `Learn how to introduce yourself in a job interview with a clear 45 to 75 second answer that links your background to the role.` | AIOSEO DB updated. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -199,6 +228,10 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A4 public REST meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A4 live spot check: passed for post IDs 18157, 19654, and 22445 after cache purge.
 - Phase A batch A4 full DB count verification: confirmed after WPVibe Pro activation. Missing descriptions 211, down from 231 before A4.
+- Phase A batch A5 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A5 after update: missing descriptions 191, A5 descriptions present 20, A5 descriptions in 120-160 range 20.
+- Phase A batch A5 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A5 live spot check: passed for post IDs 24475, 24476, and 25123 after cache purge.
 
 ## Open Decisions
 
