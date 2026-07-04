@@ -480,6 +480,18 @@ These 11 rows were selected from live published pages with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A title sample T1, over-long custom titles
+
+The AIOSEO title format was checked before title edits. Both published posts and pages use `#post_title`, so AIOSEO is not adding a site-name suffix through the title template. These three rows were selected as the required sample before wider title batches. Each new title preserves the main keyword near the front and is 60 characters or shorter.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 16 | `/blog/` | AIOSEO title | `Hospitality Career Advice & UAE HR Resources | Inspire Ambitions` | `Hospitality Career Advice and UAE HR Resources` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 281 | `/famous-hospitality-industry-leaders/` | AIOSEO title | `Famous Hospitality Industry Leaders Who Transformed the Field` | `Famous Hospitality Industry Leaders Who Changed the Field` | AIOSEO DB title length 57. Public REST matched expected title. |
+| 283 | `/activities-on-motivation-for-students/` | AIOSEO title | `Activities on Motivation for Students | Inspire Learning &amp; Growth` | `Activities on Motivation for Students That Work` | AIOSEO DB title length 47. Public REST matched expected title. |
+
+Cache after this sample: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -563,6 +575,9 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A15 meta lint: rows checked 11, unique descriptions 11, length ok 11, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A15 public REST verification: all 11 descriptions matched expected text on the pages endpoint.
 - Phase A batch A15 rendered HTML note: existing canonical targets were preserved. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A title-format check: published posts and pages use `#post_title` in `aioseo_options_dynamic`, so AIOSEO is not adding a site-name suffix through the title template.
+- Phase A title sample T1 after update: over-long custom titles 238, sample titles in range 3 of 3.
+- Phase A title sample T1 public REST verification: all 3 AIOSEO titles matched expected text across posts and pages endpoints.
 
 ## Open Decisions
 
