@@ -198,7 +198,7 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A4 public REST verification: all 20 descriptions matched expected text and were 120-160 characters.
 - Phase A batch A4 public REST meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A4 live spot check: passed for post IDs 18157, 19654, and 22445 after cache purge.
-- Phase A batch A4 full DB count verification: blocked after cache purge because WPVibe Free daily fair-use limit was reached. Last confirmed DB count before A4 was 231 missing descriptions. Row-level public REST verification confirms the 20 A4 rows were populated, so the expected next DB count is 211, but this must be confirmed with WPVibe after the limit resets.
+- Phase A batch A4 full DB count verification: confirmed after WPVibe Pro activation. Missing descriptions 211, down from 231 before A4.
 
 ## Open Decisions
 
