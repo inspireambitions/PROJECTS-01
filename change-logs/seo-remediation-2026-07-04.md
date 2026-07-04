@@ -612,6 +612,65 @@ These 50 rows were selected from live published posts and pages with custom AIOS
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A title batch T4, over-long custom titles
+
+These 50 rows were selected from live published posts with custom AIOSEO titles longer than 60 characters. Pre-check confirmed all 50 selected titles were over 60 characters before update. Each new title preserves the main keyword near the front and is 60 characters or shorter.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 26480 | `/when-do-jobs-usually-call-back-after-interview/` | AIOSEO title | `When Do Jobs Usually Call Back After Interview | Timelines, Signals &amp; Follow-Up Strategy` | `When Jobs Call Back After Interview: Timelines` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 26483 | `/how-to-interview-for-a-job-with-no-experience/` | AIOSEO title | `How To Interview For A Job With No Experience | First Step Guide` | `Interview for a Job With No Experience: First Step` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 26498 | `/why-are-job-interviews-so-fake/` | AIOSEO title | `Why Are Job Interviews So Fake? | Real vs. Performative Hiring` | `Why Are Job Interviews So Fake?` | AIOSEO DB title length 31. Public REST matched expected title. |
+| 26547 | `/how-to-manifest-getting-a-job-after-interview/` | AIOSEO title | `How to Manifest Getting a Job After Interview | Clear Action Plan` | `Manifest Getting a Job After Interview: Action Plan` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 26738 | `/what-happens-in-a-job-interview/` | AIOSEO title | `What Happens in a Job Interview | Stages, Questions &amp; Proven Preparation Steps` | `What Happens in a Job Interview? Stages and Questions` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 26757 | `/do-jobs-do-background-check-before-interview/` | AIOSEO title | `Do Jobs Do Background Checks Before Interviews? | Timing, Rights &amp; Preparation` | `Background Checks Before Interviews? Timing and Rights` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 26800 | `/how-long-to-hear-back-after-government-job-interview/` | AIOSEO title | `How Long After a Government Job Interview? Realistic Timelines` | `Government Job Interview: How Long to Hear Back` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 26808 | `/should-you-tell-interviewer-about-other-job-offers/` | AIOSEO title | `Should You Tell the Interviewer About Other Job Offers? | Timing, Scripts &amp; Negotiation Strategy` | `Tell Interviewer About Other Offers? Timing and Scripts` | AIOSEO DB title length 55. Public REST matched expected title. |
+| 26821 | `/how-long-does-it-take-to-get-a-job-interview/` | AIOSEO title | `“How Long It Takes to Get a Job Interview – Realistic Timeline”` | `How Long It Takes to Get a Job Interview` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 26859 | `/what-happens-at-job-interviews/` | AIOSEO title | `What Happens at Job Interviews: Complete Guide &amp; Preparation` | `What Happens at Job Interviews: Complete Guide` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 26904 | `/how-to-answer-what-motivates-you-in-a-job-interview/` | AIOSEO title | `How to Answer “What Motivates You?” (Frameworks, Scripts &amp; Examples)` | `What Motivates You? Interview Answer Framework` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 26976 | `/what-happens-at-a-job-interview-expectation-and-preparation/` | AIOSEO title | `What Happens in a Job Interview? Step-by-Step Process and Preparation Tips` | `What Happens at a Job Interview? Step-by-Step` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 26988 | `/how-to-answer-what-is-your-weakness-in-job-interview/` | AIOSEO title | `How to Answer “What Is Your Weakness” in an Interview | Best Examples &amp; Scripts` | `What Is Your Weakness? Interview Answer Examples` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 26993 | `/who-interviews-the-applicants-in-job-interview/` | AIOSEO title | `Who Interviews Job Applicants – Roles &amp; Preparation Guide` | `Who Interviews Job Applicants? Roles and Prep` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 26996 | `/what-happens-after-a-job-interview/` | AIOSEO title | `What Happens After a Job Interview – Next Steps &amp; Follow-Up` | `What Happens After a Job Interview? Next Steps` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 27081 | `/what-are-the-job-interview-questions-and-how-to-answer/` | AIOSEO title | `“Interview Questions &amp; How to Answer Them – Global Professionals”` | `Interview Questions and How to Answer Them` | AIOSEO DB title length 42. Public REST matched expected title. |
+| 27129 | `/how-many-interviews-on-average-before-getting-a-job/` | AIOSEO title | `How Many Interviews On Average Before Getting a Job | Data, Roadmaps &amp; Real Strategy` | `Average Interviews Before Getting a Job` | AIOSEO DB title length 39. Public REST matched expected title. |
+| 27185 | `/how-to-set-up-a-job-interview/` | AIOSEO title | `How to Set Up a Job Interview – Planning &amp; Best Practices` | `How to Set Up a Job Interview: Best Practices` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 27273 | `/how-to-answer-interview-questions-for-a-teaching-job/` | AIOSEO title | `Teaching Job Interview Questions: How to Answer &amp; Prepare` | `Teaching Job Interview Questions: How to Answer` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 27274 | `/did-i-get-the-job-after-interview/` | AIOSEO title | `Did I Get the Job After Interview – Key Signs &amp; Next Steps` | `Did I Get the Job After Interview? Key Signs` | AIOSEO DB title length 44. Public REST matched expected title. |
+| 27373 | `/how-to-interview-for-hotel-job-prepare-perform-progress/` | AIOSEO title | `How To Interview For A Hotel Job | Prepare, Perform, Progress` | `How to Interview for a Hotel Job` | AIOSEO DB title length 32. Public REST matched expected title. |
+| 27377 | `/how-long-to-receive-job-offer-after-final-interview/` | AIOSEO title | `How Long to Receive a Job Offer After Final Interview? (2026)` | `How Long to Receive a Job Offer After Final Interview` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 27446 | `/does-an-interview-mean-you-have-the-job/` | AIOSEO title | `“Does an Interview Mean You Have the Job? | Career Strategy Guide”` | `Does an Interview Mean You Have the Job?` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 27469 | `/how-to-reject-a-job-interview-due-to-salary/` | AIOSEO title | `How to Reject a Job Interview Due to Salary – Professional Guide` | `Reject a Job Interview Due to Salary: Professional Guide` | AIOSEO DB title length 56. Public REST matched expected title. |
+| 27490 | `/what-areas-to-improve-in-job-interviews/` | AIOSEO title | `Areas to Improve in Job Interviews: Scripts, Metrics &amp; Plan` | `Areas to Improve in Job Interviews: Plan and Scripts` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 27497 | `/which-job-does-not-require-interview/` | AIOSEO title | `Which Job Does Not Require Interview | No-Interview Work Guide` | `Jobs That Do Not Require Interviews` | AIOSEO DB title length 35. Public REST matched expected title. |
+| 27529 | `/how-many-candidates-interview-for-a-job/` | AIOSEO title | `How Many Candidates Interview for a Job — Practical Hiring Benchmarks` | `How Many Candidates Interview for a Job?` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 27618 | `/how-to-interview-for-another-job-while-working/` | AIOSEO title | `How To Interview For Another Job While Working | Confidential Guide` | `Interview for Another Job While Working: Confidential Guide` | AIOSEO DB title length 59. Public REST matched expected title. |
+| 27623 | `/how-to-teach-job-interview-skills/` | AIOSEO title | `How to Teach Job Interview Skills Course &amp; Lesson Framework` | `How to Teach Job Interview Skills: Lesson Framework` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 27707 | `/how-to-prepare-for-a-construction-job-interview/` | AIOSEO title | `How to Prepare for a Construction Job Interview – Step-by-Step Guide` | `Prepare for a Construction Job Interview: Step-by-Step` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 27719 | `/how-to-respond-to-a-job-interview-follow-up-email/` | AIOSEO title | `How to Respond to a Job Interview Follow-Up Email | Professional HR Templates &amp; Examples` | `Respond to a Job Interview Follow-Up Email` | AIOSEO DB title length 42. Public REST matched expected title. |
+| 27724 | `/how-to-interview-for-your-first-job/` | AIOSEO title | `How To Interview For Your First Job | Beginner Interview Guide` | `How to Interview for Your First Job` | AIOSEO DB title length 35. Public REST matched expected title. |
+| 27733 | `/how-to-negotiate-wages-in-a-job-interview/` | AIOSEO title | `“Negotiate Wages in a Job Interview: Framework &amp; Scripts”` | `Negotiate Wages in a Job Interview: Framework` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 27735 | `/should-i-tell-my-employer-i-have-a-job-interview/` | AIOSEO title | `Should I Tell My Employer I Have a Job Interview? | Expert Guide` | `Tell Employer About a Job Interview? Expert Guide` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 27895 | `/what-are-references-for-a-job-interview/` | AIOSEO title | `What Are References for a Job Interview | Types, Strategy &amp; Templates` | `References for a Job Interview: Types and Strategy` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 27961 | `/can-i-get-a-job-without-interview/` | AIOSEO title | `Can I Get a Job Without Interview – Real Ways to Get Hired Fast` | `Can I Get a Job Without an Interview?` | AIOSEO DB title length 37. Public REST matched expected title. |
+| 28036 | `/should-you-tell-your-boss-youre-interviewing-for-another-job/` | AIOSEO title | `Should You Tell Your Boss You’re Interviewing for Another Job` | `Tell Your Boss You Are Interviewing Elsewhere?` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 28038 | `/how-to-get-over-a-failed-job-interview/` | AIOSEO title | `How to Recover from a Failed Job Interview &amp; Reset Your Career` | `Recover from a Failed Job Interview and Reset` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 28044 | `/how-to-interview-for-a-nursing-job/` | AIOSEO title | `How to Interview for a Nursing Job – Complete Preparation Guide` | `How to Interview for a Nursing Job` | AIOSEO DB title length 34. Public REST matched expected title. |
+| 28046 | `/how-to-interview-for-a-flight-attendant-job/` | AIOSEO title | `How To Interview For A Flight Attendant Job | Cabin Crew Guide` | `Interview for a Flight Attendant Job: Cabin Crew Guide` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 28055 | `/why-do-i-keep-failing-at-job-interviews/` | AIOSEO title | `Why Do I Keep Failing at Job Interviews? Root Causes, Fixes &amp; Proven Strategies` | `Why Do I Keep Failing at Job Interviews?` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 28071 | `/how-long-to-wait-to-hear-back-after-job-interview/` | AIOSEO title | `How Long to Wait After a Job Interview | Follow-Up Timing Guide` | `How Long to Wait After a Job Interview` | AIOSEO DB title length 38. Public REST matched expected title. |
+| 28088 | `/how-should-i-act-in-a-job-interview/` | AIOSEO title | `How Should I Act in a Job Interview – Professional Behaviour Guide` | `How to Act in a Job Interview: Professional Behaviour` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 28092 | `/how-to-prepare-for-a-government-job-interview/` | AIOSEO title | `How to Prepare for a Government Job Interview – Complete Guide` | `Prepare for a Government Job Interview: Complete Guide` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 28093 | `/how-to-interview-for-a-job-you-re-overqualified-for/` | AIOSEO title | `How To Interview For A Job You're Overqualified For | Credibility Guide` | `Interview for a Job You Are Overqualified For` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 28101 | `/what-makes-you-unique-job-interview-best-answer/` | AIOSEO title | `What Makes You Unique? Best Job Interview Answers &amp; Examples` | `What Makes You Unique? Interview Answer Examples` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 28136 | `/how-to-nail-your-job-interview/` | AIOSEO title | `How to Nail Your Job Interview Strategic Guide &amp; Global Tips` | `How to Nail Your Job Interview: Strategic Guide` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 28188 | `/should-i-interview-after-accepting-a-job-offer/` | AIOSEO title | `Should You Keep Interviewing After Accepting a Job Offer? Expert Guidance` | `Interview After Accepting a Job Offer?` | AIOSEO DB title length 38. Public REST matched expected title. |
+| 28266 | `/how-to-prepare-for-an-engineering-job-interview/` | AIOSEO title | `How to Prepare for an Engineering Job Interview | Complete Guide` | `Prepare for an Engineering Job Interview: Complete Guide` | AIOSEO DB title length 56. Public REST matched expected title. |
+| 28275 | `/why-is-confidence-important-in-a-job-interview/` | AIOSEO title | `Why Confidence Matters in Job Interviews: Key Benefits &amp; How-to` | `Why Confidence Matters in Job Interviews` | AIOSEO DB title length 40. Public REST matched expected title. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -706,6 +765,10 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A title batch T3 after update: over-long custom titles 138, T3 titles in range 50 of 50.
 - Phase A title batch T3 row-level DB verification: 50 rows returned with title lengths 34-54.
 - Phase A title batch T3 public REST verification: all 50 AIOSEO titles rendered as expected across posts and pages endpoints.
+- Phase A title batch T4 pre-check: all 50 selected rows had custom AIOSEO titles longer than 60 characters before update.
+- Phase A title batch T4 after update: over-long custom titles 88, T4 titles in range 50 of 50.
+- Phase A title batch T4 row-level DB verification: 50 rows returned with title lengths 31-59.
+- Phase A title batch T4 public REST verification: all 50 AIOSEO titles rendered as expected on the posts endpoint.
 
 ## Open Decisions
 
