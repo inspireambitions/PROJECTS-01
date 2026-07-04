@@ -257,6 +257,35 @@ These 20 rows were selected from live published posts with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A8, missing descriptions
+
+These 20 rows were selected from live published posts with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from post content samples or excerpts. All 20 rows had existing canonical targets, so row-level DB and public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 28771 | `/why-you-left-the-job-interview-questions/` | AIOSEO description | empty | `Answer why you left a job with a clear interview structure, safe wording, and examples that show growth without sounding defensive.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28877 | `/how-do-you-introduce-yourself-in-a-job-interview-examples/` | AIOSEO description | empty | `Use job interview introduction examples to build a 60 to 90 second answer that links your role, results, and fit for the job.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28887 | `/how-to-answer-why-leave-current-job-interview-question/` | AIOSEO description | empty | `Answer why you want to leave your current job with a short, positive reason that shows growth, fit, and professional judgement.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28909 | `/how-to-answer-tell-me-about-yourself-for-job-interview/` | AIOSEO description | empty | `Answer tell me about yourself with a 60 to 90 second structure that connects your background, achievements, and next career move.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28925 | `/how-to-answer-job-interview-question-what-is-your-weakness/` | AIOSEO description | empty | `Answer what is your weakness with a safe example, honest context, and clear improvement steps that protect your interview credibility.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 29052 | `/how-to-answer-biggest-weakness-in-a-job-interview/` | AIOSEO description | empty | `Answer your biggest weakness with self-awareness, specific action, and a short story that avoids stock phrases and builds interview trust.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 29091 | `/how-to-address-weaknesses-in-a-job-interview/` | AIOSEO description | empty | `Address weaknesses in a job interview with a focused 45 to 90 second answer, action evidence, and a role-safe example that feels honest.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 38917 | `/cost-of-living-dubai-african-expats/` | AIOSEO description | empty | `Plan a realistic Dubai budget for African expats, including housing, food, priorities, and what daily life can cost in 2026.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39021 | `/basic-salary-vs-total-package-uae-what-nobody-in-hr-will-tell-you/` | AIOSEO description | empty | `Compare UAE basic salary and total package so you understand housing, allowances, gratuity, and the real value of a job offer.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39022 | `/saudi-vision-2030-jobs-what-nobody-in-hr-will-tell-you/` | AIOSEO description | empty | `Explore Saudi Vision 2030 jobs, major projects, expat hiring trends, and how to target roles with stronger long-term demand.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39031 | `/ats-friendly-resume-for-gulf-countries-what-nobody-in-hr-will-tell-you/` | AIOSEO description | empty | `Build an ATS-friendly Gulf CV that parses cleanly, uses the right keywords, and reaches recruiters across the UAE, Saudi Arabia, and Qatar.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39033 | `/emiratisation-for-fresh-graduates-what-nobody-in-hr-will-tell-you/` | AIOSEO description | empty | `Understand Emiratisation for fresh graduates, including private sector targets, eligibility, salary support, and smarter ways to use the advantage.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39095 | `/qatarisation-what-nobody-in-hr-will-tell-you/` | AIOSEO description | empty | `Understand Qatarisation, where it applies, how it differs from Saudisation, and what Qatari nationals and expat job seekers should know.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39298 | `/technology-careers-abu-dhabi/` | AIOSEO description | empty | `Explore technology careers in Abu Dhabi, including growth areas, salary ranges, top roles, and practical steps for skilled professionals.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39346 | `/dubai-construction-real-estate-salary-guide-2026/` | AIOSEO description | empty | `Compare Dubai construction and real estate salaries by role, including package gaps, benefits, and what to check before accepting an offer.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39413 | `/dubai-tech-salary-guide-2026-software-engineer-cto/` | AIOSEO description | empty | `Use the Dubai tech salary guide to compare software, product, and leadership pay by seniority before judging a UAE offer.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39414 | `/uae-annual-leave-entitlement-law-vs-employer-practices/` | AIOSEO description | empty | `Understand UAE annual leave entitlement, employer practice, unused leave pay, and what workers should check before resigning or signing.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39415 | `/dubai-healthcare-careers-salary-guide-2026/` | AIOSEO description | empty | `Compare Dubai healthcare career salaries by role, including nursing, clinical, and support positions, plus benefits that affect total pay.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 39416 | `/uae-freelance-visa-vs-employment-visa-decision-guide/` | AIOSEO description | empty | `Compare UAE freelance and employment visas, including setup costs, benefits, risks, and the real money impact before choosing a path.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 45280 | `/uae-internship-regulations-2026-mohre-guide/` | AIOSEO description | empty | `Understand UAE internship regulations for 2026, including MOHRE rules, visas, duration limits, and employer duties under labour law.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -300,6 +329,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A7 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A7 public REST verification: all 20 descriptions matched expected text.
 - Phase A batch A7 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A8 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A8 after update: missing descriptions 131, A8 descriptions present 20, A8 descriptions in 120-160 range 20.
+- Phase A batch A8 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A8 public REST verification: all 20 descriptions matched expected text.
+- Phase A batch A8 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
