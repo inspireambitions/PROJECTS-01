@@ -70,6 +70,35 @@ These 20 rows were selected from live published posts with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A2, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Several legacy rows already had existing canonical targets, so they are logged as DB fixes. Live HTML spot checks used non-canonical pages from the batch.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 3 | `/privacy-policy/` | AIOSEO description | empty | `Read Inspire Ambitions' privacy policy, including how newsletter sign-ups, toolkits, cookies, subscriber data, and unsubscribe choices are handled.` | AIOSEO DB updated. Live HTML spot check matched after normal HTML entity decoding. |
+| 384 | `/arabic-cousine/` | AIOSEO description | empty | `Find Arabic cuisine and UAE restaurant ideas, including places to eat, food travel notes, and useful dining links for visitors and residents.` | AIOSEO DB updated. |
+| 1115 | `/type-of-residence-visa-in-uae/` | AIOSEO description | empty | `Compare UAE residence visa types, from work and family visas to investor routes, student options, eligibility steps, and documents to prepare.` | AIOSEO DB updated. Existing canonical target present. |
+| 1577 | `/from-intern-to-employee-making-a-lasting-impression/` | AIOSEO description | empty | `Learn how interns can earn a full-time role by proving reliability, usefulness, trust, and steady growth before the placement ends.` | AIOSEO DB updated. Existing canonical target present. |
+| 1605 | `/cover-letter/` | AIOSEO description | empty | `Write a hotel management internship cover letter with a clear opening, relevant study or service experience, and a confident close.` | AIOSEO DB updated. Existing canonical target present. |
+| 1611 | `/internship/` | AIOSEO description | empty | `Know what to bring to an internship, from documents and workplace basics to personal items, preparation habits, and first-day confidence.` | AIOSEO DB updated. Existing canonical target present. |
+| 1666 | `/internship-ultimate-guide/` | AIOSEO description | empty | `Choose the right student internship by checking supervision, real work, skill growth, warning signs, and ways to stand out once accepted.` | AIOSEO DB updated. Existing canonical target present. |
+| 2190 | `/cost-of-living-in-dubai-a-comprehensive-guide/` | AIOSEO description | empty | `Compare Dubai monthly living costs with the USA, including rent, food, transport, lifestyle choices, and what expats should budget.` | AIOSEO DB updated. Existing canonical target present. |
+| 2313 | `/healthcare-careers-in-abu-dhabi-opportunities-and-requirements/` | AIOSEO description | empty | `Explore healthcare careers in Abu Dhabi, including hospital roles, licensing needs, hiring requirements, and professional growth paths.` | AIOSEO DB updated. Existing canonical target present. |
+| 2323 | `/jobs-in-dubai-opportunities-and-requirements/` | AIOSEO description | empty | `Find jobs in Dubai by sector, understand common hiring requirements, and plan your applications across finance, tourism, healthcare, and tech.` | AIOSEO DB updated. Existing canonical target present. |
+| 2341 | `/resume-writing-tips-expert-advice-from-skill-success/` | AIOSEO description | empty | `Improve your Dubai CV with clearer structure, stronger achievements, recruiter-friendly wording, and practical tips for standing out.` | AIOSEO DB updated. Existing canonical target present. |
+| 2349 | `/teaching-jobs-in-abu-dhabi-everything-you-need-to-know/` | AIOSEO description | empty | `Learn about teaching jobs in Abu Dhabi, including public and private school options, qualifications, benefits, and what expat teachers should know.` | AIOSEO DB updated. Existing canonical target present. |
+| 4390 | `/abu-dhabi-work-permits/` | AIOSEO description | empty | `Understand Abu Dhabi work permits and visas, including MOHRE permit types, residence steps, employer duties, and documents expats need.` | AIOSEO DB updated. Existing canonical target present. |
+| 4442 | `/job-opportunities-in-abu-dhabi/` | AIOSEO description | empty | `Review Abu Dhabi job opportunities for 2026, with hiring sectors, salary signals, market growth, and practical steps to get noticed.` | AIOSEO DB updated. Existing canonical target present. |
+| 4469 | `/healthcare-facilities-in-abu-dhabi/` | AIOSEO description | empty | `Explore healthcare facilities in Abu Dhabi, including public and private hospitals, specialist care, medical tourism, and DoH standards.` | AIOSEO DB updated. Existing canonical target present. |
+| 5096 | `/terms/` | AIOSEO description | empty | `Read Inspire Ambitions' terms of use, including site access, content limits, user responsibilities, external links, and service changes.` | AIOSEO DB updated. Live HTML spot check matched after normal HTML entity decoding. |
+| 5098 | `/disclaimer/` | AIOSEO description | empty | `Read the Inspire Ambitions disclaimer, including how to use the site's career, travel, and lifestyle information responsibly.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 5116 | `/cost-of-living-in-abu-dhabi/` | AIOSEO description | empty | `Plan Abu Dhabi living costs with guidance on rent, food, transport, utilities, family needs, and what expats should budget before moving.` | AIOSEO DB updated. Existing canonical target present. |
+| 5606 | `/recruitment-company-in-dubai/` | AIOSEO description | empty | `Understand how recruitment companies in Dubai connect employers with talent, support compliance, and help candidates find suitable roles.` | AIOSEO DB updated. Existing canonical target present. |
+| 5880 | `/freelance-work-in-dubai-your-guide-to-thriving-in-the-gig-economy/` | AIOSEO description | empty | `Learn how freelance work in Dubai operates, from permits and legal setup to income planning, flexibility, and building steady client work.` | AIOSEO DB updated. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -83,6 +112,10 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A1 after update: missing descriptions 272, A1 descriptions present 20, A1 descriptions in 120-160 range 20.
 - Phase A batch A1 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A1 live spot check: passed for post IDs 26192, 47070, and 47200 after cache purge.
+- Phase A batch A2 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A2 after update: missing descriptions 252, A2 descriptions present 20, A2 descriptions in 120-160 range 20.
+- Phase A batch A2 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A2 live spot check: passed for post IDs 3, 5096, and 5098 after cache purge. Apostrophes rendered as HTML entities and matched after decoding.
 
 ## Open Decisions
 
