@@ -431,6 +431,35 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A14, missing descriptions
+
+These 20 rows were selected from live published pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from live page excerpts. Existing canonical targets were preserved, and row-level DB plus public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 47615 | `/uae-salary-guide/negotiating-your-offer/` | AIOSEO description | empty | `Negotiate a UAE salary offer with calm wording, smart timing, and a clear ask that protects the role while improving the package.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47616 | `/uae-salary-guide/what-the-band-hides/` | AIOSEO description | empty | `Read UAE salary bands properly by checking basic pay, allowances, housing, schooling, bonus terms, gratuity, and real take-home value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47633 | `/working-in-saudi-arabia/` | AIOSEO description | empty | `Use the Saudi Arabia 2026 guide to understand jobs, salaries, visas, Saudisation, culture, relocation, and the real expatriate trade-offs.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47634 | `/working-in-saudi-arabia/finding-a-job/` | AIOSEO description | empty | `Find a job in Saudi Arabia with warmer channels, sector targeting, CV positioning, and a search method built for the 2026 market.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47635 | `/working-in-saudi-arabia/saudisation/` | AIOSEO description | empty | `Understand Saudisation and Nitaqat before accepting a Saudi offer, including hiring ease, visa risk, renewals, and employer strength.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47636 | `/working-in-saudi-arabia/work-visa/` | AIOSEO description | empty | `Learn how Saudi work visas should work, why employers pay the costs, and which fee requests should make candidates walk away.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47637 | `/working-in-saudi-arabia/salaries/` | AIOSEO description | empty | `Compare Saudi Arabia salaries in 2026 by role, package structure, housing value, allowances, benefits, and real expatriate earning power.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47638 | `/working-in-saudi-arabia/culture-and-relocation/` | AIOSEO description | empty | `Understand Saudi Arabia relocation in 2026, from culture and daily life to family fit, workplace change, and what older advice now misses.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47652 | `/abu-dhabi-careers/` | AIOSEO description | empty | `Explore Abu Dhabi careers in 2026, including the capital's employer mix, quieter lifestyle, stronger benefits, and sectors worth targeting.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47653 | `/abu-dhabi-careers/finding-a-job/` | AIOSEO description | empty | `Find a job in Abu Dhabi with a search plan built around state-linked employers, warm channels, sector fit, and the city's slower hiring rhythm.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47654 | `/abu-dhabi-careers/work-permits-and-visas/` | AIOSEO description | empty | `Understand Abu Dhabi work permits and visas in plain English, including UAE steps, ADGM differences, fees, documents, and timing.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47655 | `/abu-dhabi-careers/salaries/` | AIOSEO description | empty | `Compare Abu Dhabi salaries in 2026 by role, cash pay, housing value, allowances, schooling support, benefits, and real package strength.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47656 | `/abu-dhabi-careers/government-vs-private/` | AIOSEO description | empty | `Choose between Abu Dhabi government, quasi-government, ADGM, and private roles by comparing benefits, pace, security, and career fit.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47657 | `/abu-dhabi-careers/sectors/` | AIOSEO description | empty | `Target Abu Dhabi sectors with real 2026 demand, from energy and finance to healthcare, technology, education, hospitality, and infrastructure.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47658 | `/abu-dhabi-careers/relocating-here/` | AIOSEO description | empty | `Plan a move to Abu Dhabi with clear expectations on lifestyle, schools, housing, community, costs, and how the capital differs from Dubai.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47676 | `/gcc-recruitment-guide/uae/` | AIOSEO description | empty | `Recruit in the UAE with clearer job descriptions, better salary signals, visa awareness, stronger screening, and a process built for local hiring.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47677 | `/gcc-recruitment-guide/saudi-arabia/` | AIOSEO description | empty | `Recruit in Saudi Arabia in 2026 with practical guidance on Saudisation, visas, salary packages, local channels, and faster market change.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47678 | `/gcc-recruitment-guide/qatar/` | AIOSEO description | empty | `Recruit in Qatar with a sharper view of labour reforms, Qatarisation, salary expectations, employer branding, and sectors with real demand.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47679 | `/gcc-recruitment-guide/job-descriptions/` | AIOSEO description | empty | `Write GCC job descriptions that attract stronger candidates with clear titles, outcome-led responsibilities, visa detail, salary bands, and next steps.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47680 | `/gcc-recruitment-guide/screening-cvs/` | AIOSEO description | empty | `Screen GCC CVs with a structured method that checks role fit, visa status, evidence, career arc, and bias before building a shortlist.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -504,6 +533,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A13 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A13 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
 - Phase A batch A13 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A14 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A14 after update: missing descriptions 11, A14 descriptions present 20, A14 descriptions in 120-160 range 20.
+- Phase A batch A14 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A14 public REST verification: all 20 descriptions matched expected text on the pages endpoint.
+- Phase A batch A14 rendered HTML note: existing canonical targets were preserved. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
