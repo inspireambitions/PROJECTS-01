@@ -460,6 +460,26 @@ These 20 rows were selected from live published pages with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A15, missing descriptions
+
+These 11 rows were selected from live published pages with empty AIOSEO descriptions. Pre-check confirmed all 11 descriptions were empty before update. Descriptions were drafted from live page excerpts. Existing canonical targets were preserved, and row-level DB plus public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 47681 | `/gcc-recruitment-guide/interview-stages/` | AIOSEO description | empty | `Run GCC interview stages that test the right things, reduce delays, protect candidate interest, and help hiring teams make stronger decisions.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47682 | `/gcc-recruitment-guide/work-visas/` | AIOSEO description | empty | `Handle GCC work visas as an employer duty, with clearer timing, costs, documents, and candidate communication across major Gulf markets.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47683 | `/gcc-recruitment-guide/labour-law/` | AIOSEO description | empty | `Understand GCC labour law essentials for employers, including contracts, probation, leave, termination, gratuity, and country-specific risks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47684 | `/gcc-recruitment-guide/nationalisation-quotas/` | AIOSEO description | empty | `Plan GCC nationalisation quotas with practical guidance on Emiratisation, Saudisation, Qatarisation, penalties, targets, and workforce planning.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47685 | `/gcc-recruitment-guide/salary-benchmarking/` | AIOSEO description | empty | `Benchmark GCC salaries with stronger offer checks, market data, internal equity, benefits value, and a process that protects accepted offers.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47709 | `/gcc-interview-answers/` | AIOSEO description | empty | `Answer GCC interview questions with local context, clear evidence, and practical judgement instead of generic scripts copied from Western advice.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47710 | `/gcc-interview-answers/tell-me-about-yourself/` | AIOSEO description | empty | `Answer tell me about yourself in a Gulf interview with a concise career story, regional intent, and proof that fits the role.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47711 | `/gcc-interview-answers/expected-salary/` | AIOSEO description | empty | `Answer expected salary in a Gulf interview without underselling yourself, overpricing the role, or losing room to negotiate the package.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47712 | `/gcc-interview-answers/why-leave-your-job/` | AIOSEO description | empty | `Explain why you are leaving your job with calm, positive wording that avoids blame and gives Gulf interview panels a reason to trust you.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47713 | `/gcc-interview-answers/greatest-weakness/` | AIOSEO description | empty | `Answer the greatest weakness question with honest self-awareness, a real example, and a clear improvement habit that does not damage your case.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47714 | `/gcc-interview-answers/why-the-gulf/` | AIOSEO description | empty | `Explain why you want to work in the Gulf with career logic, market understanding, and motivation that goes beyond tax and lifestyle.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -538,6 +558,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A14 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A14 public REST verification: all 20 descriptions matched expected text on the pages endpoint.
 - Phase A batch A14 rendered HTML note: existing canonical targets were preserved. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A15 pre-check: all 11 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A15 after update: missing descriptions 0, A15 descriptions present 11, A15 descriptions in 120-160 range 11.
+- Phase A batch A15 meta lint: rows checked 11, unique descriptions 11, length ok 11, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A15 public REST verification: all 11 descriptions matched expected text on the pages endpoint.
+- Phase A batch A15 rendered HTML note: existing canonical targets were preserved. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
