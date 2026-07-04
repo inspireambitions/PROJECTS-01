@@ -553,6 +553,65 @@ Correction note: post 2510 was first drafted as `Sustainability Meaning: Clear 2
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A title batch T3, over-long custom titles
+
+These 50 rows were selected from live published posts and pages with custom AIOSEO titles longer than 60 characters. Pre-check confirmed all 50 selected titles were over 60 characters before update. Each new title preserves the main keyword near the front and is 60 characters or shorter.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 9606 | `/best-city-to-live-in-canada-for-immigrants/` | AIOSEO title | `Best City to Live in Canada for Immigrants | Top Canadian Destinations` | `Best City to Live in Canada for Immigrants` | AIOSEO DB title length 42. Public REST matched expected title. |
+| 9686 | `/living-in-redding-california/` | AIOSEO title | `Living in Redding, CA | Cost, Lifestyle &amp; Relocation Guide` | `Living in Redding, California: Cost and Lifestyle` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 9845 | `/hidden-gems-crete/` | AIOSEO title | `Hidden Gems Crete 2025 | Eco-Tourism &amp; Sustainable Travel` | `Hidden Gems Crete: Eco-Tourism and Sustainable Travel` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 10833 | `/powerful-millionaire-affirmations/` | AIOSEO title | `Powerful Millionaire Affirmations | Wealth Mindset for Success` | `Powerful Millionaire Affirmations: Wealth Mindset` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 12968 | `/good-work-benefits/` | AIOSEO title | `Good Work Benefits: How Employee Perks Boost Satisfaction and Productivity` | `Good Work Benefits: Employee Perks and Productivity` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 12974 | `/goodwill-employee-strategies-for-effective-donation-management/` | AIOSEO title | `Goodwill Employee Strategies for Effective Donation Management` | `Goodwill Employee Strategies for Donation Management` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 13053 | `/confidence-building-camps-for-adults/` | AIOSEO title | `Confidence Building Camps for Adults | Empowering Personal Growth` | `Confidence Building Camps for Adults: Personal Growth` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 13058 | `/effective-email-communication-in-the-workplace-examples/` | AIOSEO title | `Effective Email Communication At Work: Clear Examples That Help` | `Effective Email Communication at Work: Clear Examples` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 13576 | `/cheapest-luxury-places-to-travel/` | AIOSEO title | `Cheapest Luxury Places to Travel in 2025 | Affordable Opulence` | `Cheapest Luxury Places to Travel: Affordable Opulence` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 13846 | `/easiest-country-to-get-a-digital-nomad-visa/` | AIOSEO title | `Easiest Country to Get a Digital Nomad Visa – Top Destinations` | `Easiest Country for a Digital Nomad Visa` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 13883 | `/how-to-check-uae-insurance-status-quickly-and-effectively/` | AIOSEO title | `How to Check UAE Insurance Status Online | Quick &amp; Easy Guide` | `How to Check UAE Insurance Status Online` | AIOSEO DB title length 40. Public REST matched expected title. |
+| 13913 | `/is-uae-lottery-halal/` | AIOSEO title | `Is UAE Lottery Halal or Haram? Islamic Ruling Explained (2026)` | `Is UAE Lottery Halal or Haram? Islamic Ruling` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 14238 | `/visa-dubai-photo-requirements/` | AIOSEO title | `Dubai Visa Photo Requirements: Size, Background & Specs (2026)` | `Dubai Visa Photo Requirements: Size and Background` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 14282 | `/which-country-is-best-for-ai-education/` | AIOSEO title | `Best Countries for AI Education | Global Tech Learning Leaders` | `Best Countries for AI Education: Tech Learning Leaders` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 14313 | `/zayed-international-airport-abu-dhabi-location/` | AIOSEO title | `Zayed International Airport Abu Dhabi | Location, Access &amp; Amenities` | `Zayed International Airport Abu Dhabi: Location Guide` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 14373 | `/best-wellness-retreats/` | AIOSEO title | `Best Wellness Retreats 2025 | Relax, Recharge &amp; Rejuvenate` | `Best Wellness Retreats 2026: Relax and Recharge` | AIOSEO DB title length 47. Public REST matched expected title. |
+| 15660 | `/australia-japan-society/` | AIOSEO title | `Australia Japan Society – Cultural Exchange &amp; Partnership` | `Australia Japan Society: Cultural Exchange` | AIOSEO DB title length 42. Public REST matched expected title. |
+| 15872 | `/cities-in-kazakhstan/` | AIOSEO title | `Cities in Kazakhstan | Exploring Major Urban Centers &amp; Growth` | `Cities in Kazakhstan: Major Urban Centres` | AIOSEO DB title length 41. Public REST matched expected title. |
+| 16585 | `/luxury-hotels-in-riyadh-saudi-arabia/` | AIOSEO title | `Luxury Hotels in Riyadh 2025: 15 Opulent Stays for Discerning Travelers` | `Luxury Hotels in Riyadh 2026: 15 Opulent Stays` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 16844 | `/sharjah-publishing-city/` | AIOSEO title | `Sharjah Publishing City Free Zone: License, Setup & Benefits 2026` | `Sharjah Publishing City Free Zone: Setup and Benefits` | AIOSEO DB title length 53. Public REST matched expected title. |
+| 18482 | `/flydubai-vs-flynas/` | AIOSEO title | `Flydubai vs Flynas: Which Budget Airline Is Better? (2026 Comparison)` | `Flydubai vs Flynas: Budget Airline Comparison` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 22226 | `/interview-prep/` | AIOSEO title | `Interview Prep: Tips, Questions & Coaching | Inspire Ambitions` | `Interview Prep: Tips, Questions and Coaching` | AIOSEO DB title length 44. Public REST matched expected title. |
+| 22472 | `/what-is-the-difference-between-soft-skills-and-hard-skills/` | AIOSEO title | `Difference Between Soft Skills and Hard Skills | Complete Career Guide` | `Difference Between Soft Skills and Hard Skills` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 22487 | `/best-female-obstetrics-and-gynaecologist-in-dubai-for-new-parents/` | AIOSEO title | `Best Female Gynaecologist in Dubai: Top 10 Doctors for New Parents` | `Best Female Gynaecologist in Dubai for New Parents` | AIOSEO DB title length 50. Public REST matched expected title. |
+| 22665 | `/international-job-seeker/` | AIOSEO title | `International Job Seeker After Layoff | Visa &amp; Career Guide` | `International Job Seeker After Layoff: Visa Guide` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 24419 | `/what-is-a-long-term-career-goal/` | AIOSEO title | `What Is a Long-Term Career Goal? Define Yours &amp; Plan Ahead` | `What Is a Long-Term Career Goal? Plan Ahead` | AIOSEO DB title length 43. Public REST matched expected title. |
+| 24439 | `/how-to-manage-work-life-balance/` | AIOSEO title | `How to Manage Work-Life Balance – Proven Steps for Professionals` | `How to Manage Work-Life Balance: Practical Steps` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 24451 | `/what-is-a-career-goal-definition-examples-and-how-to-set-one/` | AIOSEO title | `What Is a Career Goal: Definition, Examples &amp; How to Set One` | `What Is a Career Goal? Definition and Examples` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 24453 | `/why-should-you-plan-your-career/` | AIOSEO title | `Why You Should Plan Your Career: Strategy for Growth &amp; Mobility` | `Why You Should Plan Your Career: Growth Strategy` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 24461 | `/does-happiness-promote-career-success/` | AIOSEO title | `“Does Happiness Promote Career Success? Insight &amp; Roadmap”` | `Does Happiness Promote Career Success?` | AIOSEO DB title length 38. Public REST matched expected title. |
+| 25933 | `/how-much-is-a-career-counselor-costs-value-and-what-to-expect/` | AIOSEO title | `How Much Is a Career Counselor? Costs, Value &amp; What to Expect` | `How Much Is a Career Counsellor? Costs and Value` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 25934 | `/why-hire-a-career-coach-a-practical-case-for-professional-guidance/` | AIOSEO title | `Why Hire a Career Coach: A Practical Case for Professional Guidance` | `Why Hire a Career Coach: Practical Guidance` | AIOSEO DB title length 43. Public REST matched expected title. |
+| 25938 | `/what-does-career-coach-do-clear-answers-and-steps/` | AIOSEO title | `What Does a Career Coach Do? Clear Answers, Frameworks, and ROI` | `What Does a Career Coach Do? Role and ROI` | AIOSEO DB title length 41. Public REST matched expected title. |
+| 25950 | `/what-does-a-career-counselor-do-roles-methods-and-outcomes/` | AIOSEO title | `What Does a Career Counselor Do: Roles, Methods &amp; Outcomes` | `What Does a Career Counsellor Do? Roles and Outcomes` | AIOSEO DB title length 52. Public REST matched expected title. |
+| 25953 | `/where-can-i-get-career-counseling/` | AIOSEO title | `Where Can I Get Career Counseling – Practical Options &amp; Guide` | `Where Can I Get Career Counselling? Options Guide` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 25990 | `/what-is-a-career-ownership-coach/` | AIOSEO title | `What Is a Career Ownership Coach? Role, Frameworks &amp; Benefits` | `What Is a Career Ownership Coach? Role and Benefits` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 25997 | `/does-career-counseling-help-a-practical-actionable-roadmap-for-ambitious-global-professionals/` | AIOSEO title | `Does Career Counseling Help? Roadmap for Global Professionals` | `Does Career Counselling Help? Global Roadmap` | AIOSEO DB title length 44. Public REST matched expected title. |
+| 26000 | `/how-to-get-career-counseling-a-practical-roadmap/` | AIOSEO title | `How to Get Career Counseling: A Practical Roadmap | Expert Advice &amp; Global Career Strategies` | `How to Get Career Counselling: Practical Roadmap` | AIOSEO DB title length 48. Public REST matched expected title. |
+| 26024 | `/what-is-the-purpose-of-career-counseling/` | AIOSEO title | `What Is the Purpose of Career Counseling | Clarity &amp; Career Growth` | `Purpose of Career Counselling: Clarity and Growth` | AIOSEO DB title length 49. Public REST matched expected title. |
+| 26256 | `/what-should-you-prepare-for-a-job-interview/` | AIOSEO title | `What Should You Prepare for a Job Interview | Complete Checklist` | `What to Prepare for a Job Interview: Checklist` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 26272 | `/how-long-to-prepare-for-a-job-interview/` | AIOSEO title | `How Long to Prepare for a Job Interview – Time &amp; Strategy` | `How Long to Prepare for a Job Interview` | AIOSEO DB title length 39. Public REST matched expected title. |
+| 26274 | `/how-does-a-job-interview-work/` | AIOSEO title | `How Does a Job Interview Work? A Complete Guide for Candidates` | `How Does a Job Interview Work? Candidate Guide` | AIOSEO DB title length 46. Public REST matched expected title. |
+| 26285 | `/how-to-prepare-for-an-academic-job-interview/` | AIOSEO title | `How to Prepare for an Academic Job Interview | Practical Guide` | `Prepare for an Academic Job Interview: Practical Guide` | AIOSEO DB title length 54. Public REST matched expected title. |
+| 26301 | `/is-it-okay-to-have-multiple-job-interviews/` | AIOSEO title | `Multiple Job Interviews: How to Manage &amp; Make Smart Choices` | `Multiple Job Interviews: Manage Smart Choices` | AIOSEO DB title length 45. Public REST matched expected title. |
+| 26357 | `/can-you-get-a-job-offer-without-an-interview/` | AIOSEO title | `Can You Get a Job Offer Without an Interview? Guide &amp; Checklist` | `Job Offer Without an Interview? Guide and Checklist` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 26404 | `/what-not-to-ask-on-a-job-interview/` | AIOSEO title | `What Not to Ask in a Job Interview: Smart Questions and Mistakes to Avoid` | `What Not to Ask in a Job Interview` | AIOSEO DB title length 34. Public REST matched expected title. |
+| 26438 | `/should-i-wear-cologne-to-a-job-interview/` | AIOSEO title | `Should I Wear Cologne to a Job Interview? | Smart Interview Tips` | `Should I Wear Cologne to a Job Interview?` | AIOSEO DB title length 41. Public REST matched expected title. |
+| 26449 | `/how-many-failed-interviews-before-job-offer/` | AIOSEO title | `How Many Interviews Before a Job Offer? Reality &amp; Roadmap` | `How Many Interviews Before a Job Offer?` | AIOSEO DB title length 39. Public REST matched expected title. |
+| 26458 | `/how-to-prepare-for-academic-job-interview/` | AIOSEO title | `How to Prepare for an Academic Job Interview – Step-by-Step Guide` | `Prepare for an Academic Job Interview: Step-by-Step` | AIOSEO DB title length 51. Public REST matched expected title. |
+| 26470 | `/how-to-interview-for-a-job-you-dont-want/` | AIOSEO title | `How To Interview For A Job You Don't Want | Stay Professional` | `How to Interview for a Job You Don't Want` | AIOSEO DB title length 41. Public REST matched expected title. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -643,6 +702,10 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A title batch T2 after update: over-long custom titles 188, T2 titles in range 50 of 50.
 - Phase A title batch T2 row-level DB verification: 50 rows returned with title lengths 37-58 after final correction.
 - Phase A title batch T2 public REST verification: all 50 AIOSEO titles rendered as expected across posts and pages endpoints.
+- Phase A title batch T3 pre-check: all 50 selected rows had custom AIOSEO titles longer than 60 characters before update.
+- Phase A title batch T3 after update: over-long custom titles 138, T3 titles in range 50 of 50.
+- Phase A title batch T3 row-level DB verification: 50 rows returned with title lengths 34-54.
+- Phase A title batch T3 public REST verification: all 50 AIOSEO titles rendered as expected across posts and pages endpoints.
 
 ## Open Decisions
 
