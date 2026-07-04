@@ -402,6 +402,35 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A13, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from post content samples or excerpts. Existing canonical targets were preserved where present, and row-level DB plus public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 47380 | `/professional-summary-cv-examples-uae/` | AIOSEO description | empty | `Write a UAE CV professional summary that shows clear value in four lines, avoids empty claims, and gives hiring managers a reason to read on.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47381 | `/should-i-include-photo-on-cv-uae/` | AIOSEO description | empty | `Decide whether to include a CV photo in the UAE, with 2026 guidance by employer type, sector, and professional image standards.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47383 | `/employment-gap-cv-uae/` | AIOSEO description | empty | `Explain an employment gap on a UAE CV with honest wording, clear context, and enough confidence to avoid over-explaining.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47545 | `/gcc-recruitment-guide/` | AIOSEO description | empty | `Use the GCC Recruitment Guide to understand Gulf hiring, labour laws, nationalisation policies, salary structures, and employer expectations.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47550 | `/gcc-recruitment-guide/internships/convert-to-a-job/` | AIOSEO description | empty | `Turn an internship into a full-time job with deliberate work habits, useful conversations, proof of value, and smarter follow-up.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47570 | `/gcc-cv-guide/` | AIOSEO description | empty | `Use the GCC CV Guide to write a Dubai-ready CV with the right structure, local details, clear evidence, and recruiter-friendly formatting.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47571 | `/gcc-cv-guide/cv-format-for-dubai/` | AIOSEO description | empty | `Build a Dubai CV format that follows the expected order, highlights evidence, and helps hiring managers find the right details fast.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47572 | `/gcc-cv-guide/photo-or-no-photo/` | AIOSEO description | empty | `Understand why a professional CV photo is still useful in Dubai, when it matters, and how to choose an image that supports your application.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47573 | `/gcc-cv-guide/visa-status-line/` | AIOSEO description | empty | `Write the right visa status line on a Dubai CV so employers quickly understand hiring ease, availability, and work authorisation.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47574 | `/gcc-cv-guide/nationality-question/` | AIOSEO description | empty | `Understand why nationality appears on many Dubai CVs, how employers use it, and how to include it without weakening your application.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47575 | `/gcc-cv-guide/why-western-cv-advice-fails/` | AIOSEO description | empty | `Learn why Western CV advice often fails in Dubai and what to change for photos, nationality, visa status, format, and recruiter expectations.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47576 | `/gcc-cv-guide/cover-letter-for-uae-jobs/` | AIOSEO description | empty | `Write a short cover letter for UAE jobs with a clear structure, specific value, and four tight paragraphs that support your CV.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47595 | `/how-to-get-a-job-in-the-uae/` | AIOSEO description | empty | `Get a job in the UAE in 2026 with a practical search method, stronger applications, market fit, and a clearer route to interviews.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47596 | `/how-to-get-a-job-in-the-uae/from-india/` | AIOSEO description | empty | `Plan a Dubai job search from India with safer routes, scam awareness, stronger targeting, and steps that protect your money and time.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47597 | `/how-to-get-a-job-in-the-uae/for-freshers/` | AIOSEO description | empty | `Get a job in Dubai as a fresher with realistic sectors, a sharper search method, and steps that turn no experience into evidence.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47598 | `/how-to-get-a-job-in-the-uae/on-a-visit-visa/` | AIOSEO description | empty | `Decide if job hunting on a UAE visit visa makes sense, with risks, preparation checks, and signs you should wait before travelling.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47599 | `/how-to-get-a-job-in-the-uae/no-experience/` | AIOSEO description | empty | `Find a Dubai job with no experience by building proof, targeting entry routes, and using a practical plan instead of false promises.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47612 | `/uae-salary-guide/` | AIOSEO description | empty | `Use the UAE Salary Guide 2026 to read salary bands, basic pay, allowances, hidden value, and the numbers that actually matter.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47613 | `/uae-salary-guide/by-role/` | AIOSEO description | empty | `Compare UAE salary by role with real bands for common jobs, plus basic-pay context that changes what each offer is worth.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47614 | `/uae-salary-guide/by-sector/` | AIOSEO description | empty | `Compare UAE salary by sector in 2026, including pay patterns, allowances, bonuses, and which industries offer stronger earning potential.` | AIOSEO DB updated. Public REST matched expected description. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -470,6 +499,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A12 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A12 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
 - Phase A batch A12 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A13 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A13 after update: missing descriptions 31, A13 descriptions present 20, A13 descriptions in 120-160 range 20.
+- Phase A batch A13 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A13 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
+- Phase A batch A13 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
