@@ -373,6 +373,35 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A12, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from post content samples or excerpts. Existing canonical targets were preserved where present, and row-level DB plus public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 47207 | `/lawyer-salary-dubai/` | AIOSEO description | empty | `Compare lawyer salaries in Dubai for 2026 by firm type, year of call, practice area, bonuses, and in-house package factors.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47208 | `/front-office-manager-salary-dubai/` | AIOSEO description | empty | `Compare front office manager salaries in Dubai hotels for 2026, including AED bands, accountability, and negotiation points.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47210 | `/hr-manager-salary-dubai/` | AIOSEO description | empty | `Review HR manager salaries in Dubai for 2026, including industry, company size, commercial impact, and package differences.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47211 | `/revenue-manager-salary-dubai/` | AIOSEO description | empty | `Compare revenue manager salaries in Dubai hotels for 2026, including RevPAR impact, AED bands, and negotiation evidence.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47212 | `/finance-manager-salary-dubai/` | AIOSEO description | empty | `Compare finance manager salaries in Dubai for 2026 by qualification, sector, experience, allowances, and total package value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47214 | `/financial-controller-salary-dubai/` | AIOSEO description | empty | `Compare Dubai hotel financial controller salaries for 2026 by property tier, AED bands, package details, and negotiation checks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47215 | `/marketing-manager-salary-dubai/` | AIOSEO description | empty | `Compare marketing manager salaries in Dubai for 2026 by company size, sector, AED range, and package factors before negotiating.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47219 | `/executive-housekeeper-salary-dubai/` | AIOSEO description | empty | `Compare executive housekeeper salaries in Dubai hotels for 2026, including AED bands, department size, and package details.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47224 | `/hotel-manager-salary-dubai/` | AIOSEO description | empty | `Compare hotel manager salaries in Dubai for 2026, from budget properties to luxury brands, with AED bands and package checks.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47256 | `/dubai-hotel-salary-guide-2026/` | AIOSEO description | empty | `Use the Dubai Hotel Salary Guide 2026 to compare AED figures for hotel roles, property tiers, service charge, and package value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47295 | `/how-to-get-internship-dubai-2026/` | AIOSEO description | empty | `Get a Dubai internship in 2026 with steps for eligibility, company targeting, visa requirements, stipend ranges, and applications.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47313 | `/director-of-sales-salary-dubai/` | AIOSEO description | empty | `Compare director of sales salaries in Dubai for 2026, including hotel and corporate AED bands, incentives, and package checks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47314 | `/chief-engineer-salary-dubai/` | AIOSEO description | empty | `Compare chief engineer salaries in Dubai hotels for 2026, including property tier, compliance skills, AED bands, and package value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47315 | `/executive-sous-chef-salary-dubai/` | AIOSEO description | empty | `Compare executive sous chef salaries in Dubai hotels for 2026, including property tier, kitchen scope, service charge, and visa reality.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47322 | `/duty-manager-salary-dubai/` | AIOSEO description | empty | `Compare duty manager salaries in Dubai hotels for 2026, including property tier, language premium, accommodation, and career path.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47340 | `/accountant-salary-dubai/` | AIOSEO description | empty | `Compare accountant salaries in Dubai for 2026 by qualification, sector, AED band, experience level, and total package value.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47342 | `/dentist-salary-dubai/` | AIOSEO description | empty | `Compare dentist salaries in Dubai for 2026, including AED bands, experience level, clinic type, licensing, and package factors.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47347 | `/financial-analyst-salary-dubai/` | AIOSEO description | empty | `Compare financial analyst salaries in Dubai for 2026 by level, sector, AED figures, and package factors before negotiating.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47378 | `/ats-friendly-cv-dubai/` | AIOSEO description | empty | `Write an ATS-friendly CV for Dubai jobs in 2026 with clear formatting, right keywords, and evidence that passes software and recruiters.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47379 | `/cv-vs-resume-difference-uae/` | AIOSEO description | empty | `Choose the right CV or resume format for UAE jobs in 2026, with local hiring norms, role expectations, and format mistakes to avoid.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -436,6 +465,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A11 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A11 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
 - Phase A batch A11 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A12 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A12 after update: missing descriptions 51, A12 descriptions present 20, A12 descriptions in 120-160 range 20.
+- Phase A batch A12 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A12 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
+- Phase A batch A12 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
