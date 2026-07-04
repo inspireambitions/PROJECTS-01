@@ -228,6 +228,35 @@ These 20 rows were selected from live published posts with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A7, missing descriptions
+
+These 20 rows were selected from live published posts with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. All 20 rows already had existing canonical targets, so rendered old URLs may show canonical target metadata; row-level DB and public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 27590 | `/why-you-left-your-previous-job-interview-questions/` | AIOSEO description | empty | `Explain why you left your previous job in an interview with honest wording, useful practice, and answers that keep the focus on fit.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27630 | `/a-positive-weakness-for-a-job-interview/` | AIOSEO description | empty | `Choose a positive weakness for a job interview with examples that sound honest, avoid cliches, and show improvement without damaging trust.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27766 | `/how-to-answer-weakness-question-job-interview/` | AIOSEO description | empty | `Answer the weakness question with a short structure, specific improvement steps, and a result that shows action rather than apology.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27802 | `/how-to-answer-interview-question-why-leaving-current-job/` | AIOSEO description | empty | `Explain why you are leaving your current job with a clear answer that avoids negativity, shows direction, and keeps the interview moving.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27829 | `/a-list-of-weaknesses-for-job-interview/` | AIOSEO description | empty | `Review a list of weaknesses for job interviews, with safer options, examples to avoid, and ways to show progress without sounding fake.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27877 | `/can-i-ask-for-job-description-before-interview/` | AIOSEO description | empty | `Ask for a job description before an interview with confident wording, referral-safe phrasing, and a sharper preparation plan.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27926 | `/can-you-ask-about-salary-at-a-job-interview/` | AIOSEO description | empty | `Ask about salary in a job interview with better timing, calm wording, market awareness, and questions that protect your negotiating position.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27954 | `/how-to-answer-my-weakness-in-job-interview/` | AIOSEO description | empty | `Answer my weakness in a job interview with a practical structure, honest example, and improvement story that keeps credibility intact.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27976 | `/how-to-answer-strengths-and-weaknesses-in-job-interview/` | AIOSEO description | empty | `Answer strengths and weaknesses in interviews by linking examples to achievements, learning, and the role you want next.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 27993 | `/answering-why-you-left-previous-job-interview-questions/` | AIOSEO description | empty | `Answer why you left your previous job with a focused explanation, lessons learned, and a positive reason for pursuing the new role.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28028 | `/how-many-weaknesses-in-a-job-interview/` | AIOSEO description | empty | `Know how many weaknesses to share in a job interview and how to keep the answer focused, safe, and centred on clear progress.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28052 | `/how-to-prepare-for-an-interview-without-a-job-description/` | AIOSEO description | empty | `Prepare for an interview without a job description by building likely priorities, asking better questions, and shaping adaptable examples.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28086 | `/how-to-answer-salary-expectations-in-job-interview/` | AIOSEO description | empty | `Answer salary expectations in a job interview with a narrow researched range, calm wording, and flexibility when details are still unclear.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28087 | `/how-to-answer-salary-expectations-in-a-job-interview/` | AIOSEO description | empty | `Answer salary expectations in an interview with confident framing, market research, and wording that protects your pay negotiation.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28123 | `/answering-why-you-left-your-job-interview-questions/` | AIOSEO description | empty | `Answer why you left your job with a clear story, employment gap framing, and role-focused wording that avoids sounding defensive.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28161 | `/why-leaving-job-interview-question-what-to-say/` | AIOSEO description | empty | `Explain why you are leaving a job in an interview with trust-building language, calm framing, and a forward-looking career reason.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28362 | `/what-is-your-expected-salary-job-interview-answer/` | AIOSEO description | empty | `Prepare an expected salary answer with market evidence, range planning, and wording that keeps compensation talks professional.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28656 | `/why-leave-your-current-job-interview-question/` | AIOSEO description | empty | `Answer why you want to leave your current job with a clear motivation, positive tone, and evidence that the next role is a better fit.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28692 | `/how-to-prepare-for-a-recruiter-job-interview/` | AIOSEO description | empty | `Prepare for a recruiter job interview by showing candidate empathy, hiring knowledge, communication skill, and business awareness.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 28764 | `/how-to-answer-job-interview-questions-about-salary-expectations/` | AIOSEO description | empty | `Answer salary expectation questions with stronger market research, relocation context, and confident wording that avoids underselling.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -266,6 +295,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A6 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A6 public REST verification: all 20 descriptions matched expected text.
 - Phase A batch A6 rendered HTML note: sampled old URLs for post IDs 26187, 26346, and 27026 rendered existing canonical target descriptions, so they were not treated as row-level live-render passes. This matches the existing canonical setup for all 20 A6 rows.
+- Phase A batch A7 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A7 after update: missing descriptions 151, A7 descriptions present 20, A7 descriptions in 120-160 range 20.
+- Phase A batch A7 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A7 public REST verification: all 20 descriptions matched expected text.
+- Phase A batch A7 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
