@@ -99,6 +99,35 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A3, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Most older post rows already had existing canonical targets, so they are logged as DB fixes. Live HTML spot checks used non-canonical pages from the batch.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 5962 | `/jobs-in-dubai-for-freshers/` | AIOSEO description | empty | `Find Dubai jobs for freshers, including entry-level sectors, hiring requirements, tax-free pay basics, and practical steps to start applying.` | AIOSEO DB updated. Existing canonical target present. |
+| 6297 | `/best-food-and-beverages-internship-tips/` | AIOSEO description | empty | `Use food and beverage internship tips to build service confidence, handle guest pressure, learn standards, and stand out in hospitality.` | AIOSEO DB updated. Existing canonical target present. |
+| 6303 | `/best-front-desk-internship-tips/` | AIOSEO description | empty | `Build front desk internship skills with tips on guest greetings, communication, pressure, professionalism, and making a strong first impression.` | AIOSEO DB updated. Existing canonical target present. |
+| 6309 | `/best-kitchen-internship-tips/` | AIOSEO description | empty | `Prepare for a kitchen internship with advice on discipline, applications, practical skills, kitchen pressure, and learning from chefs.` | AIOSEO DB updated. Existing canonical target present. |
+| 6503 | `/mandatory-internship-benefits/` | AIOSEO description | empty | `Understand mandatory internship benefits, including workplace learning, employability, professional culture, and smoother graduate transitions.` | AIOSEO DB updated. Existing canonical target present. |
+| 6535 | `/uae-internships-summer/` | AIOSEO description | empty | `Apply for UAE summer internships 2026 with better timing, ready documents, stronger CVs, and a clear plan before programmes close.` | AIOSEO DB updated. Existing canonical target present. |
+| 7031 | `/5-star-hotels-in-dubai-for-internship/` | AIOSEO description | empty | `Find 5-star hotels in Dubai for internships, with tips on luxury hospitality training, guest exposure, and building a career network.` | AIOSEO DB updated. Existing canonical target present. |
+| 7304 | `/how-to-apply-for-internship-in-dubai/` | AIOSEO description | empty | `Learn how to apply for an internship in Dubai, from finding roles and preparing documents to building skills and gaining UAE work exposure.` | AIOSEO DB updated. Existing canonical target present. |
+| 7431 | `/nursery-in-abu-dhabi-city/` | AIOSEO description | empty | `Choose a nursery in Abu Dhabi City with guidance on safety, teachers, curriculum, activities, and admission steps for parents.` | AIOSEO DB updated. Existing canonical target present. |
+| 7476 | `/paid-internships-in-dubai/` | AIOSEO description | empty | `Explore paid legal internships in Dubai, including practical work exposure, financial support, legal market experience, and application basics.` | AIOSEO DB updated. Existing canonical target present. |
+| 7505 | `/summer-internships-in-dubai/` | AIOSEO description | empty | `Find summer internships in Dubai across finance, technology, engineering, marketing, and hospitality, with tips to build global experience.` | AIOSEO DB updated. Existing canonical target present. |
+| 7862 | `/nursery-in-reem-island-abu-dhabi/` | AIOSEO description | empty | `Compare nursery options on Reem Island Abu Dhabi, including location, learning environment, early years support, and parent-friendly facilities.` | AIOSEO DB updated. Existing canonical target present. |
+| 10996 | `/best-views/` | AIOSEO description | empty | `Explore BestViews guides for scenic places, travel ideas, and memorable vistas, with inspiration for planning trips and choosing standout viewpoints.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 11197 | `/coworking-trips/` | AIOSEO description | empty | `Plan coworking trips with guides that blend remote work, travel planning, workspace choices, and destinations for productive working breaks.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 11198 | `/best-digital-nomad-destinations/` | AIOSEO description | empty | `Compare top digital nomad destinations, including location ideas, remote work lifestyle needs, travel planning, and places to live and work.` | AIOSEO DB updated. Live HTML spot check matched after cache purge. |
+| 13542 | `/how-many-types-of-visa-in-saudi-arabia/` | AIOSEO description | empty | `Understand Saudi Arabia visa types, including tourism, business, pilgrimage, and work options, plus key planning points for travellers.` | AIOSEO DB updated. Existing canonical target present. |
+| 13690 | `/what-to-bring-to-saudi-arabia/` | AIOSEO description | empty | `Prepare for Saudi Arabia with a practical packing list covering clothing, travel documents, cultural needs, weather, and daily essentials.` | AIOSEO DB updated. Existing canonical target present. |
+| 13856 | `/how-much-does-it-cost-to-renew-uae-residence-visa/` | AIOSEO description | empty | `Check UAE residence visa renewal costs, common fees, process steps, and what residents should prepare before their visa expires.` | AIOSEO DB updated. Existing canonical target present. |
+| 13909 | `/is-medical-insurance-required-for-uae-residence-visa/` | AIOSEO description | empty | `Learn if medical insurance is required for a UAE residence visa, including resident rules, renewal needs, and why cover matters.` | AIOSEO DB updated. Existing canonical target present. |
+| 13923 | `/uae-residence-visa-stamp-process/` | AIOSEO description | empty | `Understand the UAE residence visa stamp process, including passport endorsement changes, Emirates ID links, and digital residency proof.` | AIOSEO DB updated. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -116,6 +145,10 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A2 after update: missing descriptions 252, A2 descriptions present 20, A2 descriptions in 120-160 range 20.
 - Phase A batch A2 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A2 live spot check: passed for post IDs 3, 5096, and 5098 after cache purge. Apostrophes rendered as HTML entities and matched after decoding.
+- Phase A batch A3 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A3 after update: missing descriptions 232, A3 descriptions present 20, A3 descriptions in 120-160 range 20.
+- Phase A batch A3 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A3 live spot check: passed for post IDs 10996, 11197, and 11198 after cache purge.
 
 ## Open Decisions
 
