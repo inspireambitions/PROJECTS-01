@@ -344,6 +344,35 @@ These 20 rows were selected from live published posts with empty AIOSEO descript
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A11, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Descriptions were drafted from post content samples or excerpts. Existing canonical targets were preserved where present, and row-level DB plus public REST verification were used for the AIOSEO descriptions.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 45975 | `/sick-leave-uae/` | AIOSEO description | empty | `Understand sick leave in the UAE, including days, pay percentages, medical certificate rules, probation limits, and notice duties.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46701 | `/saudization-nitaqat-explained/` | AIOSEO description | empty | `Understand Saudization and Nitaqat in KSA, including colour bands, visa impact, compliance duties, and how companies hire legally.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46704 | `/pro-ready-job-description-checklist/` | AIOSEO description | empty | `Write a PRO-ready UAE job description with seven checks that reduce MOHRE rejection risk, visa delays, and resubmission problems.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46705 | `/bilingual-job-description-english-arabic/` | AIOSEO description | empty | `Write a bilingual English and Arabic job description for UAE roles, with MOHRE, government, and Emiratisation needs in mind.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46712 | `/evaluate-tell-me-about-yourself-dubai/` | AIOSEO description | empty | `Evaluate tell me about yourself answers in Dubai interviews by checking clarity, communication, market awareness, and role fit.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46760 | `/front-office-manager-salary-uae/` | AIOSEO description | empty | `Check UAE front office manager salary ranges for 2026, including basic pay, package items, gratuity impact, and negotiation timing.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46761 | `/executive-chef-salary-uae/` | AIOSEO description | empty | `Review UAE executive chef salary ranges for 2026, including basic pay, package details, gratuity impact, and negotiation insight.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46762 | `/f-and-b-manager-salary-uae/` | AIOSEO description | empty | `Review UAE F&B manager salary ranges for 2026, including basic pay, package details, gratuity impact, and negotiation insight.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46794 | `/uae-labour-law-guide-expats/` | AIOSEO description | empty | `Understand UAE labour law for expats, including contracts, leave, gratuity, notice periods, termination rights, and MOHRE complaints.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46931 | `/maternity-leave-uae-2026/` | AIOSEO description | empty | `Understand maternity leave in the UAE for 2026, including legal entitlement, pay split, employer limits, and benefits new mothers should know.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 46934 | `/uae-probation-period-2026/` | AIOSEO description | empty | `Understand UAE probation period rules for 2026, including notice, labour ban risks, leave, gratuity, and what changed for employees.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47071 | `/hotel-cv-uae/` | AIOSEO description | empty | `Write a UAE hotel CV that uses hospitality language, brand experience, achievements, and role evidence to get shortlisted in Dubai.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47072 | `/cv-photo-uae/` | AIOSEO description | empty | `Decide whether to include a photo on your UAE CV in 2026, with sector guidance and practical rules for a professional image.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47074 | `/cv-templates-dubai-free/` | AIOSEO description | empty | `Choose the right free CV template for Dubai by sector, with formats for hospitality, finance, technology, and ATS screening.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47081 | `/ats-friendly-cv-uae/` | AIOSEO description | empty | `Write an ATS-friendly UAE CV that passes automated screening at major employers by using clear formatting, keywords, and readable evidence.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47199 | `/dubai-salary-guide-2026/` | AIOSEO description | empty | `Use the Dubai Salary Guide 2026 to compare AED figures by role, allowances, tax-free income, and real UAE market benchmarks.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47201 | `/nurse-salary-dubai/` | AIOSEO description | empty | `Compare Dubai nurse salaries for 2026 by DHA licence category, basic pay, allowances, and total package value for UAE nurses.` | AIOSEO DB updated. Public REST matched expected description. |
+| 47202 | `/executive-chef-salary-dubai/` | AIOSEO description | empty | `Compare executive chef salaries in Dubai hotels for 2026, including AED bands, offer details, and what to check before negotiating.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47204 | `/civil-engineer-salary-dubai/` | AIOSEO description | empty | `Compare civil engineer salaries in Dubai for 2026 by level and sector, including infrastructure, real estate, and oil and gas roles.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 47205 | `/food-beverage-manager-salary-dubai/` | AIOSEO description | empty | `Compare food and beverage manager salaries in Dubai hotels for 2026, including base pay, service charge, accommodation, and family costs.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -402,6 +431,11 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A10 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A10 public REST verification: all 20 descriptions matched expected text.
 - Phase A batch A10 rendered HTML note: all 20 rows had existing canonical targets, so rendered old URLs may show canonical target descriptions. Row-level DB and public REST checks were used for the AIOSEO descriptions.
+- Phase A batch A11 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A11 after update: missing descriptions 71, A11 descriptions present 20, A11 descriptions in 120-160 range 20.
+- Phase A batch A11 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A11 public REST verification: all 20 descriptions matched expected text across posts and pages endpoints.
+- Phase A batch A11 rendered HTML note: existing canonical targets were preserved where present. Row-level DB and public REST checks were used for the AIOSEO descriptions.
 
 ## Open Decisions
 
