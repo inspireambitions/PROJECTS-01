@@ -141,6 +141,35 @@ Kim chose option 2: keep one car-auction page and remove the duplicate. The newe
 
 Cache after this fix: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Phase A batch A4, missing descriptions
+
+These 20 rows were selected from live published posts and pages with empty AIOSEO descriptions. Pre-check confirmed all 20 descriptions were empty before update. Some rows already had existing canonical targets or `noindex` robots settings; those settings were preserved.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 13927 | `/what-are-the-medical-tests-for-uae-residence-visa/` | AIOSEO description | empty | `Understand UAE residence visa medical tests, including health screening rules, infectious disease checks, age requirements, and what to prepare.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 15312 | `/how-to-get-a-work-permit-in-dubai/` | AIOSEO description | empty | `Learn how to get a Dubai work permit, including employer steps, legal requirements, documents, and what expats should prepare before starting work.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 16799 | `/saudi-arabia-employment-visa/` | AIOSEO description | empty | `Understand Saudi Arabia employment visa rules, including work permit steps, labour law links, visa types, and what foreign workers need.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 17407 | `/best-nursery-in-dubai-vs-abu-dhabi/` | AIOSEO description | empty | `Compare nurseries in Dubai and Abu Dhabi, including early education options, parent priorities, facilities, and city differences.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 17616 | `/eye-test-for-driving-license-abu-dhabi-2/` | AIOSEO description | empty | `Prepare for an Abu Dhabi driving licence eye test, including eligibility, approved test centres, vision checks, and what applicants should expect.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 17624 | `/how-are-you-inspired-by-america-2/` | AIOSEO description | empty | `Explore what inspires people about America, from opportunity and hard work to cultural ideals, ambition, and personal success stories.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 17628 | `/lost-driving-license-dubai-2/` | AIOSEO description | empty | `Know what to do after losing a Dubai driving licence, including replacement steps, documents, online requests, and practical recovery tips.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 18157 | `/car-hub/` | AIOSEO description | empty | `Explore Car Hub for UAE car buying guides, maintenance advice, auto news, reviews, and practical tips for drivers and enthusiasts.` | AIOSEO DB updated. Public REST and live HTML matched expected description. |
+| 18285 | `/best-car-to-buy-in-uae-for-daily-dubai-commutes-2/` | AIOSEO description | empty | `Choose the best car for daily Dubai commutes with advice on comfort, reliability, efficiency, budget, and UAE driving needs.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 18744 | `/basket/` | AIOSEO description | empty | `Use the Inspire Ambitions basket page to review selected items, update quantities, check totals, and continue smoothly to checkout.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 18745 | `/checkout/` | AIOSEO description | empty | `Use the Inspire Ambitions checkout page to confirm your order, review totals, enter details, and complete your purchase securely.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 18746 | `/my-account/` | AIOSEO description | empty | `Access your Inspire Ambitions account to view orders, manage details, update learning access, and return to purchased resources.` | AIOSEO DB updated. Public REST matched expected description. Existing `noindex` preserved. |
+| 19654 | `/thank-you/` | AIOSEO description | empty | `Read the Inspire Ambitions thank-you page for next steps after signing up, purchasing, or submitting your details through the site.` | AIOSEO DB updated. Public REST and live HTML matched expected description. |
+| 21372 | `/riyadh-metro-careers/` | AIOSEO description | empty | `Explore Riyadh Metro careers, including transport roles, infrastructure growth, Saudi hiring context, and ways to build a future in mobility.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 22228 | `/resume-tips/` | AIOSEO description | empty | `Get resume tips for the UAE and GCC job market, including CV structure, applicant tracking systems, recruiter focus, and interview readiness.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 22445 | `/registration-flow-content/` | AIOSEO description | empty | `Review the Inspire Ambitions registration flow content, including onboarding steps, self-assessment prompts, and coaching discovery copy.` | AIOSEO DB updated. Public REST and live HTML matched expected description. |
+| 22458 | `/how-to-ask-for-more-work-at-your-internship-and-make-a-lasting-impression/` | AIOSEO description | empty | `Learn how to ask for more work at your internship, show initiative, build trust, and make a stronger impression before the placement ends.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 22498 | `/onboarding-questions/` | AIOSEO description | empty | `Review Inspire Ambitions onboarding questions used for self-assessment, coaching discovery, and matching users with useful next steps.` | AIOSEO DB updated. Public REST matched expected description. |
+| 22705 | `/resume-tips-create-a-resume-that-gets-interviews/` | AIOSEO description | empty | `Create a resume that gets interviews with tips on achievements, structure, recruiter expectations, and presenting your career story.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+| 22730 | `/cover-letter-assistance/` | AIOSEO description | empty | `Improve your cover letter with stronger positioning, clearer value, better structure, and a focused message for hiring managers.` | AIOSEO DB updated. Public REST matched expected description. Existing canonical target present. |
+
+Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -165,6 +194,11 @@ Cache after this fix: `wp cache purge` succeeded. WPVibe reported `Purged: WP Ro
 - Decision gate 2.2 car-auction result: `/car-auction-sharjah/` returns 200, `/car-auction-sharjah-2/` redirects one way to `/car-auction-sharjah/`, and the previous two-way redirect loop is broken.
 - Decision gate 2.2 car-auction meta: missing descriptions 231, one row checked, unique descriptions 1, length ok 1, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Decision gate 2.2 robots note: live HTML for `/car-auction-sharjah/` includes `noindex, max-snippet:-1, max-image-preview:large, max-video-preview:-1`. This was preserved, not newly introduced.
+- Phase A batch A4 pre-check: all 20 selected rows had empty AIOSEO descriptions before update.
+- Phase A batch A4 public REST verification: all 20 descriptions matched expected text and were 120-160 characters.
+- Phase A batch A4 public REST meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A batch A4 live spot check: passed for post IDs 18157, 19654, and 22445 after cache purge.
+- Phase A batch A4 full DB count verification: blocked after cache purge because WPVibe Free daily fair-use limit was reached. Last confirmed DB count before A4 was 231 missing descriptions. Row-level public REST verification confirms the 20 A4 rows were populated, so the expected next DB count is 211, but this must be confirmed with WPVibe after the limit resets.
 
 ## Open Decisions
 
