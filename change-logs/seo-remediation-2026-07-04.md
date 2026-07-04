@@ -128,6 +128,19 @@ These 20 rows were selected from live published posts and pages with empty AIOSE
 
 Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
 
+### Decision gate 2.2, car-auction pair
+
+Kim chose option 2: keep one car-auction page and remove the duplicate. The newer published post was kept, moved to the clean URL, and given a page-specific AIOSEO description. The older draft duplicate was moved to trash. Existing `noindex` robots state on the kept page was preserved.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 8497 | `/car-auction-sharjah/` | Post status | `draft` | `trash` | Duplicate draft moved to trash. WordPress changed slug to `car-auction-sharjah__trashed`. |
+| 8497 | `/car-auction-sharjah/` | Post slug | `car-auction-sharjah` | `car-auction-sharjah__trashed` | Clean slug freed for the kept published page. |
+| 22029 | `/car-auction-sharjah-2/` | Post slug | `car-auction-sharjah-2` | `car-auction-sharjah` | Kept published page now resolves at `/car-auction-sharjah/`. |
+| 22029 | `/car-auction-sharjah/` | AIOSEO description | empty | `Learn how car auctions in Sharjah work, including bidding basics, vehicle checks, auction timing, and tips for choosing the right car.` | AIOSEO DB updated. Live HTML printed the exact meta description after cache purge. |
+
+Cache after this fix: `wp cache purge` succeeded. WPVibe reported `Purged: WP Rocket. Object cache flushed.` Cloudflare purge was not exposed through the available WPVibe CLI.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -149,10 +162,13 @@ Cache after this batch: `wp cache purge` succeeded. WPVibe reported `Purged: WP 
 - Phase A batch A3 after update: missing descriptions 232, A3 descriptions present 20, A3 descriptions in 120-160 range 20.
 - Phase A batch A3 meta lint: rows checked 20, unique descriptions 20, length ok 20, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A batch A3 live spot check: passed for post IDs 10996, 11197, and 11198 after cache purge.
+- Decision gate 2.2 car-auction result: `/car-auction-sharjah/` returns 200, `/car-auction-sharjah-2/` redirects one way to `/car-auction-sharjah/`, and the previous two-way redirect loop is broken.
+- Decision gate 2.2 car-auction meta: missing descriptions 231, one row checked, unique descriptions 1, length ok 1, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Decision gate 2.2 robots note: live HTML for `/car-auction-sharjah/` includes `noindex, max-snippet:-1, max-image-preview:large, max-video-preview:-1`. This was preserved, not newly introduced.
 
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: waiting for Kim decision.
-- `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: waiting for Kim decision.
+- `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: answered by Kim. Kept one, moved it to `/car-auction-sharjah/`, and trashed the duplicate draft.
 - `/bn/`, `/ar/`, `/hi/` language pages: investigate first, then waiting for Kim decision.
 - Inactive `ia-hospitality-career-map-{1..4}` plugin folders: waiting for Kim decision before deletion.
