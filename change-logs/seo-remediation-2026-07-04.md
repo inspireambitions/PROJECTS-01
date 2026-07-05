@@ -730,6 +730,53 @@ These 50 rows were selected from live published posts and pages with custom AIOS
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase A title batch T6, over-long custom titles
+
+These 38 rows were the remaining custom AIOSEO titles longer than 60 characters. WPVibe was still at its daily cap, so discovery used public REST titles to narrow the candidate set, then AIOSEO's authenticated `/aioseo/v1/post` endpoint to confirm custom title values. Pre-check confirmed all 38 selected titles were over 60 characters before update. Each new title is 60 characters or shorter.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 45844 | `/salary-guides/` | AIOSEO title | `Dubai and UAE Salary Guides 2026 \| Hotel, HR and Professional Salaries` | `Dubai and UAE Salary Guides 2026` | Browser AIOSEO title length 32. Public REST matched expected title. |
+| 46088 | `/uae-hospitality-career-coaching/` | AIOSEO title | `UAE Hospitality Career Coaching \| Dubai Hotel Career Coach 2026` | `UAE Hospitality Career Coaching 2026` | Browser AIOSEO title length 36. Public REST matched expected title. |
+| 46089 | `/uae-hospitality-career-coaching-alternatives/` | AIOSEO title | `UAE Career Coaching Alternatives 2026 \| Free vs Paid Options Compared` | `UAE Career Coaching Alternatives 2026` | Browser AIOSEO title length 37. Public REST matched expected title. |
+| 46120 | `/glossary/` | AIOSEO title | `UAE Hospitality Career Glossary: Labour Law, Emiratisation, HR and Job Search Terms` | `UAE Hospitality Career Glossary` | Browser AIOSEO title length 31. Public REST matched expected title. |
+| 46563 | `/hospitality-career-path/` | AIOSEO title | `Hospitality Career Path in the UAE 2026 \| How to Progress in Hotel Careers` | `Hospitality Career Path in the UAE 2026` | Browser AIOSEO title length 39. Public REST matched expected title. |
+| 46652 | `/career-toolkit/` | AIOSEO title | `UAE Career Tools Hub 2026 \| Free HR and Job Tools for Dubai Professionals` | `UAE Career Tools Hub 2026` | Browser AIOSEO title length 25. Public REST matched expected title. |
+| 46700 | `/emiratisation-2026-hiring-guide/` | AIOSEO title | `Emiratisation in 2026: Quotas, Fines, Nafis and What Hiring Managers Must Know` | `Emiratisation 2026: Quotas, Fines and Nafis` | Browser AIOSEO title length 43. Public REST matched expected title. |
+| 46702 | `/uae-job-description-mohre-guide/` | AIOSEO title | `How to Write a UAE Job Description That MOHRE Will Approve First Time` | `Write a UAE Job Description MOHRE Will Approve` | Browser AIOSEO title length 46. Public REST matched expected title. |
+| 46703 | `/uae-interview-compliance-legal-framework/` | AIOSEO title | `UAE Interview Compliance: Labour Law Framework for HR Directors` | `UAE Interview Compliance: Labour Law Framework` | Browser AIOSEO title length 46. Public REST matched expected title. |
+| 46706 | `/illegal-interview-questions-uae/` | AIOSEO title | `10 Illegal Interview Questions in the UAE and What to Ask Instead` | `Illegal Interview Questions in the UAE` | Browser AIOSEO title length 38. Public REST matched expected title. |
+| 46707 | `/interview-hotel-staff-dubai-playbook/` | AIOSEO title | `How to Interview Hotel Staff in Dubai: 20 Years of Hiring Lessons` | `Interview Hotel Staff in Dubai: Hiring Lessons` | Browser AIOSEO title length 46. Public REST matched expected title. |
+| 46710 | `/hospitality-interview-questions-dubai/` | AIOSEO title | `17 Interview Questions to Assess Hospitality Candidates in Dubai` | `Interview Questions for Dubai Hospitality Candidates` | Browser AIOSEO title length 52. Public REST matched expected title. |
+| 46780 | `/uae-career-guide/` | AIOSEO title | `UAE Career Guide 2026 \| Jobs, Salaries and Career Advice for Dubai Professionals` | `UAE Career Guide 2026` | Browser AIOSEO title length 21. Public REST matched expected title. |
+| 46781 | `/career-skills-guide/` | AIOSEO title | `Career Skills Guide 2026 \| Skills That Advance Your Career in the UAE` | `Career Skills Guide 2026` | Browser AIOSEO title length 24. Public REST matched expected title. |
+| 46829 | `/ai-job-replacement-calculator/` | AIOSEO title | `AI Job Replacement Calculator UAE 2026 \| Will AI Replace Your Job?` | `AI Job Replacement Calculator UAE 2026` | Browser AIOSEO title length 38. Public REST matched expected title. |
+| 47094 | `/will-ai-replace-my-job-uae/` | AIOSEO title | `Will AI Replace My Job in the UAE? What the Data Says for 2026` | `Will AI Replace My Job in the UAE?` | Browser AIOSEO title length 34. Public REST matched expected title. |
+| 47096 | `/ai-proof-your-career-dubai/` | AIOSEO title | `How to AI-Proof Your Career in Dubai 2026 \| Practical Steps for Professionals` | `AI-Proof Your Career in Dubai 2026` | Browser AIOSEO title length 34. Public REST matched expected title. |
+| 47099 | `/ai-jobs-at-risk-uae-2026/` | AIOSEO title | `UAE Jobs Most at Risk From AI in 2026 \| Sector-by-Sector Breakdown` | `UAE Jobs Most at Risk From AI in 2026` | Browser AIOSEO title length 37. Public REST matched expected title. |
+| 47312 | `/spa-manager-salary-dubai/` | AIOSEO title | `Spa Manager Salary Dubai 2026 \| AED 8,000–28,000 UAE Hotel Figures` | `Spa Manager Salary Dubai 2026` | Browser AIOSEO title length 29. Public REST matched expected title. |
+| 47326 | `/restaurant-manager-salary-dubai/` | AIOSEO title | `Restaurant Manager Salary Dubai 2026 \| AED 7,000–30,000 by Outlet Type` | `Restaurant Manager Salary Dubai 2026` | Browser AIOSEO title length 36. Public REST matched expected title. |
+| 47334 | `/hr-manager-salary-dubai-hospitality/` | AIOSEO title | `HR Manager Salary Dubai Hotels 2026 \| AED 9,000–28,000 Hospitality Figures` | `HR Manager Salary Dubai Hotels 2026` | Browser AIOSEO title length 35. Public REST matched expected title. |
+| 47341 | `/project-manager-salary-dubai/` | AIOSEO title | `Project Manager Salary in Dubai 2026 \| AED Breakdown %%sep%% Inspire Ambitions` | `Project Manager Salary in Dubai 2026` | Browser AIOSEO title length 36. Public REST matched expected title. |
+| 47343 | `/physiotherapist-salary-dubai/` | AIOSEO title | `Physiotherapist Salary in Dubai 2026 \| AED Breakdown for UAE Physios %%sep%% Inspire Ambitions` | `Physiotherapist Salary in Dubai 2026` | Browser AIOSEO title length 36. Public REST matched expected title. |
+| 47344 | `/sales-manager-salary-dubai/` | AIOSEO title | `Sales Manager Salary in Dubai 2026 \| AED Figures Including Commission %%sep%% Inspire Ambitions` | `Sales Manager Salary in Dubai 2026` | Browser AIOSEO title length 34. Public REST matched expected title. |
+| 47346 | `/operations-manager-salary-dubai/` | AIOSEO title | `Operations Manager Salary in Dubai 2026 \| AED Figures by Industry %%sep%% Inspire Ambitions` | `Operations Manager Salary in Dubai 2026` | Browser AIOSEO title length 39. Public REST matched expected title. |
+| 47377 | `/how-hiring-managers-review-cvs-dubai/` | AIOSEO title | `How Hiring Managers Review CVs in Dubai \| HR Insider 2026 %%sep%% Inspire Ambitions` | `How Hiring Managers Review CVs in Dubai` | Browser AIOSEO title length 39. Public REST matched expected title. |
+| 47382 | `/novoresume-alternative-uae/` | AIOSEO title | `Novoresume Alternative for UAE Jobs 2026 \| Free CV Builder %%sep%% Inspire Ambitions` | `Novoresume Alternative for UAE Jobs 2026` | Browser AIOSEO title length 40. Public REST matched expected title. |
+| 47384 | `/free-cv-templates-uae-2026/` | AIOSEO title | `Free CV Templates UAE 2026 \| ATS-Ready Formats for Dubai Jobs %%sep%% Inspire Ambitions` | `Free CV Templates UAE 2026` | Browser AIOSEO title length 26. Public REST matched expected title. |
+| 47408 | `/dubai-flexible-summer-2026/` | AIOSEO title | `Dubai Flexible Summer 2026 Is Official: What Every UAE Worker Needs to Know %%sep%% Inspire Ambitions` | `Dubai Flexible Summer 2026: What Workers Need to Know` | Browser AIOSEO title length 53. Public REST matched expected title. |
+| 47424 | `/uae-hotel-hr-hiring-criteria/` | AIOSEO title | `What UAE Hotel HR Looks For \| The Criteria Candidates Never See` | `What UAE Hotel HR Looks For` | Browser AIOSEO title length 27. Public REST matched expected title. |
+| 47425 | `/uae-hotel-promotion-checklist/` | AIOSEO title | `UAE Hotel Promotion Checklist \| 10 Things HR Checks Before Promoting You` | `UAE Hotel Promotion Checklist` | Browser AIOSEO title length 29. Public REST matched expected title. |
+| 47433 | `/hotel-general-manager-salary-dubai/` | AIOSEO title | `Hotel General Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel General Manager Salary in Dubai 2026` | Browser AIOSEO title length 42. Public REST matched expected title. |
+| 47435 | `/hotel-front-office-manager-salary-dubai/` | AIOSEO title | `Hotel Front Office Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel Front Office Manager Salary in Dubai 2026` | Browser AIOSEO title length 47. Public REST matched expected title. |
+| 47437 | `/hotel-housekeeping-manager-salary-dubai/` | AIOSEO title | `Hotel Housekeeping Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel Housekeeping Manager Salary in Dubai 2026` | Browser AIOSEO title length 47. Public REST matched expected title. |
+| 47439 | `/hotel-food-beverage-manager-salary-dubai/` | AIOSEO title | `Hotel Food & Beverage Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel Food and Beverage Manager Salary Dubai 2026` | Browser AIOSEO title length 49. Public REST matched expected title. |
+| 47443 | `/hotel-sales-manager-salary-dubai/` | AIOSEO title | `Hotel Sales Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel Sales Manager Salary in Dubai 2026` | Browser AIOSEO title length 40. Public REST matched expected title. |
+| 47445 | `/hotel-human-resources-manager-salary-dubai/` | AIOSEO title | `Hotel Human Resources Manager Salary in Dubai 2026 \| What UAE Hotels Pay` | `Hotel HR Manager Salary in Dubai 2026` | Browser AIOSEO title length 37. Public REST matched expected title. |
+| 47447 | `/marketing-executive-salary-dubai/` | AIOSEO title | `Marketing Executive Salary in Dubai 2026 \| What UAE Hotels Pay` | `Marketing Executive Salary in Dubai 2026` | Browser AIOSEO title length 40. Public REST matched expected title. |
+
+Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -832,6 +879,11 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase A title batch T5 after update: browser AIOSEO readback confirmed 50 of 50 selected titles in range, with title lengths 26-53.
 - Phase A title batch T5 public REST verification: all 50 AIOSEO titles rendered as expected across posts and pages endpoints.
 - Phase A title batch T5 global count note: last SQL count before T5 was 88 over-long custom titles. T5 fixed 50, so the expected remaining count is 38. Full SQL count verification is pending until WPVibe or another database route is available.
+- Phase A title batch T6 pre-check: browser AIOSEO readback confirmed all 38 selected rows had custom AIOSEO titles longer than 60 characters before update.
+- Phase A title batch T6 after update: browser AIOSEO readback confirmed 38 of 38 selected titles in range, with title lengths 21-53.
+- Phase A title batch T6 public REST verification: all 38 AIOSEO titles rendered as expected across posts and pages endpoints.
+- Phase A title batch T6 targeted final check: the high-ID candidate slice that contained the final 38 custom over-long titles returned 0 remaining custom titles over 60 characters after update.
+- Phase A title batch T6 global count note: full SQL count verification is still pending until WPVibe or another database route is available.
 
 ## Open Decisions
 
