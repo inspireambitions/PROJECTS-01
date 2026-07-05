@@ -777,6 +777,18 @@ These 38 rows were the remaining custom AIOSEO titles longer than 60 characters.
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase A description sample D1, out-of-range custom descriptions
+
+These 3 rows were selected from the browser-confirmed current set of custom AIOSEO descriptions outside the 120-160 character range. WPVibe was still at its daily cap, so discovery used public REST descriptions to narrow candidates, then AIOSEO's authenticated `/aioseo/v1/post` endpoint to confirm custom description values. Pre-check found 133 current custom descriptions outside range; this differs from the earlier SQL baseline of 148 and needs SQL confirmation when WPVibe is available again.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 428 | `/subscribe/` | AIOSEO description | `A career briefing for hospitality professionals across the UAE and GCC, every other Sunday. Salaries, hiring trends, labour rights, and the moves shaping your next role.` | `Get The Hospitality Memo every other Sunday for UAE and GCC salary insights, hiring trends, labour rights and career moves.` | Browser AIOSEO description length 123. Public REST matched expected description. |
+| 475 | `/living-in-the-uae/` | AIOSEO description | `Everything you need to know about living in the UAE as an expat. From housing and visas to culture and lifestyle — your practical guide to life in Dubai and the Gulf.` | `Explore practical UAE living advice for expats, from housing and visas to culture, lifestyle and settling into Dubai or the Gulf.` | Browser AIOSEO description length 129. Public REST matched expected description. |
+| 5137 | `/career-path-in-human-resources/` | AIOSEO description | `The complete HR career path in the UAE mapped by a GCC HR Career Specialist with 20+ years. Every level, timeline, salary stage, and skill requirement — in one guide.` | `Use this guide to map an HR career path in the UAE, with levels, timelines, salary stages and skills from an HR Career Specialist.` | Browser AIOSEO description length 130. Public REST matched expected description. |
+
+Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -884,6 +896,10 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase A title batch T6 public REST verification: all 38 AIOSEO titles rendered as expected across posts and pages endpoints.
 - Phase A title batch T6 targeted final check: the high-ID candidate slice that contained the final 38 custom over-long titles returned 0 remaining custom titles over 60 characters after update.
 - Phase A title batch T6 global count note: full SQL count verification is still pending until WPVibe or another database route is available.
+- Phase A description sample D1 discovery: browser route found 133 current custom AIOSEO descriptions outside the 120-160 range. Earlier SQL baseline was 148, so this count needs database confirmation when WPVibe is available again.
+- Phase A description sample D1 after update: browser AIOSEO readback confirmed 3 of 3 selected descriptions in range, with lengths 123, 129, and 130.
+- Phase A description sample D1 public REST verification: all 3 descriptions rendered as expected across posts and pages endpoints.
+- Phase A description sample D1 meta lint: rows checked 3, unique descriptions 3, length ok 3, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 
 ## Open Decisions
 
