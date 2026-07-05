@@ -996,6 +996,19 @@ Seobility flagged repeated date anchor text such as `Jun 26, 2026`. The source w
 
 Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase B duplicate anchor text sample B3
+
+These three source pages were the sample for the non-date identical-anchor groups. Each edit keeps the same destination but makes the visible anchor text specific to the linked page.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 45594 | `/career-tools/` | `post_content` anchor text for `/career-coaching/` | `Book a Discovery Call` | `Explore career coaching` | Browser REST readback confirmed old text count 0 and new text count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 46780 | `/uae-career-guide/` | `post_content` anchor text for `/dubai-cv-builder/` | `free UAE CV Builder` | `Dubai CV builder` | Browser REST readback confirmed old text count 0 and new text count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 47424 | `/uae-hotel-hr-hiring-criteria/` | `post_content` inline anchor text for `/ai-powered-cv-builder/` | `free UAE CV builder` | `AI-powered CV builder` | Browser REST readback confirmed old text count 0 and new text count 1. Public HTML after cache purge: old count 0, new count 2 across the page. |
+| 47424 | `/uae-hotel-hr-hiring-criteria/` | `post_content` related-tools anchor text for `/ai-powered-cv-builder/` | `Free UAE CV builder ->` | `AI-powered CV builder ->` | Browser REST readback confirmed old text count 0 and new text count 1. Public HTML after cache purge: old count 0, new count 2 across the page. |
+
+Cache after this sample: browser admin CDN purge returned 200. WP Rocket all-cache purge returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1127,6 +1140,7 @@ Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge r
 - Phase B internal redirect link sample B1: 3 stored links changed across 2 pages. Browser REST readback and public HTML both showed old path count 0 for all three sampled redirecting URLs after cache purge.
 - Phase B internal redirect link batch B2: 19 stored links changed across 8 pages. Browser REST readback showed old path count 0 on all updated rows. Public HTML spot check across all 8 pages showed old path count 0 after cache purge. Final stored-content rescan for the known PDF-listed pages returned 0 remaining known redirecting paths.
 - Phase B anchor-text template fix: active child-theme `post-meta` template part now renders post dates as visible text, not links. Browser REST readback confirmed 0 linked post-date blocks. Public HTML samples showed 0 linked post-date blocks after cache purge.
+- Phase B duplicate anchor text sample B3: 4 anchor-text edits across 3 source pages. Browser REST readback and public HTML verification showed old text count 0 and target-specific new text present after cache purge.
 
 ## Open Decisions
 
