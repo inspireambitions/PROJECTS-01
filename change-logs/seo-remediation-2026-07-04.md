@@ -944,6 +944,16 @@ These 28 rows were selected from the browser-confirmed current set of custom AIO
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase B canonical fix, `/travel-tools/`
+
+Live HTML showed two canonical tags on `/travel-tools/`: one AIOSEO canonical and one hand-written canonical inside the page's stored HTML block. The stored page content is a full HTML document pasted into a WordPress HTML block, so the safe scoped fix was to remove only the hand-written canonical line and leave the page-specific CSS and scripts in place.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 39234 | `/travel-tools/` | `post_content` hand-written canonical tag | `<link rel="canonical" href="https://inspireambitions.com/travel-tools/">` | removed from page content | Browser REST readback confirmed 0 hand-written canonical tags remain in stored page content. Public HTML after cache purge shows exactly 1 canonical tag, the AIOSEO canonical. |
+
+Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1070,6 +1080,8 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase A description post-D4 focused recheck: browser AIOSEO readback checked the 133-row original browser-discovered out-of-range set. 131 are now fixed. Two non-English rows remain out of range and are held for language-page decision: post 21766, `/самых-красивых-городов-испании/`; post 21875, `/ترقية-نافورة-دبي/`.
 - Phase A duplicate title and description review: the Seobility PDF export pages 19-23 list the duplicate title and duplicate description groups. All listed groups are `/bn/`, `/ar/`, `/hi/` language-copy groups or the `/tools/cake-day-gifts/` decision group. No same-language duplicate title or description group was available to fix before Kim's §2.1 and §2.3 decisions.
 - Phase A independent review gate: Codex reviewer checked a random 10-row sample from the committed Phase A metadata change log, covering 7 descriptions and 3 titles. Result: PASS. Rejects: 0. Reviewer confirmed length rules, no em dashes in new values, no AI blacklist hits, no US spelling hits, correct use of `HR Career Specialist`, and relevance to the sampled URLs.
+- Phase B www redirect check: `https://www.inspireambitions.com/` returns 301 to `https://inspireambitions.com/`, but the header includes `x-redirect-by: WordPress`. The redirect works for users and crawlers, but a strict Cloudflare/Rocket-level implementation remains pending until panel access is available.
+- Phase B `/travel-tools/` canonical fix: live HTML before fix showed 2 canonical tags. Removed the hand-written canonical from page content for post 39234. After WP Rocket and CDN purge, live HTML shows exactly 1 canonical tag.
 
 ## Open Decisions
 
