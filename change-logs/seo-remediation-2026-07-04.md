@@ -1253,6 +1253,18 @@ While verifying H1 fixes on `/about-kim/` and `/contact-me/`, `lint-quality.sh` 
 
 `lint-quality.sh` rerun on fresh public HTML snapshots for `/about-kim/` and `/contact-me/`: em dashes 0, AI blacklist hits none, formulaic transitions none, internal links OK. Remaining failures were article-only checks on utility pages (word count, exact article CTA, first-person count on contact) and CSS-property false positives for `color`/`center`.
 
+### Phase D heading-structure sample HS-1
+
+Three English pages from the Seobility "Problems with headings" top list were fixed first as the sample. Each issue was an H2-to-H4 hierarchy jump. The affected H4 headings were demoted to H3, preserving the visible text.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 45603 | `/dubai-cv-builder/` | Content heading | `<h4>Role 1 (Most Recent)</h4>` | `<h3>Role 1 (Most Recent)</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 45603 | `/dubai-cv-builder/` | Content heading | `<h4>Role 2</h4>` | `<h3>Role 2</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 45603 | `/dubai-cv-builder/` | Content heading | `<h4>Role 3 (Optional)</h4>` | `<h3>Role 3 (Optional)</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 46029 | `/how-to-get-promoted-in-a-dubai-hotel/` | Content heading | `<h4 class="wp-block-heading">Check if your promotion case is strong enough</h4>` | `<h3 class="wp-block-heading">Check if your promotion case is strong enough</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 46034 | `/front-office-to-revenue-management-dubai-hotels/` | Content heading | `<h4>See the next role before you move</h4>` | `<h3>See the next role before you move</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: waiting for Kim decision. The current language-copy hold includes post 21766, `/самых-красивых-городов-испании/`, and post 21875, `/ترقية-نافورة-دبي/`.
