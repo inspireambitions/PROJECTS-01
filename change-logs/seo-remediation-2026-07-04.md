@@ -1211,6 +1211,47 @@ Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purg
 - Phase C malformed LinkedIn URL sample C1: fixed 4 malformed LinkedIn URL occurrences across 3 source pages. Browser REST readback and public HTML verification showed malformed URL count 0 on the sampled pages after cache purge.
 - Phase C malformed LinkedIn URL batch C2: fixed 8 malformed LinkedIn URL occurrences across 5 more source pages. Final stored-content scan found 0 remaining malformed LinkedIn URL patterns across published posts and pages.
 - Phase D multiple-H1 sample H1-1: demoted content H1 tags to H2 on 3 English pages. Public HTML verification showed exactly one H1 on each sampled page after cache purge.
+- Phase D multiple-H1 batch H1-2 and About title-rule cleanup: demoted content H1 tags to H2 on 2 more English pages, changed the page titles so the theme-rendered H1s are specific, and removed `HR Director` title references from the About page body, social metadata, and Person schema. Public HTML verification after WP Rocket and CDN purge showed `/about-kim/` and `/contact-me/` both returned 200, both had exactly one H1, and neither public HTML/schema output contained `HR Director`. Wider H1 verification across `/about-kim/`, `/dubai-cv-builder/`, `/interview-prep/`, `/job-search-hacks/`, `/contact-me/`, and `/travel-tools/` found 6 of 6 pages returning 200 with exactly one H1.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 10 | `/about-kim/` | WordPress page title | `About Me` | `About Kim Kiyingi` | Public H1 became `About Kim Kiyingi`; H1 count 1 after cache purge. |
+| 10 | `/about-kim/` | Page content heading | `<h1>Kim <em>Kiyingi</em></h1>` | `<h2>Kim <em>Kiyingi</em></h2>` | Public HTML shows `Kim Kiyingi` as H2, not H1. |
+| 10 | `/about-kim/` | Page JSON-LD jobTitle in content | `"jobTitle": "HR Director & Career Coach"` | `"jobTitle": "HR Career Specialist"` | Stored content updated. Public AIOSEO schema also separately cleaned below. |
+| 10 | `/about-kim/` | Page hero subtitle | `HR Director, PCC-Certified Career Coach, and published author helping professionals build careers they're proud of [em dash] from Dubai to the world.` | `HR Career Specialist with PCC certification and published author helping professionals build careers they're proud of, from Dubai to the world.` | Public HTML no longer contains `HR Director` in the body or social output. |
+| 10 | `/about-kim/` | Image alt text | `Kim Kiyingi - HR Director and Career Coach in Dubai` | `Kim Kiyingi, HR Career Specialist in Dubai` | Stored content updated and public HTML no longer contains the old alt text. |
+| 10 | `/about-kim/` | Credentials bar | `CIPD-Qualified HR Director` | `CIPD-qualified HR professional` | Stored content updated and public HTML no longer contains `HR Director`. |
+| 10 | `/about-kim/` | AIOSEO title | `About Kim Kiyingi | HR Career Specialist & Coach, Dubai` | `About Kim Kiyingi | HR Career Specialist in Dubai` | Public title rendered the new value after cache purge. |
+| 10 | `/about-kim/` | AIOSEO social description | `Meet Kim Kiyingi [em dash] PCC-certified career coach, CIPD-qualified HR Director, and published author with 20+ years in luxury hospitality and talent development.` | `Meet Kim Kiyingi, HR Career Specialist with PCC certification, published author, and 20+ years across hospitality and talent development.` | Public OG and Twitter descriptions rendered the new value after cache purge. |
+| 10 | `/about-kim/` | AIOSEO Person schema description | `PCC-certified career coach, CIPD-qualified HR Director, and published author with 15+ years in luxury hospitality and talent development.` | `HR Career Specialist with PCC certification, published author, and practical career guidance experience across hospitality and talent development.` | Public schema no longer contains `HR Director`. |
+| 10 | `/about-kim/` | AIOSEO Person schema jobTitle | `HR Director & Career Coach` | `HR Career Specialist` | Public schema rendered `HR Career Specialist` and no longer contains `HR Director`. |
+| 4823 | `/contact-me/` | WordPress page title | `Contact` | `Contact Kim Kiyingi` | Public H1 became `Contact Kim Kiyingi`; H1 count 1 after cache purge. |
+| 4823 | `/contact-me/` | Page content heading | `<h1>Get in <em>Touch</em></h1>` | `<h2>Get in <em>Touch</em></h2>` | Public HTML shows `Get in Touch` as H2, not H1. |
+
+### Phase D quality cleanup found during H1 verification
+
+While verifying H1 fixes on `/about-kim/` and `/contact-me/`, `lint-quality.sh` and public HTML checks found remaining em dashes plus one public Director-level title reference in editable page content. These were cleaned before closing the H1 batch.
+
+| Object ID | URL or object | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 10 | `/about-kim/` | Body paragraph | `luxury hospitality [em dash] working my way` | `luxury hospitality, working my way` | Stored content em dash count 0 after all body replacements. |
+| 10 | `/about-kim/` | Body paragraph | `<strong>Inspire Ambitions</strong> [em dash] to give` | `<strong>Inspire Ambitions</strong> to give` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Body paragraph | `the next chapter [em dash] I'm here` | `the next chapter, I'm here` | Public text em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Timeline heading | `Building the Foundation [em dash] Dubai, London & East Africa` | `Building the Foundation, Dubai, London & East Africa` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Timeline paragraph | `Trained over 2,000 professionals in the early years [em dash] and never stopped. in world-class hotels.` | `Trained over 2,000 professionals in the early years and never stopped learning in world-class hotels.` | Stored content em dash count 0. |
+| 10 | `/about-kim/` | Timeline heading | `HR & Talent Development [em dash] Dubai, UAE` | `HR & Talent Development in Dubai, UAE` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Timeline heading | `Director of Learning & Development [em dash] Abu Dhabi, UAE` | `Learning & Development Leadership in Abu Dhabi, UAE` | Public HTML no longer contains `Director of Learning` or `HR Director`. |
+| 10 | `/about-kim/` | Timeline paragraph | `real HR experience [em dash] not theory` | `real HR experience, not theory` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Timeline heading | `Cluster HR Career Specialist [em dash] Dubai, UAE` | `HR Career Specialist in Dubai, UAE` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Body paragraph | `20+ years of insight [em dash] now yours to access` | `20+ years of insight, now yours to access` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Body paragraph | `Explorer, writer, photographer, mentor [em dash] Kim brings` | `Explorer, writer, photographer, mentor. Kim brings` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | Body paragraph | `or building confidence [em dash] we work` | `or building confidence, we work` | Public HTML em dash count 0 after cache purge. |
+| 10 | `/about-kim/` | CTA paragraph | `No obligation [em dash] just clarity` | `No obligation, just clarity` | Public HTML em dash count 0 after cache purge. |
+| 4823 | `/contact-me/` | CTA paragraph | `Skip the form [em dash] book a free 15-minute discovery call` | `Skip the form. Book a free 15-minute discovery call` | Public HTML em dash count 0 after cache purge. |
+| 299 | Code Snippet `Homepage Email Capture - Mid-Page Section + Hero Form + Copy Fixes` | Global newsletter copy | `twice a month &#x2014; free`; `hiring signals &#x2014; from inside UAE hospitality` | `twice a month, free`; `hiring signals from inside UAE hospitality` | Active snippet updated. Homepage-facing encoded em dash outputs removed. |
+| 300 | Code Snippet `IA Memo - JS Handler + Hero Form + Mid-Page Section (DOM Inject)` | Global newsletter copy | 4 visible newsletter strings with em dashes, plus snippet name/comment dash | Same strings rewritten with commas, full stops, or plain hyphen in non-public comment/name | Public `/about-kim/` and `/contact-me/` HTML showed newsletter-target em dash count 0 after cache purge. |
+
+`lint-quality.sh` rerun on fresh public HTML snapshots for `/about-kim/` and `/contact-me/`: em dashes 0, AI blacklist hits none, formulaic transitions none, internal links OK. Remaining failures were article-only checks on utility pages (word count, exact article CTA, first-person count on contact) and CSS-property false positives for `color`/`center`.
 
 ## Open Decisions
 
