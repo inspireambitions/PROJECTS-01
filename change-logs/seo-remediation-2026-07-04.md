@@ -1009,6 +1009,20 @@ These three source pages were the sample for the non-date identical-anchor group
 
 Cache after this sample: browser admin CDN purge returned 200. WP Rocket all-cache purge returned 200.
 
+### Phase B duplicate anchor text batch B4
+
+These were the remaining English non-date identical-anchor fixes from the Seobility anchor-text list. The `/bn/` discovery-call group remains held under the language-page decision.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 46818 | `/how-to-prepare-for-a-job-interview-guide/` | `post_content` anchor and href | `<a href="/common-job-interview-questions-answers/">Common Interview Questions</a>` | `<a href="/gcc-interview-answers/">GCC interview answers</a>` | `/gcc-interview-answers/` returned 200 before update. Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 46034 | `/front-office-to-revenue-management-dubai-hotels/` | `post_content` anchor text for `/what-are-questions-you-get-asked-at-a-job-interview/` | `common interview questions` | `job interview question examples` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 45720 | `/the-great-flattening-ai-is-eliminating-middle-management-here-is-what-comes-next/` | `post_content` anchor text for `/what-is-an-ai-interview-ai-powered-hiring/` | `inspireambitions.com` | `AI interview guide` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge: old count 0, new count 1. |
+
+Final exact-phrase check after this batch: `book a discovery call` now points to one English target only, `/book-a-discovery-call/`. `free uae cv builder`, `common interview questions`, and `inspireambitions.com` returned 0 exact English duplicate anchor matches in the public REST check.
+
+Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1141,6 +1155,7 @@ Cache after this sample: browser admin CDN purge returned 200. WP Rocket all-cac
 - Phase B internal redirect link batch B2: 19 stored links changed across 8 pages. Browser REST readback showed old path count 0 on all updated rows. Public HTML spot check across all 8 pages showed old path count 0 after cache purge. Final stored-content rescan for the known PDF-listed pages returned 0 remaining known redirecting paths.
 - Phase B anchor-text template fix: active child-theme `post-meta` template part now renders post dates as visible text, not links. Browser REST readback confirmed 0 linked post-date blocks. Public HTML samples showed 0 linked post-date blocks after cache purge.
 - Phase B duplicate anchor text sample B3: 4 anchor-text edits across 3 source pages. Browser REST readback and public HTML verification showed old text count 0 and target-specific new text present after cache purge.
+- Phase B duplicate anchor text batch B4: 3 English anchor fixes across 3 source pages. Public exact-phrase verification found no remaining English multi-target matches for `free uae cv builder`, `common interview questions`, or `inspireambitions.com`; `book a discovery call` now has one English target only.
 
 ## Open Decisions
 
