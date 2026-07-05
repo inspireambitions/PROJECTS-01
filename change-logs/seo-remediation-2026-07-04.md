@@ -1062,6 +1062,18 @@ Final stored-content scan after this batch: 0 remaining matches for `https://www
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase D multiple-H1 sample H1-1
+
+These three pages were the first sample for the English multiple-H1 fixes. The safe scoped fix was to demote the content-level H1 inside the page body to H2, leaving the theme-rendered page title as the only H1.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 22226 | `/interview-prep/` | `post_content` heading tag | `<h1 ...>Interview Preparation</h1>` | `<h2 ...>Interview Preparation</h2>` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge shows one H1: `Interview Prep`. |
+| 22224 | `/job-search-hacks/` | `post_content` heading tag | `<h1 ...>Job Search Strategies</h1>` | `<h2 ...>Job Search Strategies</h2>` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge shows one H1: `Job Search Hacks`. |
+| 39234 | `/travel-tools/` | `post_content` heading tag | `<h1>UAE Travel &amp; Relocation Tools</h1>` | `<h2>UAE Travel &amp; Relocation Tools</h2>` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge shows one H1: `Travel Tools`. |
+
+Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1198,6 +1210,7 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase C typo fix: corrected the adjective `dependant coverage varies` to `dependent coverage varies` on `/neom-careers-salary-2026/`. Checked `/hr-manager-salary-dubai-hospitality/` and left valid noun uses unchanged.
 - Phase C malformed LinkedIn URL sample C1: fixed 4 malformed LinkedIn URL occurrences across 3 source pages. Browser REST readback and public HTML verification showed malformed URL count 0 on the sampled pages after cache purge.
 - Phase C malformed LinkedIn URL batch C2: fixed 8 malformed LinkedIn URL occurrences across 5 more source pages. Final stored-content scan found 0 remaining malformed LinkedIn URL patterns across published posts and pages.
+- Phase D multiple-H1 sample H1-1: demoted content H1 tags to H2 on 3 English pages. Public HTML verification showed exactly one H1 on each sampled page after cache purge.
 
 ## Open Decisions
 
