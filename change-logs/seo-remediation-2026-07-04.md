@@ -1067,10 +1067,11 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase A description batch D4 after update: browser AIOSEO readback confirmed 28 of 28 selected descriptions in range, with lengths 120-156.
 - Phase A description batch D4 public REST verification: all 28 descriptions rendered as expected across posts and pages endpoints.
 - Phase A description batch D4 meta lint: rows checked 28, unique descriptions 28, length ok 28, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
+- Phase A description post-D4 focused recheck: browser AIOSEO readback checked the 133-row original browser-discovered out-of-range set. 131 are now fixed. Two non-English rows remain out of range and are held for language-page decision: post 21766, `/самых-красивых-городов-испании/`; post 21875, `/ترقية-نافورة-دبي/`.
 
 ## Open Decisions
 
-- `/tools/cake-day-gifts/` and language copies: waiting for Kim decision.
+- `/tools/cake-day-gifts/` and language copies: waiting for Kim decision. The current language-copy hold includes post 21766, `/самых-красивых-городов-испании/`, and post 21875, `/ترقية-نافورة-دبي/`.
 - `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: answered by Kim. Kept one, moved it to `/car-auction-sharjah/`, and trashed the duplicate draft.
 - `/bn/`, `/ar/`, `/hi/` language pages: investigate first, then waiting for Kim decision.
 - Inactive `ia-hospitality-career-map-{1..4}` plugin folders: waiting for Kim decision before deletion.
