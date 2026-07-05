@@ -954,6 +954,18 @@ Live HTML showed two canonical tags on `/travel-tools/`: one AIOSEO canonical an
 
 Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase B internal redirect link sample B1
+
+These three stored content links were selected from the Seobility internal redirects list. Pre-check confirmed each source URL was present in stored WordPress content before update. The sample deliberately avoided `/newsletter/` links until the direct destination was checked.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 45844 | `/salary-guides/` | `post_content` internal link | `/how-to-answer-salary-expectations-in-job-interview/` | `/how-to-answer-salary-expectations-in-a-job-interview/` | Browser REST readback confirmed old path count 0, new path count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 46029 | `/how-to-get-promoted-in-a-dubai-hotel/` | `post_content` internal link | `/jd-generator/` | `/gcc-job-description-generator/` | Browser REST readback confirmed old path count 0, new path count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 46029 | `/how-to-get-promoted-in-a-dubai-hotel/` | `post_content` internal link | `/coaching/` | `/career-coaching/` | Browser REST readback confirmed old path count 0, new path count 1. Public HTML after cache purge: old count 0, new direct target occurrences 3. |
+
+Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1082,6 +1094,7 @@ Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge r
 - Phase A independent review gate: Codex reviewer checked a random 10-row sample from the committed Phase A metadata change log, covering 7 descriptions and 3 titles. Result: PASS. Rejects: 0. Reviewer confirmed length rules, no em dashes in new values, no AI blacklist hits, no US spelling hits, correct use of `HR Career Specialist`, and relevance to the sampled URLs.
 - Phase B www redirect check: `https://www.inspireambitions.com/` returns 301 to `https://inspireambitions.com/`, but the header includes `x-redirect-by: WordPress`. The redirect works for users and crawlers, but a strict Cloudflare/Rocket-level implementation remains pending until panel access is available.
 - Phase B `/travel-tools/` canonical fix: live HTML before fix showed 2 canonical tags. Removed the hand-written canonical from page content for post 39234. After WP Rocket and CDN purge, live HTML shows exactly 1 canonical tag.
+- Phase B internal redirect link sample B1: 3 stored links changed across 2 pages. Browser REST readback and public HTML both showed old path count 0 for all three sampled redirecting URLs after cache purge.
 
 ## Open Decisions
 
