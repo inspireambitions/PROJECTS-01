@@ -966,6 +966,26 @@ These three stored content links were selected from the Seobility internal redir
 
 Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase B internal redirect link batch B2
+
+These 19 stored content links were the remaining browser-confirmed matches from the Seobility internal redirects list after sample B1. `/newsletter/` currently redirects to the homepage, but the affected visible links are subscribe CTAs and `/subscribe/` is a direct 200 page, so the content-safe direct replacement is `/subscribe/`.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 38718 | `/books/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 45605 | `/uae-gratuity-calculator/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 4 occurrences and confirmed old path count 0, new path count 4. Public HTML old path count 0 after cache purge. |
+| 46827 | `/gcc-job-description-generator/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 3 occurrences and confirmed old path count 0, new path count 3. Public HTML old path count 0 after cache purge. |
+| 46029 | `/how-to-get-promoted-in-a-dubai-hotel/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 2. Public HTML old path count 0 after cache purge. |
+| 45405 | `/uae-end-of-service-gratuity-calculator-2026/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 45405 | `/uae-end-of-service-gratuity-calculator-2026/` | `post_content` internal link | `/coaching/` | `/career-coaching/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 39031 | `/ats-friendly-resume-for-gulf-countries-what-nobody-in-hr-will-tell-you/` | `post_content` internal link | `/newsletter/` | `/subscribe/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 39031 | `/ats-friendly-resume-for-gulf-countries-what-nobody-in-hr-will-tell-you/` | `post_content` internal link | `/coaching/` | `/career-coaching/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 39031 | `/ats-friendly-resume-for-gulf-countries-what-nobody-in-hr-will-tell-you/` | `post_content` internal link | `/free-career-templates/` | `/category/career-hub/free-career-templates-career-hub/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+| 28087 | `/how-to-answer-salary-expectations-in-a-job-interview/` | `post_content` internal link | `/free-career-templates/` | `/category/career-hub/free-career-templates-career-hub/` | Browser REST readback replaced 4 occurrences and confirmed old path count 0, new path count 4. Public HTML old path count 0 after cache purge. |
+| 19377 | `/promotion-readiness-assessment-test/` | `post_content` internal link | `/free-career-templates/` | `/category/career-hub/free-career-templates-career-hub/` | Browser REST readback replaced 1 occurrence and confirmed old path count 0, new path count 1. Public HTML old path count 0 after cache purge. |
+
+Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1095,6 +1115,7 @@ Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purg
 - Phase B www redirect check: `https://www.inspireambitions.com/` returns 301 to `https://inspireambitions.com/`, but the header includes `x-redirect-by: WordPress`. The redirect works for users and crawlers, but a strict Cloudflare/Rocket-level implementation remains pending until panel access is available.
 - Phase B `/travel-tools/` canonical fix: live HTML before fix showed 2 canonical tags. Removed the hand-written canonical from page content for post 39234. After WP Rocket and CDN purge, live HTML shows exactly 1 canonical tag.
 - Phase B internal redirect link sample B1: 3 stored links changed across 2 pages. Browser REST readback and public HTML both showed old path count 0 for all three sampled redirecting URLs after cache purge.
+- Phase B internal redirect link batch B2: 19 stored links changed across 8 pages. Browser REST readback showed old path count 0 on all updated rows. Public HTML spot check across all 8 pages showed old path count 0 after cache purge. Final stored-content rescan for the known PDF-listed pages returned 0 remaining known redirecting paths.
 
 ## Open Decisions
 
