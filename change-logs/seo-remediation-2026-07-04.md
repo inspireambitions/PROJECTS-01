@@ -1023,6 +1023,17 @@ Final exact-phrase check after this batch: `book a discovery call` now points to
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase C typo fix, `dependant` context check
+
+The brief required context checking before changing `dependant`, because British English uses `dependant` correctly as a noun. The HR Manager salary page uses `dependants` and `one dependant` as nouns, so those were checked and left unchanged.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 45374 | `/neom-careers-salary-2026/` | `post_content` adjective typo | `dependant coverage varies` | `dependent coverage varies` | Browser REST readback confirmed old count 0 and new count 1. Public HTML after cache purge: old count 0, new count 1. |
+| 47334 | `/hr-manager-salary-dubai-hospitality/` | `post_content` checked noun uses | `dependants`; `one dependant` | unchanged | Browser REST context check confirmed these are noun uses in British English, so no edit was made. |
+
+Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1156,6 +1167,7 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase B anchor-text template fix: active child-theme `post-meta` template part now renders post dates as visible text, not links. Browser REST readback confirmed 0 linked post-date blocks. Public HTML samples showed 0 linked post-date blocks after cache purge.
 - Phase B duplicate anchor text sample B3: 4 anchor-text edits across 3 source pages. Browser REST readback and public HTML verification showed old text count 0 and target-specific new text present after cache purge.
 - Phase B duplicate anchor text batch B4: 3 English anchor fixes across 3 source pages. Public exact-phrase verification found no remaining English multi-target matches for `free uae cv builder`, `common interview questions`, or `inspireambitions.com`; `book a discovery call` now has one English target only.
+- Phase C typo fix: corrected the adjective `dependant coverage varies` to `dependent coverage varies` on `/neom-careers-salary-2026/`. Checked `/hr-manager-salary-dubai-hospitality/` and left valid noun uses unchanged.
 
 ## Open Decisions
 
