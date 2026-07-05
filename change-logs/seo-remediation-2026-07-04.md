@@ -986,6 +986,16 @@ These 19 stored content links were the remaining browser-confirmed matches from 
 
 Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase B anchor-text template fix
+
+Seobility flagged repeated date anchor text such as `Jun 26, 2026`. The source was the `post-meta` template part in the active child theme. The visible date stays in place, but the date is no longer a link, so the repeated date anchor text is removed at template level.
+
+| Object ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| `inspireambitions-theme//post-meta` | site-wide post meta template part | `wp_template_part content.raw` | `<!-- wp:post-date {"format":"M j, Y","isLink":true} /-->` | `<!-- wp:post-date {"format":"M j, Y","isLink":false} /-->` | Browser REST readback confirmed linked post-date block count 0 and unlinked post-date block count 1. Public HTML after cache purge showed 0 linked post-date blocks on `/marketing-executive-salary-dubai/` and `/how-to-get-promoted-in-a-dubai-hotel/`; `/salary-guides/` has no post-date block. |
+
+Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1116,6 +1126,7 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase B `/travel-tools/` canonical fix: live HTML before fix showed 2 canonical tags. Removed the hand-written canonical from page content for post 39234. After WP Rocket and CDN purge, live HTML shows exactly 1 canonical tag.
 - Phase B internal redirect link sample B1: 3 stored links changed across 2 pages. Browser REST readback and public HTML both showed old path count 0 for all three sampled redirecting URLs after cache purge.
 - Phase B internal redirect link batch B2: 19 stored links changed across 8 pages. Browser REST readback showed old path count 0 on all updated rows. Public HTML spot check across all 8 pages showed old path count 0 after cache purge. Final stored-content rescan for the known PDF-listed pages returned 0 remaining known redirecting paths.
+- Phase B anchor-text template fix: active child-theme `post-meta` template part now renders post dates as visible text, not links. Browser REST readback confirmed 0 linked post-date blocks. Public HTML samples showed 0 linked post-date blocks after cache purge.
 
 ## Open Decisions
 
