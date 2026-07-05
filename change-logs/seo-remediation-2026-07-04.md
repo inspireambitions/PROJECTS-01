@@ -1068,6 +1068,7 @@ Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge
 - Phase A description batch D4 public REST verification: all 28 descriptions rendered as expected across posts and pages endpoints.
 - Phase A description batch D4 meta lint: rows checked 28, unique descriptions 28, length ok 28, em dash hits 0, AI blacklist hits 0, US spelling hits 0.
 - Phase A description post-D4 focused recheck: browser AIOSEO readback checked the 133-row original browser-discovered out-of-range set. 131 are now fixed. Two non-English rows remain out of range and are held for language-page decision: post 21766, `/самых-красивых-городов-испании/`; post 21875, `/ترقية-نافورة-دبي/`.
+- Phase A duplicate title and description review: the Seobility PDF export pages 19-23 list the duplicate title and duplicate description groups. All listed groups are `/bn/`, `/ar/`, `/hi/` language-copy groups or the `/tools/cake-day-gifts/` decision group. No same-language duplicate title or description group was available to fix before Kim's §2.1 and §2.3 decisions.
 
 ## Open Decisions
 
