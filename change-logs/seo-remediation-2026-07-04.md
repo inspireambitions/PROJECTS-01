@@ -1046,6 +1046,22 @@ The malformed LinkedIn pattern appears in more places than the brief examples. T
 
 Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase C malformed LinkedIn URL batch C2
+
+These five fixes cleared the remaining malformed LinkedIn URL patterns. Real Kim/social links were corrected to the live profile URL. CV and email-signature examples were corrected to valid generic example profile URLs so Kim's profile is not placed inside fictional user examples.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 45603 | `/dubai-cv-builder/` | `post_content` LinkedIn input placeholder | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/your-name/` | Browser REST readback confirmed malformed URL count 0 and replacement count 1. Public HTML after cache purge: bad count 0. |
+| 45287 | `/uae-internship-to-full-time-job/` | `post_content` JSON-LD `sameAs` profile URL | `https://www.https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | Browser REST readback confirmed malformed URL count 0 and replacement count 1. Public HTML after cache purge: bad count 0. |
+| 28894 | `/how-do-you-reply-to-a-job-interview-email/` | `post_content` email-signature example URL | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/jane-doe/` | Browser REST readback confirmed 2 malformed URL occurrences fixed. Public HTML after cache purge: bad count 0. |
+| 28823 | `/how-to-accept-a-job-interview-offer-via-email/` | `post_content` email-signature example URL | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/jane-doe/` | Browser REST readback confirmed 2 malformed URL occurrences fixed. Public HTML after cache purge: bad count 0. |
+| 22133 | `/virtual-interview-etiquette-essential-tips-to-look-professional-on-camera/` | `post_content` LinkedIn `href` and `data-id` | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | Browser REST readback confirmed 2 malformed URL occurrences fixed. Public HTML after cache purge: bad count 0. |
+
+Final stored-content scan after this batch: 0 remaining matches for `https://www.https`, `https/www.linkedin.com`, `www.https/www.linkedin.com`, or `https://www.https/www.linkedin.com` across published posts and pages.
+
+Cache after this batch: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1181,6 +1197,7 @@ Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purg
 - Phase B duplicate anchor text batch B4: 3 English anchor fixes across 3 source pages. Public exact-phrase verification found no remaining English multi-target matches for `free uae cv builder`, `common interview questions`, or `inspireambitions.com`; `book a discovery call` now has one English target only.
 - Phase C typo fix: corrected the adjective `dependant coverage varies` to `dependent coverage varies` on `/neom-careers-salary-2026/`. Checked `/hr-manager-salary-dubai-hospitality/` and left valid noun uses unchanged.
 - Phase C malformed LinkedIn URL sample C1: fixed 4 malformed LinkedIn URL occurrences across 3 source pages. Browser REST readback and public HTML verification showed malformed URL count 0 on the sampled pages after cache purge.
+- Phase C malformed LinkedIn URL batch C2: fixed 8 malformed LinkedIn URL occurrences across 5 more source pages. Final stored-content scan found 0 remaining malformed LinkedIn URL patterns across published posts and pages.
 
 ## Open Decisions
 
