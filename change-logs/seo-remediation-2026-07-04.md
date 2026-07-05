@@ -1034,6 +1034,18 @@ The brief required context checking before changing `dependant`, because British
 
 Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
 
+### Phase C malformed LinkedIn URL sample C1
+
+The malformed LinkedIn pattern appears in more places than the brief examples. This three-page sample fixed the broken profile URL while preserving the existing link text and attributes.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+| --- | --- | --- | --- | --- | --- |
+| 10 | `/about-kim/` | `post_content` LinkedIn social link | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | Browser REST readback confirmed malformed URL count 0 and valid profile URL count 1. Public HTML after cache purge: bad count 0, good count 1. |
+| 4823 | `/contact-me/` | `post_content` LinkedIn social link | `https://www.https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | Browser REST readback confirmed malformed URL count 0 and valid profile URL count 1. Public HTML after cache purge: bad count 0, good count 1. |
+| 22822 | `/what-does-a-sales-coordinator-do-in-a-hotel-5-key-responsibilities-that-drive-revenue-in-2025/` | `post_content` LinkedIn `href` and `data-id` | `https://www.https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | `https://www.linkedin.com/in/inspire-ambitions-3056b0320/` | Browser REST readback confirmed 2 malformed URL occurrences fixed. Public HTML after cache purge: bad count 0, good count 2. |
+
+Cache after this sample: browser admin purge succeeded. WP Rocket all-cache purge returned 200. CDN purge-everything returned 200.
+
 ## Verification Gates
 
 - Phase A baseline on 2026-07-04: missing descriptions 298, over-60 custom titles 241, out-of-range custom descriptions 148, duplicate description groups 8, duplicate title groups 12.
@@ -1168,6 +1180,7 @@ Cache after this fix: browser admin purge succeeded. WP Rocket all-cache purge r
 - Phase B duplicate anchor text sample B3: 4 anchor-text edits across 3 source pages. Browser REST readback and public HTML verification showed old text count 0 and target-specific new text present after cache purge.
 - Phase B duplicate anchor text batch B4: 3 English anchor fixes across 3 source pages. Public exact-phrase verification found no remaining English multi-target matches for `free uae cv builder`, `common interview questions`, or `inspireambitions.com`; `book a discovery call` now has one English target only.
 - Phase C typo fix: corrected the adjective `dependant coverage varies` to `dependent coverage varies` on `/neom-careers-salary-2026/`. Checked `/hr-manager-salary-dubai-hospitality/` and left valid noun uses unchanged.
+- Phase C malformed LinkedIn URL sample C1: fixed 4 malformed LinkedIn URL occurrences across 3 source pages. Browser REST readback and public HTML verification showed malformed URL count 0 on the sampled pages after cache purge.
 
 ## Open Decisions
 
