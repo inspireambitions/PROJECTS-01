@@ -1297,6 +1297,33 @@ Cleaned the two shared sources identified during HS-2 verification: the site-wid
 
 Cache purge after HS-3: WP Rocket purged and object cache flushed through WPVibe.
 
+### Phase D heading-structure sample HS-4
+
+Three more English pages from the Seobility heading/duplicate-heading set were fixed as a sample. Each public page was checked after WP Rocket/object-cache purge.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 22214 | `/career-coaching/` | Intro H2 | `<h2>Hospitality Career Coaching</h2>` | `<h2>Career Coaching for Dubai Hospitality Professionals</h2>` | Public verification: H1 count 1, em dash count 0. |
+| 22214 | `/career-coaching/` | Section H2 | `<h2>Hospitality Career Coaching for Professionals in Dubai and the GCC</h2>` | `<h2>Build a Clear Career Move in Dubai and the GCC</h2>` | Public verification: duplicate visible heading removed. |
+| 22214 | `/career-coaching/` | Interview-library link label | `After the Interview [em dash] Offers and Decisions` | `After the Interview: Offers and Decisions` | Stored content search for em dash returned 0. Plain public URL later verified 0 em dashes after CDN cache released stale HTML. |
+| 22208 | `/book-a-discovery-call/` | Intro H2 | `<h2>Book a Discovery Call</h2>` | `<h2>Free Career Clarity Call</h2>` | Public verification: H1 count 1, em dash count 0. |
+| 22208 | `/book-a-discovery-call/` | Content heading | `<h1>Let's Talk About Your Goals</h1>` | `<h2>Let's Talk About Your Goals</h2>` | Public verification: no second H1 remains. |
+| 22208 | `/book-a-discovery-call/` | Body list item | `Plan the best next step[em dash]together` | `Plan the best next step together` | Stored content search for em dash returned 0. |
+| 19377 | `/promotion-readiness-assessment-test/` | Content heading | `<h1>Promotion Readiness Assessment Test</h1>` | `<h2>Check Your Promotion Readiness</h2>` | Public verification: H1 count 1, em dash count 0. |
+
+### Phase D 404 internal-link sample 404-1
+
+Started the Seobility 8-new-404 cleanup with internal-link fixes only. Redirect import is still held for the separate redirect-import step and backup confirmation.
+
+| Post ID | Source URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 24403 | `/can-a-career-coach-help-me-find-a-job/` | `post_content` link target | `https://inspireambitions.com/courses/career-confidence-blueprint/` | `https://inspireambitions.com/self-paced-course/` | Stored old URL count 0 after 6 replacements. Public old URL count 0. |
+| 24410 | `/how-to-set-a-career-goal/` | `post_content` link target | `https://inspireambitions.com/courses/career-confidence-blueprint/` | `https://inspireambitions.com/self-paced-course/` | Stored old URL count 0 after 1 replacement. Public old URL count 0 and new URL count 1. |
+| 24411 | `/how-to-separate-work-and-personal-life/` | `post_content` link target | `https://inspireambitions.com/courses/career-confidence-blueprint/` | `https://inspireambitions.com/self-paced-course/` | Stored old URL count 0 after 6 replacements. Public old URL count 0 and new URL count 6. |
+| 46816 | `/what-to-wear-to-a-job-interview-guide/` | `post_content` link target | `href="/job-interview-tips-guide/"` | `href="/uae-job-interview-guide/"` | Stored old URL count 0. Public old URL count 0 and new URL count 1. |
+
+Discovery notes: `curl -I` confirmed `/courses/career-confidence-blueprint/` and `/job-interview-tips-guide/` return 404. `/self-paced-course/` and `/uae-job-interview-guide/` return 200. A dry-run table-wide search-replace for the old course URL would have touched 3,966 occurrences in `wpof_posts`, including revisions, so it was not run. After the 3-row sample, 1,776 published posts/pages still contain the old course URL and must be handled in controlled batches or by a safer scoped operation.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
