@@ -201,3 +201,11 @@ Source URL,Target URL,Redirect Type,Ignore Slash,Ignore Case,Regex
 /how-to-provide-references-for-a-job-interview/,/gcc-interview-answers/,301,Yes,Yes,No
 /hospitality-career-path/,/gcc-recruitment-guide/internships/hospitality/,301,Yes,Yes,No
 /rta-theory-test-questions-and-answers-pdf/,/,301,Yes,Yes,No
+/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/bn/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ar/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/hi/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/bn/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ar/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/hi/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No

@@ -23,7 +23,7 @@ GA4 flagged "Page not found – Inspire Ambitions" as the single most-viewed pag
 **➡️ IMPORT THIS ONE FILE: `redirects/MERGED-all-redirects.csv`** (built 2 July). AIOSEO
 *overwrites* the whole redirect table on import — it does not merge — so importing the 12
 CSVs one by one would leave only the last file's rules. The merged file consolidates all 12
-(11 folder CSVs + the 404 fix) into a single deduplicated import: **202 unique rows**, 2
+(11 folder CSVs + the 404 fix) into a single deduplicated import: **210 unique rows** (8 CV-builder consolidation rows added 4 Jul), 2
 source-URL collisions auto-resolved (later file wins), 0 redirect chains, all rows well-formed.
 Before importing: **export the site's existing redirects first as a backup**, and if any of
 those are real/unrelated to this project, append them into the merged file so the import
@@ -46,6 +46,21 @@ yet imported — same AIOSEO admin-UI limitation as every other redirect CSV in 
 **This is very likely not the full list** — only checked the specific paths visible in the GA4 screenshots provided. The underlying problem (interview-question swamp only ~1.5% mapped) is unresolved; treat this CSV as a patch, not a fix. A proper fix means finishing the full crawl-and-map of the 3,000+ near-duplicate posts referenced in `folder-11-interview-answers/HANDOFF-to-codex.md`.
 
 **Still blocked on:** actually importing this (and all other) redirect CSVs requires the WordPress admin UI (AIOSEO → Redirects → Import/Export). No session in this chain has had that access yet.
+
+---
+
+## ✅ DECIDED 4 July: one CV builder, one URL — protected
+
+Kim chose the canonical CV builder: **`https://cv.inspireambitions.com/`** (the Vercel
+Next.js app, deployed from her `cv-builder-for-blog` repo). The WordPress pages
+`/dubai-cv-builder/` and `/ai-powered-cv-builder/` (+ language copies) 301-redirect into it
+(rows already in `MERGED-all-redirects.csv`), and **every** site link that says "CV builder"
+or "resume builder" must point to that URL. Her standing instruction: it must never break
+again. Safeguards (uptime monitor, edge redirects, DNS documentation, Vercel project
+protection) are specified in `CODEX-EXECUTION-BRIEF.md` §2b. **No future session should
+build, rebuild, or "consolidate" CV builder pages on WordPress — the tool lives on Vercel,
+full stop.** The three `folder-05-cv-guide/` source files that linked to the old pages are
+already repointed and committed.
 
 ---
 
