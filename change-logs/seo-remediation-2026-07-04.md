@@ -1396,8 +1396,8 @@ Fifteen English AIOSEO descriptions still use `#post_excerpt`. A three-row sampl
 
 | Area | Target | Pending operation | Status |
 |---|---|---|---|
-| Duplicate support blocks | `/uae-gratuity-calculator/` and `/gcc-job-description-generator/` | Trim copied duplicate lower-page blocks while keeping the first support block on each page. | WPVibe approval op `op_819d0ba5794541c8` pending. |
-| Strong/bold overuse sample | `/restaurant-jobs-in-dubai/` | Remove redundant `<strong>` markup from post content while preserving text. | WPVibe approval op `op_3718c4579d884a0a` pending. |
+| Duplicate support blocks | `/uae-gratuity-calculator/` and `/gcc-job-description-generator/` | Trim copied duplicate lower-page blocks while keeping the first support block on each page. | WPVibe approval op `op_819d0ba5794541c8` expired; replacement op `op_f65ce49b592d47c6` pending. |
+| Strong/bold overuse sample | `/restaurant-jobs-in-dubai/` | Remove redundant `<strong>` markup from post content while preserving text. | WPVibe approval op `op_3718c4579d884a0a` expired before execution; regenerate when Kim is ready to approve. |
 
 ## Open Decisions
 
