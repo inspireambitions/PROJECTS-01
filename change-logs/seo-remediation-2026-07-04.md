@@ -1358,4 +1358,4 @@ Fixed three simple duplicate-title H2 issues on English tool pages. This did not
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
 - `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: answered by Kim. Kept one, moved it to `/car-auction-sharjah/`, and trashed the duplicate draft.
 - `/bn/`, `/ar/`, `/hi/` language pages: Kim said to leave language pages for now.
-- Inactive `ia-hospitality-career-map-{1..4}` plugin folders: Kim approved deletion. WPVibe uninstall is submitted and pending browser approval.
+- Inactive `ia-hospitality-career-map-{1..4}` plugin folders: Kim approved deletion. WPVibe uninstall completed after browser approval. Verification confirmed the active base `ia-hospitality-career-map/ia-hospitality-career-map.php` plugin remains active, and inactive duplicates `ia-hospitality-career-map-1` through `-4` no longer appear in the plugin list.
