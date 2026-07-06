@@ -1411,6 +1411,27 @@ Post-update hook note: after the AIOSEO DB write, public HTML for two sample row
 
 Cache purge after D6: WP Rocket purged and object cache flushed through WPVibe.
 
+### Phase A description cleanup batch D7
+
+The remaining 12 English `#post_excerpt` AIOSEO descriptions were replaced in one batch after the 3-row sample passed. All descriptions were 120-160 characters and were linted through `lint-quality.sh` via Git Bash before submission. The linter showed no em dashes, no AI-blacklist hits, no formulaic transitions, and no US spellings. The article-only checks for word count, CTA, and internal links were expected to fail because the lint input contained meta descriptions only.
+
+| Post ID | URL | Old value | New value | Verification |
+|---:|---|---|---|---|
+| 24428 | `/how-to-balance-work-and-life-effectively/` | `#post_excerpt` | `Build better work life balance with practical steps for boundaries, energy, family time and focused career progress without constant stress.` | DB length 140. Public cache-busted HTML sample matched expected description. |
+| 24431 | `/how-to-follow-up-on-a-job-interview/` | `#post_excerpt` | `Follow up after a job interview with clear timing, polite wording and stronger messages that keep trust alive after the meeting.` | DB length 128. |
+| 24432 | `/what-is-a-short-term-career-goal/` | `#post_excerpt` | `Set short term career goals with clear outcomes, deadlines and simple milestones that connect daily action to long term progress.` | DB length 129. |
+| 24436 | `/how-to-choose-the-best-career-for-me/` | `#post_excerpt` | `Choose a career direction with practical tests, values checks and decision filters that turn uncertainty into a clearer next move.` | DB length 130. |
+| 24437 | `/what-career-path-is-right-for-me/` | `#post_excerpt` | `Find the right career path by matching your strengths, values, lifestyle needs and market options before making your next move.` | DB length 127. |
+| 24441 | `/what-to-wear-to-a-job-interview/` | `#post_excerpt` | `Decide what to wear to a job interview with practical guidance on role fit, culture, comfort and a polished professional look.` | DB length 126. |
+| 24444 | `/how-to-answer-job-interview-questions/` | `#post_excerpt` | `Answer job interview questions with clearer structure, stronger examples and calm delivery that helps hiring managers trust your fit.` | DB length 133. Public cache-busted HTML sample matched expected description. |
+| 24445 | `/how-to-change-career-at-50/` | `#post_excerpt` | `Change career at 50 with a realistic plan for skills, confidence, networking and phased moves that protect income while you grow.` | DB length 129. |
+| 24449 | `/how-to-find-out-what-job-is-right-for-me/` | `#post_excerpt` | `Find out what job is right for you by testing strengths, interests, work style and market demand before choosing your next step.` | DB length 128. |
+| 24454 | `/how-to-find-a-career-coach/` | `#post_excerpt` | `Find a career coach who fits your goal, budget and working style, with checks for credibility, process and practical support.` | DB length 125. |
+| 24459 | `/how-to-handle-stress-job-interview/` | `#post_excerpt` | `Handle stress in a job interview with simple preparation, answer structure and calming techniques that help you think clearly.` | DB length 126. |
+| 24460 | `/why-are-leadership-skills-important/` | `#post_excerpt` | `Understand why leadership skills matter for trust, promotion and career mobility, plus how to build influence through daily behaviour.` | DB length 134. Public cache-busted HTML sample matched expected description. |
+
+Verification after D7: `#post_excerpt` descriptions are now 0. Out-of-range custom descriptions dropped from 14 to 2; the two remaining rows are non-English and remain held under the language-page decision. All 12 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
