@@ -129,7 +129,7 @@ Execute:
    project id `prj_AIfXZRQO63nPlcque7QQzpO4EO44`) serves it.
 5. **Record the decision in HANDOFF.md** so no future session "consolidates" or rebuilds CV
    builder pages on WordPress again. One tool, one URL, everything points at it.
-6. **Fix the circular link inside the app itself — Kim has confirmed this fix (4 Jul):
+6. **✅ DONE 4 Jul (Codex fixed, this session verified live).** ~~Fix the circular link inside the app itself — Kim has confirmed this fix (4 Jul):
    every footer link in the app must point to a normal, working website page.** Full footer
    audit done 4 Jul against the redirect table and the site inventory: of the app's six
    website links, five are fine (`/`, `/career-tools/`, `/dubai-internship-eligibility-checker/`,
@@ -143,7 +143,12 @@ Execute:
    that href with `https://inspireambitions.com/career-tools/`, keep the anchor text
    sensible (e.g. "More free career tools"), commit to the production branch, and Vercel
    auto-deploys. Verify after deploy: fetch the app homepage and confirm zero occurrences
-   of `dubai-cv-builder` remain in its HTML.
+   of `dubai-cv-builder` remain in its HTML.~~
+   **Verification (4 Jul, post-deploy):** production deployment `dpl_3pqjLLcR4ZdAZftnjxp9wD51PX9D`
+   (commit "Fix CV builder footer career tools link") confirmed serving the live page;
+   0 occurrences of `dubai-cv-builder` or `ai-powered-cv-builder` in the HTML; footer now
+   links homepage, /career-tools/ (×2, incl. "More free career tools"), and the four other
+   audited-good tool pages. Nothing else changed.
 
 ---
 
