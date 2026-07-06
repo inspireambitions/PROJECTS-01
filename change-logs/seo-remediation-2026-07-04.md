@@ -1324,6 +1324,21 @@ Started the Seobility 8-new-404 cleanup with internal-link fixes only. Redirect 
 
 Discovery notes: `curl -I` confirmed `/courses/career-confidence-blueprint/` and `/job-interview-tips-guide/` return 404. `/self-paced-course/` and `/uae-job-interview-guide/` return 200. A dry-run table-wide search-replace for the old course URL would have touched 3,966 occurrences in `wpof_posts`, including revisions, so it was not run. After the 3-row sample, 1,776 published posts/pages still contain the old course URL and must be handled in controlled batches or by a safer scoped operation.
 
+### Phase D redirect CSV update 404-2
+
+Added verified English 404 redirect rows to `redirects/MERGED-all-redirects.csv`. These are not live until the AIOSEO redirect import step runs after Rocket backup confirmation. `/bn/` and `/ar/` copies of the hotel-night-auditor URL were not added because Kim said to leave language pages for now.
+
+| Source URL | Target URL | Verification |
+|---|---|---|
+| `/hotel-night-auditor-salary-dubai/` | `/hotel-night-auditor-duties-what-the-role-really-involves/` | Old URL returned 404. Target exists in published post 46142. |
+| `/job-interview-tips-guide/` | `/uae-job-interview-guide/` | Old URL returned 404. Target returned 200. |
+| `/courses/career-confidence-blueprint/` | `/self-paced-course/` | Old URL returned 404. Target returned 200. |
+| `/travel/tips/packing/` | `/digital-nomad-packing-list/` | Old URL returned 404. Target returned 200. |
+| `/travel/tips/safety/` | `/safety-in-abu-dhabi/` | Old URL returned 404. Target returned 200. |
+| `/travel/tips/budget/` | `/best-places-to-travel-on-a-budget/` | Old URL returned 404. Target returned 200. |
+
+Redirect CSV validation after update: 208 rows, duplicate source URLs 0, redirect chains 0.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
