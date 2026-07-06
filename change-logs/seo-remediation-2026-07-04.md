@@ -1339,6 +1339,18 @@ Added verified English 404 redirect rows to `redirects/MERGED-all-redirects.csv`
 
 Redirect CSV validation after update: 208 rows, duplicate source URLs 0, redirect chains 0.
 
+### Phase D tool heading sample HS-5
+
+Fixed three simple duplicate-title H2 issues on English tool pages. This did not address repeated content blocks on `/uae-gratuity-calculator/` or `/gcc-job-description-generator/`; those need a separate duplicate-block pass.
+
+| Object ID | URL or object | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 45601 | `/dubai-internship-eligibility-checker/` | Tool hero H2 | `<h2>Dubai Internship Eligibility Checker</h2>` | `<h2>Check Your Dubai Internship Eligibility</h2>` | Public verification after purge: H1 count 1, old H2 absent, new H2 present, em dash count 0. |
+| 47290 | Featured media for `/dubai-internship-eligibility-checker/` | Image alt text | `Dubai internship eligibility checker 2026 [em dash] free tool for UAE internship requirements` | `Dubai internship eligibility checker 2026, free tool for UAE internship requirements` | Public page em dash count became 0. |
+| 46827 | `/gcc-job-description-generator/` | Tool hero H2 | `<h2>GCC Job Description Generator</h2>` | `<h2>Create a GCC-Ready Job Description</h2>` | Public verification after purge: H1 count 1, old H2 absent, new H2 present. |
+| 46827 | `/gcc-job-description-generator/` | Repeated body sentence | `compensation package structure [em dash] basic salary...` | `compensation package structure: basic salary...` | Stored content edit replaced 3 occurrences. Public em dash count became 0. |
+| 46829 | `/ai-job-replacement-calculator/` | Tool hero H2 | `<h2>AI Job Risk Calculator</h2>` | `<h2>Check Your AI Job Risk</h2>` | Public verification after purge: H1 count 1, old H2 absent, new H2 present, em dash count 0. |
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
