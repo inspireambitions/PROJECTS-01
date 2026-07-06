@@ -1324,6 +1324,8 @@ Started the Seobility 8-new-404 cleanup with internal-link fixes only. Redirect 
 
 Discovery notes: `curl -I` confirmed `/courses/career-confidence-blueprint/` and `/job-interview-tips-guide/` return 404. `/self-paced-course/` and `/uae-job-interview-guide/` return 200. A dry-run table-wide search-replace for the old course URL would have touched 3,966 occurrences in `wpof_posts`, including revisions, so it was not run. After the 3-row sample, 1,776 published posts/pages still contain the old course URL and must be handled in controlled batches or by a safer scoped operation.
 
+Deferred reminder from Kim: after the current remediation tasks are finished, remind Kim to give specific instructions for the remaining `/courses/career-confidence-blueprint/` cleanup. Do not bulk-change the remaining 1,776 published posts/pages before that instruction.
+
 ### Phase D redirect CSV update 404-2
 
 Added verified English 404 redirect rows to `redirects/MERGED-all-redirects.csv`. These are not live until the AIOSEO redirect import step runs after Rocket backup confirmation. `/bn/` and `/ar/` copies of the hotel-night-auditor URL were not added because Kim said to leave language pages for now.
