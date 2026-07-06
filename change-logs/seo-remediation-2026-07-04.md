@@ -1365,6 +1365,40 @@ Fixed three simple duplicate-title H2 issues on English tool pages. This did not
 | 46827 | `/gcc-job-description-generator/` | Repeated body sentence | `compensation package structure [em dash] basic salary...` | `compensation package structure: basic salary...` | Stored content edit replaced 3 occurrences. Public em dash count became 0. |
 | 46829 | `/ai-job-replacement-calculator/` | Tool hero H2 | `<h2>AI Job Risk Calculator</h2>` | `<h2>Check Your AI Job Risk</h2>` | Public verification after purge: H1 count 1, old H2 absent, new H2 present, em dash count 0. |
 
+### Phase A and C verification refresh 2026-07-06
+
+Read-only database and public HTML checks were run after WPVibe access was restored.
+
+| Area | Result | Notes |
+|---|---:|---|
+| Missing custom AIOSEO descriptions | 0 | Query joined `wpof_aioseo_posts` to published posts/pages. |
+| Over-60-character custom AIOSEO titles | 0 | Query excluded empty titles and counted `CHAR_LENGTH(title) > 60`. |
+| Out-of-range custom AIOSEO descriptions | 17 | 15 English rows still use `#post_excerpt`; 2 non-English rows remain held under the language-page decision. |
+| Duplicate custom AIOSEO description groups | 8 | Includes the 15-row `#post_excerpt` group plus English duplicate-description groups still to remediate. |
+| Duplicate custom AIOSEO title groups | 12 | The `#post_title #separator_sa #site_title` group is a rendering placeholder, not a custom-title defect. Remaining English duplicate-title groups still need targeted fixes. |
+| `/travel-tools/` canonical tags | 1 | Public HTML showed one `rel="canonical"` tag, so the earlier duplicate-canonical issue is not currently visible. |
+| `/about-kim/` malformed LinkedIn URL | 0 | Public HTML showed no `https://www.https/www.linkedin.com` match. |
+| `/what-does-a-sales-coordinator-do/` malformed LinkedIn URL | 0 | Public HTML showed no `https://www.https/www.linkedin.com` match. |
+| `/neom-careers-salary-2026/` dependant/dependent check | OK | Public HTML had `dependent` and no `dependant`. |
+| `/hr-manager-salary-dubai-hospitality/` dependant/dependent check | False positive | Public uses `dependants` and `one dependant` as nouns, which is correct British English. No change made. |
+
+### Phase A description cleanup pending approval D5
+
+Fifteen English AIOSEO descriptions still use `#post_excerpt`. A three-row sample was prepared, length-checked at 122, 129, and 133 characters, and linted through `lint-quality.sh` via Git Bash. The linter showed no em dashes, no AI-blacklist hits, no formulaic transitions, and no US spellings. The article-only checks for word count, CTA, and internal links were expected to fail because the lint input contained meta descriptions only.
+
+| Post ID | URL | Old value | New value | Status |
+|---:|---|---|---|---|
+| 24425 | `/how-much-do-career-coaches-charge/` | `#post_excerpt` | `Compare career coaching prices, hourly sessions and packages so you can choose the right support for your goal and budget.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
+| 24426 | `/how-long-do-job-interviews-last/` | `#post_excerpt` | `See how long job interviews usually last, what each format signals and how to prepare the right depth of answers for every stage.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
+| 24427 | `/what-does-a-career-coach-do/` | `#post_excerpt` | `Learn what a career coach does, when coaching helps and how clear goals, feedback and action plans can improve your next career move.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
+
+### Phase D pending approval gates
+
+| Area | Target | Pending operation | Status |
+|---|---|---|---|
+| Duplicate support blocks | `/uae-gratuity-calculator/` and `/gcc-job-description-generator/` | Trim copied duplicate lower-page blocks while keeping the first support block on each page. | WPVibe approval op `op_819d0ba5794541c8` pending. |
+| Strong/bold overuse sample | `/restaurant-jobs-in-dubai/` | Remove redundant `<strong>` markup from post content while preserving text. | WPVibe approval op `op_3718c4579d884a0a` pending. |
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
