@@ -1457,6 +1457,25 @@ Verification after D8: WPVibe approval op `op_a3eaa3544c49489d` executed with 8 
 
 Verification after D9: missing custom descriptions remain 0, over-60 custom titles remain 0, and out-of-range custom descriptions dropped to 2. The two remaining out-of-range descriptions are non-English pages held under Kim's language-page decision.
 
+### Phase A duplicate metadata and canonical batch D10
+
+The remaining duplicate-description groups were fixed with page-specific descriptions. Six obvious duplicate custom titles were differentiated. Three legacy rows whose stored content clearly matched another page were given AIOSEO canonicals rather than pretending they were unique pages.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 26276 | `/how-do-you-prioritize-your-work-job-interview/` | AIOSEO title and description | Duplicate title/description shared with coffee-cup-test page | Title `How to Prioritise Work in Interviews`; description `Answer how you prioritise your work in interviews with a clear structure, practical examples and calm evidence for hiring managers.` | DB title length 36, description length 131. Public cache-busted HTML matched expected description. |
+| 27456 | `/what-is-the-coffee-cup-test-in-a-job-interview/` | AIOSEO title, description, canonical | Duplicate prioritisation metadata and content matching post 26276 | Title `Coffee Cup Test in Job Interviews`; description `Use this interview answer guide to explain task priorities, deadlines and judgement with a clear example employers can trust.`; canonical `/how-do-you-prioritize-your-work-job-interview/` | DB title length 33, description length 125. Public cache-busted HTML matched expected description and canonical. |
+| 1643 | `/internship-interview/` | AIOSEO description | Duplicate internship-interview description | `Prepare internship interview questions that reveal role expectations, workplace culture, learning support and growth opportunities.` | DB description length 131. |
+| 19032 | `/questions-to-ask-during-an-internship-interview/` | AIOSEO description | Duplicate internship-interview description | `Ask stronger internship interview questions about duties, supervision, skills, feedback and how the placement supports your goals.` | DB description length 130. |
+| 18708 | `/must-pack-cruise-accessories/` | AIOSEO description | Duplicate cruise-accessory description | `Pack smarter for a cruise with practical accessories, comfort items and small essentials that prevent last-minute travel stress.` | DB description length 128. |
+| 18985 | `/must-pack-cruise-accessories-that-you-need/` | AIOSEO description | Duplicate cruise-accessory description | `Use this cruise accessories checklist to remember useful travel items, cabin comforts and practical extras before boarding.` | DB description length 123. |
+| 26029 | `/what-do-career-counselors-do/` | AIOSEO title, description, canonical | Lifeguard title/description on a career-counsellor slug | Title `Lifeguard Interview Clothing Guide`; description `Prepare for a lifeguard job interview with guidance on clothing, certificates, grooming and how to look ready for responsibility.`; canonical `/what-to-wear-to-a-lifeguard-job-interview/` | DB title length 34, description length 129. |
+| 27208 | `/what-to-wear-to-a-lifeguard-job-interview/` | AIOSEO title and description | Duplicate lifeguard title/description | Title `What to Wear to a Lifeguard Interview`; description `Choose what to wear to a lifeguard interview, from practical clothing and footwear to certificates, grooming and first impressions.` | DB title length 37, description length 131. |
+| 26560 | `/what-should-i-expect-in-a-job-interview/` | AIOSEO title and description | Duplicate interview-expectations title/description | Title `What to Expect in a Job Interview`; description `Learn what to expect in a job interview, from first impressions and question flow to follow-up, offers, decisions and role fit.` | DB title length 33, description length 127. |
+| 26867 | `/why-interview-is-important-for-job/` | AIOSEO title, description, canonical | Duplicate interview-expectations metadata and matching content | Title `Why Job Interviews Matter`; description `Understand why job interviews matter, how employers judge fit and how candidates can use the conversation to assess the role.`; canonical `/what-should-i-expect-in-a-job-interview/` | DB title length 25, description length 125. |
+
+Verification after D10: WPVibe approval op `op_76765da5d2aa404b` executed. Duplicate-description groups dropped to 0. Duplicate-title groups dropped to 9 total: one AIOSEO fallback placeholder group plus 8 actionable custom-title groups. All 10 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
