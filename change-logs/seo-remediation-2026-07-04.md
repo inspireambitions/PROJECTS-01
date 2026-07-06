@@ -1341,6 +1341,18 @@ Added verified English 404 redirect rows to `redirects/MERGED-all-redirects.csv`
 
 Redirect CSV validation after update: 208 rows, duplicate source URLs 0, redirect chains 0.
 
+### Phase D internal redirect/404 link batch 404-3
+
+Fixed the remaining `/travel/tips/` links found on `/travel-tools/`. Three were Seobility 404 paths already mapped in `MERGED-all-redirects.csv`; two more were redirecting paths and were repointed to the final relevant category to avoid internal redirects.
+
+| Post ID | Source URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 39234 | `/travel-tools/` | Packing category tile href | `/travel/tips/packing/` | `/digital-nomad-packing-list/` | Stored search for `/travel/tips/` returned 0. Public old URL count 0 and new target count 1. |
+| 39234 | `/travel-tools/` | Safety category tile href | `/travel/tips/safety/` | `/safety-in-abu-dhabi/` | Target returned 200. Public new target count 1. |
+| 39234 | `/travel-tools/` | Budget category tile href | `/travel/tips/budget/` | `/best-places-to-travel-on-a-budget/` | Target returned 200. Public new target count 1. |
+| 39234 | `/travel-tools/` | Culture category tile href | `/travel/tips/culture/` | `/category/travelling-tips/` | Old path redirected to the same final category. Target returned 200. |
+| 39234 | `/travel-tools/` | Browse all tips link href | `/travel/tips/` | `/category/travelling-tips/` | Old path redirected to an unrelated lifestyle post, so it was repointed to the travelling tips category. Target returned 200. |
+
 ### Phase D tool heading sample HS-5
 
 Fixed three simple duplicate-title H2 issues on English tool pages. This did not address repeated content blocks on `/uae-gratuity-calculator/` or `/gcc-job-description-generator/`; those need a separate duplicate-block pass.
