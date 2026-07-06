@@ -35,9 +35,15 @@ Also keep the current GCC template as **"Classic GCC"** (default, backward compa
    surfaced by default (visa, nationality, notice period, license), photo default, accent palette,
    sector synonym pack id.
 3. **Live switch:** changing template never loses data; unsupported optional fields hide, not delete.
-4. **Export parity:** current free JPEG export must work for all 8; add **PDF export** in the same
-   pass (single-column DOM print pipeline is fine) — competitors' watermark-free PDF is paid; ours
-   free is a headline claim.
+4. **Export parity — three formats, one gate:**
+   - **JPEG:** works for all 8 templates, instant, anonymous, no email, no watermark (unchanged headline claim).
+   - **PDF and Word (DOCX):** also free and watermark-free for all 8 templates, but behind the
+     one-time email gate specced in brief 05 Part D. PDF via the DOM print pipeline; DOCX via a
+     lazy-loaded generator (e.g. the `docx` npm package) mapping the CV JSON to a clean
+     single-column document — recruiters edit Word files, so DOCX must be genuinely editable
+     (real headings/lists, no images-of-text). Both pipelines code-split per brief 06's budgets.
+   - Note Enhancv ships **no Word export at all** and others paywall it — free DOCX is a
+     comparison-table win; make sure brief 05's `/vs/*` data reflects it.
 
 ## True RTL mode
 
@@ -55,7 +61,8 @@ Also keep the current GCC template as **"Classic GCC"** (default, backward compa
 
 ## Acceptance criteria
 
-- [ ] 8 templates + Classic GCC, all photo on/off, all exporting JPEG + PDF free with no watermark
+- [ ] 8 templates + Classic GCC, all photo on/off, all exporting JPEG (ungated) + PDF + DOCX
+      (email-gated) free with no watermark; DOCX opens clean and editable in MS Word and Google Docs
 - [ ] Template switch round-trip (A→B→A) preserves every field
 - [ ] Full RTL: layout mirrors, no left-anchored artifacts, bidi-safe contact lines
 - [ ] Arabic CV printed/exported renders identical to preview
@@ -68,6 +75,7 @@ Also keep the current GCC template as **"Classic GCC"** (default, backward compa
 > CV JSON schema, per-template layout component + config for section order, GCC field defaults,
 > palette, synonym pack). Convert all template CSS to logical properties. Implement the 8 sector
 > templates per the table, RTL mode per the spec (root dir, self-hosted Arabic fonts, bdi-isolated
-> contact values), and free PDF export alongside the existing JPEG path. Do not break the current
+> contact values), and free PDF + editable DOCX export (lazy-loaded pipelines) alongside the
+> existing ungated JPEG path — PDF/DOCX sit behind brief 05's email gate. Do not break the current
 > GCC template for existing users. Deliver a visual QA page rendering all templates × {EN, AR} ×
 > {photo, no-photo} for manual review.

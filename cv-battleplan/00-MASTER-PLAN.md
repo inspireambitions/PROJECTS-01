@@ -16,7 +16,7 @@ hiring credibility and no job data. We win by fusing the two assets Kim already 
 **a free, HR-specialist-authored CV builder** and **the JobStrike UAE live job database**
 (Supabase project `txnkaztivqvqppyeedwm`: `jobs`, `applications`, `fit_scores`, 645 scrape runs) —
 into one product loop no competitor can copy: *build a GCC-native CV → score it against real,
-live UAE vacancies → track the applications → upgrade to a human HR review.*
+live UAE vacancies → track the applications — all free, with the email list as the asset we grow.*
 
 ## 2. The five bets (build order)
 
@@ -27,7 +27,7 @@ live UAE vacancies → track the applications → upgrade to a human HR review.*
 | 2 | `02-templates-and-rtl.md` | 8 sector templates + true RTL/Arabic editing mode | Tadween, CV Gulf, every Western builder | ~2 wks |
 | 3 | `03-language-packs.md` | UI + section headings in EN / AR / HI / UR / TL | Nobody covers all five — near blue ocean | ~1 wk |
 | 4 | `04-jobstrike-bridge.md` | Application tracker on live UAE jobs + trackable CV share links | Teal ($13/wk, US-only), VisualCV analytics | ~2–3 wks |
-| 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, paid human HR review | The entire category's trust problem | ~1–2 wks |
+| 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, email-gated PDF/Word export (list building via Resend) | The entire category's trust problem | ~1–2 wks |
 
 **Sequencing rule:** brief 06's audit + token/mobile refactor pass comes first, then ship
 1 → 2 → 3 → 5 → 4 with 06's budgets enforced throughout. The Match Score is the demo-able wow feature;
@@ -45,11 +45,18 @@ plumbing, so it lands last.
   unable to answer this.
 - "Gulf Match Score" is a brandable asset — always capitalize, always show the number.
 
-## 4. Monetization principle
+## 4. Monetization principle — fully free, email as the currency
 
-Never gate the core builder or export. Revenue comes from:
-1. **HR Review** — one-off paid human review by Kim (AED 149 suggested), Stripe payment link, no subscription.
-2. **JobStrike Pro** (later) — alerts + fit scores on the live job feed, transparent monthly price, cancel anytime, price shown before email capture.
+**No payments anywhere. No Stripe.** The tool is 100% free; the asset we build is the email list
+(which feeds the existing Resend newsletter and, later, JobStrike):
+
+1. **JPEG export:** instant, anonymous, no email, no watermark — the headline free claim stays intact.
+2. **PDF & Word (DOCX) export:** gated behind a single email field. Honest copy, one-time per
+   device, address goes to a Resend audience. Spec in brief 05, Part D.
+3. **Never** gate the builder itself, the Match Score, or templates. The email gate exists at
+   exactly one point: choosing PDF/Word at download.
+4. Paid offerings (HR Review, JobStrike Pro) are explicitly **deferred** — revisit only once the
+   list and review base are grown. Nothing in briefs 01–06 should build payment plumbing.
 
 ## 5. KPIs (instrument via PostHog, org "Job Strike")
 
@@ -60,10 +67,11 @@ Never gate the core builder or export. Revenue comes from:
 | Match run | `match_score_run` (props: score, source=paste\|jobstrike) |
 | Gap fix applied | `match_gap_fixed` |
 | Review request shown / clicked | `review_prompt_shown` / `review_prompt_clicked` |
-| HR Review purchased | `hr_review_purchased` |
+| Email gate shown / completed | `email_gate_shown` / `email_captured` (props: format) |
 
 90-day targets: 200+ Trustpilot reviews (from 27), Match Score used in ≥40% of sessions,
-first 50 HR Review sales, comparison pages ranking for "zety alternative uae" / "dubai cv builder".
+2,000+ emails captured via the PDF/Word gate, comparison pages ranking for
+"zety alternative uae" / "dubai cv builder".
 
 ## 6. Ground rules for Codex
 
@@ -86,5 +94,6 @@ Each brief has its own acceptance criteria. Globally, nothing ships unless:
 - [ ] Passes brief 06's performance budgets (Lighthouse CI on the Moto G/4G profile) and uses
       its design tokens — no ad-hoc styling
 - [ ] Arabic string rendering verified in RTL mode (no bidi breakage with mixed EN/AR)
-- [ ] Free export still works with zero signup
+- [ ] Free JPEG export still works with zero signup and zero email; PDF/Word email gate is the
+      only gate anywhere in the product
 - [ ] PostHog events fire (check live in the Job Strike project)

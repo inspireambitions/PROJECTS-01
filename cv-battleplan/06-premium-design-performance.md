@@ -107,8 +107,8 @@ Measured on emulated **Moto G Power / 4G** via Lighthouse CI on every deploy. Bu
 
 How to hit it: code-split exports (JPEG/PDF pipelines lazy-load on first use), lazy-load Match
 panel and non-default templates, no heavyweight PDF libs on initial route, Next/Image for all
-imagery, PostHog loaded post-interactive, zero third-party scripts beyond PostHog + Stripe (on
-its page only). CV render must never block typing — debounced preview update ≤ 16ms main-thread
+imagery, PostHog loaded post-interactive, zero third-party scripts beyond PostHog — the product
+has no payment scripts at all. CV render must never block typing — debounced preview update ≤ 16ms main-thread
 chunks (move pagination math to a worker if needed).
 
 ---
