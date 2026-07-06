@@ -1432,6 +1432,23 @@ The remaining 12 English `#post_excerpt` AIOSEO descriptions were replaced in on
 
 Verification after D7: `#post_excerpt` descriptions are now 0. Out-of-range custom descriptions dropped from 14 to 2; the two remaining rows are non-English and remain held under the language-page decision. All 12 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
 
+### Phase A duplicate-description batch D8
+
+Eight safe English duplicate-description rows were fixed. These were distinct course and UAE article pages where the duplicated description was generic or reused across a cluster. The suspicious duplicate-content pairs were not included in this batch.
+
+| Post ID | URL | Old value | New value | Verification |
+|---:|---|---|---|---|
+| 7229 | `/ace-the-interview-course/` | `Course Overview Duration2 weeks languageEnglish Last updated12/2023 Course Description What You Will Get? Certificate Mentorship PDF Resources Course.` | `Build interview confidence with a two-week coaching course covering answers, body language, practice routines and stronger follow-up.` | DB length 133. Public cache-busted HTML matched expected description. |
+| 7233 | `/service-training-for-restaurant-waitstaff-course/` | Same duplicated course overview description | `Train restaurant waitstaff with service skills, guest handling, menu confidence and practical standards for stronger hospitality teams.` | DB length 135. |
+| 7236 | `/the-path-to-your-best-self-course/` | Same duplicated course overview description | `Build personal growth skills with a short course on confidence, goals, habits and clearer action for career and life progress.` | DB length 126. |
+| 7239 | `/mastering-body-language-for-hospitality-course/` | Same duplicated course overview description | `Improve hospitality body language with a short course on presence, guest trust, non-verbal cues and confident service delivery.` | DB length 127. |
+| 39331 | `/salary-negotiation-uae-housing-allowance-scripts/` | `This article draws from 15+ years of HR expertise across multinational organizations in the Gulf region. All examples are composites based on.` | `Learn UAE salary negotiation scripts for housing allowance, total package value and practical evidence before accepting an offer.` | DB length 129. |
+| 39344 | `/uae-employer-health-insurance-mandatory-coverage-guide/` | Same duplicated UAE article description | `Understand UAE employer health insurance rules, what cover should include and which gaps to check before signing a contract.` | DB length 124. |
+| 39345 | `/uae-end-of-service-gratuity-calculation-mistakes/` | Same duplicated UAE article description | `Avoid UAE gratuity calculation mistakes by checking basic salary, service length and the rules that affect end-of-service pay.` | DB length 126. |
+| 39412 | `/uae-golden-visa-eligibility-role-cost-mistakes-2026/` | Same duplicated UAE article description | `Check UAE Golden Visa eligibility, costs and common application mistakes before planning a role-based or talent route in 2026.` | DB length 126. Public cache-busted HTML matched expected description. |
+
+Verification after D8: WPVibe approval op `op_a3eaa3544c49489d` executed with 8 affected rows. Duplicate-description groups dropped from 7 to 5. All 8 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
