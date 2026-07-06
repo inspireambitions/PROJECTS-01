@@ -129,13 +129,21 @@ Execute:
    project id `prj_AIfXZRQO63nPlcque7QQzpO4EO44`) serves it.
 5. **Record the decision in HANDOFF.md** so no future session "consolidates" or rebuilds CV
    builder pages on WordPress again. One tool, one URL, everything points at it.
-6. **Fix the circular link inside the app itself.** Found 4 Jul during verification: the
-   Vercel app's own homepage footer links to `https://inspireambitions.com/dubai-cv-builder/`
-   — once the 301 goes live that becomes app → old page → 301 → app. Harmless for users but
-   circular and crawl-flag bait. The fix lives in Kim's `cv-builder-for-blog` GitHub repo
-   (outside this repo's access scope): change that footer link to
-   `https://inspireambitions.com/career-tools/` (its neighbours in the same footer already
-   point there and to the other tools) and redeploy on Vercel.
+6. **Fix the circular link inside the app itself — Kim has confirmed this fix (4 Jul):
+   every footer link in the app must point to a normal, working website page.** Full footer
+   audit done 4 Jul against the redirect table and the site inventory: of the app's six
+   website links, five are fine (`/`, `/career-tools/`, `/dubai-internship-eligibility-checker/`,
+   `/should-i-take-this-dubai-job/`, `/uae-resignation-letter-generator/`,
+   `/uae-salary-benchmarking-tool/` — all live, none will redirect). Exactly ONE is broken:
+   the footer link to `https://inspireambitions.com/dubai-cv-builder/`, which becomes
+   app → 301 → app once the redirect goes live.
+   **The one-line fix, in Kim's `cv-builder-for-blog.inspireambitions.com` GitHub repo**
+   (outside this repo's access scope — must be done by a session with access to it):
+   search the codebase for `dubai-cv-builder` (it will be in the footer component), replace
+   that href with `https://inspireambitions.com/career-tools/`, keep the anchor text
+   sensible (e.g. "More free career tools"), commit to the production branch, and Vercel
+   auto-deploys. Verify after deploy: fetch the app homepage and confirm zero occurrences
+   of `dubai-cv-builder` remain in its HTML.
 
 ---
 
