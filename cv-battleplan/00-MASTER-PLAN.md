@@ -22,13 +22,15 @@ live UAE vacancies → track the applications → upgrade to a human HR review.*
 
 | # | Brief | What it is | Beats | Effort |
 |---|-------|-----------|-------|--------|
+| 0 | `06-premium-design-performance.md` | **Governing quality bar** — design tokens + dark mode, mobile-first Edit/Preview/Score UX, hard performance budgets in CI, all-screen layouts 320px→4K | Enhancv/Novoresume on polish; every builder on mobile speed | Pass 1 up front, then enforced in every brief |
 | 1 | `01-gulf-match-score.md` | Paste a job description (or pick a live JobStrike job), get a 0–100 Gulf Match Score with a keyword-gap list and one-click fixes | Rezi Score, Novoresume Skill Gap, Teal Job Matcher | ~1–2 wks |
 | 2 | `02-templates-and-rtl.md` | 8 sector templates + true RTL/Arabic editing mode | Tadween, CV Gulf, every Western builder | ~2 wks |
 | 3 | `03-language-packs.md` | UI + section headings in EN / AR / HI / UR / TL | Nobody covers all five — near blue ocean | ~1 wk |
 | 4 | `04-jobstrike-bridge.md` | Application tracker on live UAE jobs + trackable CV share links | Teal ($13/wk, US-only), VisualCV analytics | ~2–3 wks |
 | 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, paid human HR review | The entire category's trust problem | ~1–2 wks |
 
-**Sequencing rule:** ship 1 → 2 → 3 → 5 → 4. The Match Score is the demo-able wow feature;
+**Sequencing rule:** brief 06's audit + token/mobile refactor pass comes first, then ship
+1 → 2 → 3 → 5 → 4 with 06's budgets enforced throughout. The Match Score is the demo-able wow feature;
 templates+RTL defend the regional claim; languages are cheap and uncontested; trust/monetization
 turns traffic into reviews and revenue; the JobStrike bridge is the moat but needs the most
 plumbing, so it lands last.
@@ -81,6 +83,8 @@ first 50 HR Review sales, comparison pages ranking for "zety alternative uae" / 
 
 Each brief has its own acceptance criteria. Globally, nothing ships unless:
 - [ ] Works on mobile Safari + Chrome Android (most Gulf job seekers are mobile-first)
+- [ ] Passes brief 06's performance budgets (Lighthouse CI on the Moto G/4G profile) and uses
+      its design tokens — no ad-hoc styling
 - [ ] Arabic string rendering verified in RTL mode (no bidi breakage with mixed EN/AR)
 - [ ] Free export still works with zero signup
 - [ ] PostHog events fire (check live in the Job Strike project)
