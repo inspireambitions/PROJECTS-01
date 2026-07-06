@@ -1279,9 +1279,27 @@ Three more English pages from the Seobility "Problems with headings" top list we
 
 Shared-source note from HS-2 verification: public HTML still contains em dash characters from shared output, not from the fixed article heading structures. Confirmed sources are the site-wide post-meta separator block and active Code Snippet 249, `IA Internal Linking - Interview Hub`, which outputs two interview-library link labels with em dashes. Attempted full Code Snippets REST read/update for snippet 249 was rejected, so this shared-source cleanup remains pending rather than being counted as fixed.
 
+### User decisions received 2026-07-06
+
+- `/tools/cake-day-gifts/`: Kim said to keep Cake Day Gifts. No deletion or redirect is allowed. Any noindex change remains separate and was not applied in this batch.
+- `/bn/`, `/ar/`, `/hi/` language pages: Kim said to leave language pages for now. No language-page content, metadata, redirects, or noindex changes were made in this batch.
+- Inactive duplicate `ia-hospitality-career-map-{1..4}` plugin folders: Kim approved deletion. WPVibe confirmed one active base plugin and four inactive duplicate folders. The supported WPVibe command is `plugin uninstall`, not `plugin delete`; uninstall was submitted for the four inactive duplicate slugs and is paused at WPVibe's approval gate.
+- Thin hubs and glossary split: moved to a separate Fable 5 content package brief at `FABLE-5-THIN-HUBS-GLOSSARY-BRIEF.md`. Codex will continue technical remediation in parallel.
+
+### Phase D shared em dash cleanup batch HS-3
+
+Cleaned the two shared sources identified during HS-2 verification: the site-wide post-meta template separator and active Code Snippet 249.
+
+| Object ID | Object | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 47776 | Template part `Post Meta` | `post_content` separator paragraph | `<p class="has-contrast-2-color has-text-color">[em dash]</p>` | `<p class="has-contrast-2-color has-text-color">|</p>` | WPVibe content search for em dash in post 47776 returned 0 matches. |
+| 249 | Code Snippet `IA Internal Linking: Interview Hub` | Snippet name/comment and public link labels | `IA Internal Linking [em dash] Interview Hub`; `How to Prepare for a Job Interview [em dash] Step-by-Step`; `After the Interview [em dash] Offers and Decisions` | `IA Internal Linking: Interview Hub`; `How to Prepare for a Job Interview: Step by Step`; `After the Interview: Offers and Decisions` | DB check for em dash in snippet 249 name/code returned 0 rows. Public checks after cache purge found 0 em dashes on `/how-to-prepare-for-a-job-interview/`, `/didnn-t-get-an-interview-for-internal-job-next-steps/`, and `/hotel-night-auditor-duties-what-the-role-really-involves/`. |
+
+Cache purge after HS-3: WP Rocket purged and object cache flushed through WPVibe.
+
 ## Open Decisions
 
-- `/tools/cake-day-gifts/` and language copies: waiting for Kim decision. The current language-copy hold includes post 21766, `/самых-красивых-городов-испании/`, and post 21875, `/ترقية-نافورة-دبي/`.
+- `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
 - `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: answered by Kim. Kept one, moved it to `/car-auction-sharjah/`, and trashed the duplicate draft.
-- `/bn/`, `/ar/`, `/hi/` language pages: investigate first, then waiting for Kim decision.
-- Inactive `ia-hospitality-career-map-{1..4}` plugin folders: waiting for Kim decision before deletion.
+- `/bn/`, `/ar/`, `/hi/` language pages: Kim said to leave language pages for now.
+- Inactive `ia-hospitality-career-map-{1..4}` plugin folders: Kim approved deletion. WPVibe uninstall is submitted and pending browser approval.
