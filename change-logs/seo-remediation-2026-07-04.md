@@ -1449,6 +1449,14 @@ Eight safe English duplicate-description rows were fixed. These were distinct co
 
 Verification after D8: WPVibe approval op `op_a3eaa3544c49489d` executed with 8 affected rows. Duplicate-description groups dropped from 7 to 5. All 8 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
 
+### Phase A glossary description length fix D9
+
+| Post ID | URL | Old value | New value | Verification |
+|---:|---|---|---|---|
+| 46120 | `/glossary/` | `Your complete A-Z reference for UAE hospitality and HR terms. Covers labour law, visa types, salary structures, and hotel career terminology [em dash] written for professionals working in Dubai and the wider GCC.` | `Use the Inspire Ambitions glossary to understand UAE HR, hospitality, visa, salary and labour-law terms in plain language.` | WPVibe approval op `op_dd692150be2c4d14` executed with 1 affected row. DB length 122. Public cache-busted HTML matched expected description after post-update hook and cache purge. |
+
+Verification after D9: missing custom descriptions remain 0, over-60 custom titles remain 0, and out-of-range custom descriptions dropped to 2. The two remaining out-of-range descriptions are non-English pages held under Kim's language-page decision.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
