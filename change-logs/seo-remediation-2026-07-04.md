@@ -1265,6 +1265,20 @@ Three English pages from the Seobility "Problems with headings" top list were fi
 | 46029 | `/how-to-get-promoted-in-a-dubai-hotel/` | Content heading | `<h4 class="wp-block-heading">Check if your promotion case is strong enough</h4>` | `<h3 class="wp-block-heading">Check if your promotion case is strong enough</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
 | 46034 | `/front-office-to-revenue-management-dubai-hotels/` | Content heading | `<h4>See the next role before you move</h4>` | `<h3>See the next role before you move</h3>` | Public HTML after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
 
+### Phase D heading-structure batch HS-2
+
+Three more English pages from the Seobility "Problems with headings" top list were fixed. Language variants and `/glossary/` remain out of this batch because they are tied to the language decision and glossary split work.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 24409 | `/how-to-prepare-for-a-job-interview/` | Main article headings | 19 content headings stored as `<h4>` | Same 19 headings stored as `<h2>` | Public verification after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 24409 | `/how-to-prepare-for-a-job-interview/` | Heading/body quality cleanup | `Assessment Centers`; `Conclusion`; 20 stored em dash characters | `Assessment Centres`; `Final Interview Preparation Takeaway`; commas or colons replacing stored em dashes | Stored content search for em dash returned 0 matches. One remaining `Assessment Centers` body occurrence was replaced with `Assessment Centres`. |
+| 26409 | `/didnn-t-get-an-interview-for-internal-job-next-steps/` | Main article headings | 18 content headings stored as `<h4>` | Same 18 headings stored as `<h2>` | Public verification after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+| 26409 | `/didnn-t-get-an-interview-for-internal-job-next-steps/` | Heading/body quality cleanup | 3 heading em dashes, `Conclusion`, and 12 stored body em dash characters | Colons in the 3 headings, `Final Internal Interview Takeaway`, and commas replacing stored body em dashes | Stored content search for em dash returned 0 matches. |
+| 46142 | `/hotel-night-auditor-duties-what-the-role-really-involves/` | Content heading | `<h4>Plan your next hotel operations move</h4>` | `<h3>Plan your next hotel operations move</h3>` | Public verification after cache purge: H1 count 1, content H4 count 0, heading jumps 0. |
+
+Shared-source note from HS-2 verification: public HTML still contains em dash characters from shared output, not from the fixed article heading structures. Confirmed sources are the site-wide post-meta separator block and active Code Snippet 249, `IA Internal Linking - Interview Hub`, which outputs two interview-library link labels with em dashes. Attempted full Code Snippets REST read/update for snippet 249 was rejected, so this shared-source cleanup remains pending rather than being counted as fixed.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: waiting for Kim decision. The current language-copy hold includes post 21766, `/самых-красивых-городов-испании/`, and post 21875, `/ترقية-نافورة-دبي/`.
