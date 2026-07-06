@@ -1388,16 +1388,28 @@ Fifteen English AIOSEO descriptions still use `#post_excerpt`. A three-row sampl
 
 | Post ID | URL | Old value | New value | Status |
 |---:|---|---|---|---|
-| 24425 | `/how-much-do-career-coaches-charge/` | `#post_excerpt` | `Compare career coaching prices, hourly sessions and packages so you can choose the right support for your goal and budget.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
-| 24426 | `/how-long-do-job-interviews-last/` | `#post_excerpt` | `See how long job interviews usually last, what each format signals and how to prepare the right depth of answers for every stage.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
-| 24427 | `/what-does-a-career-coach-do/` | `#post_excerpt` | `Learn what a career coach does, when coaching helps and how clear goals, feedback and action plans can improve your next career move.` | WPVibe approval op `op_4f7b1de73d3944c1` pending. |
+| 24425 | `/how-much-do-career-coaches-charge/` | `#post_excerpt` | `Compare career coaching prices, hourly sessions and packages so you can choose the right support for your goal and budget.` | Initial op `op_4f7b1de73d3944c1` expired; replacement op `op_5690e97894664504` executed. DB length 122. Public cache-busted HTML matched expected description after post-update hook and cache purge. |
+| 24426 | `/how-long-do-job-interviews-last/` | `#post_excerpt` | `See how long job interviews usually last, what each format signals and how to prepare the right depth of answers for every stage.` | Initial op `op_4f7b1de73d3944c1` expired; replacement op `op_5690e97894664504` executed. DB length 129. Public cache-busted HTML matched expected description after post-update hook and cache purge. |
+| 24427 | `/what-does-a-career-coach-do/` | `#post_excerpt` | `Learn what a career coach does, when coaching helps and how clear goals, feedback and action plans can improve your next career move.` | Initial op `op_4f7b1de73d3944c1` expired; replacement op `op_5690e97894664504` executed. DB length 133. Public cache-busted HTML matched expected description after post-update hook and cache purge. |
+
+Post-update hook note: after the AIOSEO DB write, public HTML for two sample rows still showed stale descriptions. Running `post update 24425 24426 24427 --post_status=publish` and purging WP Rocket/object cache refreshed public output. After this sample, out-of-range custom descriptions dropped from 17 to 14, and `#post_excerpt` descriptions dropped from 15 to 12.
 
 ### Phase D pending approval gates
 
 | Area | Target | Pending operation | Status |
 |---|---|---|---|
-| Duplicate support blocks | `/uae-gratuity-calculator/` and `/gcc-job-description-generator/` | Trim copied duplicate lower-page blocks while keeping the first support block on each page. | WPVibe approval op `op_819d0ba5794541c8` expired; replacement op `op_f65ce49b592d47c6` pending. |
+| Duplicate support blocks | `/uae-gratuity-calculator/` and `/gcc-job-description-generator/` | Trim copied duplicate lower-page blocks while keeping the first support block on each page. | Initial ops expired; replacement op `op_b0c8e342d48545e5` executed. Stored duplicate-heading second-hit checks returned 0 for both pages. |
 | Strong/bold overuse sample | `/restaurant-jobs-in-dubai/` | Remove redundant `<strong>` markup from post content while preserving text. | WPVibe approval op `op_3718c4579d884a0a` expired before execution; regenerate when Kim is ready to approve. |
+
+### Phase D duplicate support-block cleanup D6
+
+| Object ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 45605 | `/uae-gratuity-calculator/` | `post_content` duplicate lower-page block | Copied support block beginning with `How UAE Gratuity Works Under the 2021 Labour Law` appeared twice in stored content. | Trimmed the copied duplicate block, preserving the first support block. | Stored second-hit check returned 0. Public visible HTML after cache purge: H1 count 1, support heading count 1. |
+| 46827 | `/gcc-job-description-generator/` | `post_content` duplicate lower-page block | Copied support block beginning with `What Makes a GCC Job Description Effective` appeared twice in stored content. | Trimmed the copied duplicate block, preserving the first support block. | Stored second-hit check returned 0. Public visible HTML after cache purge: H1 count 1, support heading count 1, em dash count 0. |
+| 45605 | `/uae-gratuity-calculator/` | Body text | `situation [em dash] plus`; `basic salary only [em dash] housing`; `contract type [em dash] it is`; `daily rate [em dash] not` | `situation, plus`; `basic salary only. Housing`; `contract type. It is`; `daily rate, not` | Four exact content-edit replacements succeeded. Stored em dash check returned 0. Public visible HTML after cache purge: em dash count 0. |
+
+Cache purge after D6: WP Rocket purged and object cache flushed through WPVibe.
 
 ## Open Decisions
 
