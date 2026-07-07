@@ -1523,6 +1523,16 @@ The strong/bold overuse sample was run on `/restaurant-jobs-in-dubai/` only. The
 
 Verification after D13: post `5612` was refreshed with `post update 5612 --post_status=publish`, then WP Rocket was purged and object cache flushed. Public cache-busted HTML returned 200 for `/restaurant-jobs-in-dubai/`, showed the clean `Key Takeaways` H2, and did not contain the malformed strong-tag fragment. The two remaining public `<strong>` tags were injected newsletter/tool-card text outside the stored article content.
 
+### Phase D strong-tag cleanup D14
+
+The next named strong/bold overuse page, `/career-coaching/`, was cleaned after the D13 sample passed. `/glossary/` was not touched because the glossary split is delegated to Fable 5.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 22214 | `/career-coaching/` | `post_content` strong wrappers | Five `<strong>` wrapper groups around `Is This You?`, `What You Get`, four list labels, `How It Works`, and `Real Result:`. | Removed the `<strong>` and `</strong>` wrappers while preserving visible text, list structure, links and normal HTML. Stored content length became 3,286. | WPVibe content edit returned `invalid_page_template` after writing, because `_wp_page_template` is `elementor_theme`; stored verification still showed `<strong` count 0, `</strong>` count 0, and `<p>Is This You?</p>` present. |
+
+Verification after D14: `post update 22214 --post_status=publish` failed with `Invalid page template`, so the page-template setting was not changed. WP Rocket was purged and object cache flushed. Public cache-busted HTML returned 200 for `/career-coaching/`, showed `<p>Is This You?</p>`, and no longer showed the old strong-wrapped target snippets.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
