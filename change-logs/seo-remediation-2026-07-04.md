@@ -1511,6 +1511,18 @@ The remaining seven actionable duplicate custom-title groups were fixed after th
 
 Verification after D12: WPVibe approval op `op_16d4e39a5473497a` executed with 14 affected rows. All 14 posts were refreshed in smaller `post update` chunks after one all-ID refresh attempt hit a WPVibe 504. WP Rocket was purged and object cache flushed. Duplicate-description groups remained 0. Missing custom descriptions remained 0. Over-60-character custom titles remained 0. Out-of-range custom descriptions remained 2, both held language pages. Duplicate-title groups dropped to 1, the known AIOSEO fallback placeholder group `#post_title #separator_sa #site_title`, which is not a defect.
 
+### Phase D strong-tag sample D13
+
+The strong/bold overuse sample was run on `/restaurant-jobs-in-dubai/` only. The first raw SQL cleanup used literal angle brackets in the regex pattern, and WPVibe's SQL handling produced malformed tag fragments. This was caught during stored-content verification before cache purge or public verification. The post was restored from revision `44372`, then the cleanup was repeated with a safer `CHAR(60)` and `CHAR(62)` pattern.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 5612 | `/restaurant-jobs-in-dubai/` | `post_content` attempted strong-tag cleanup | Stored content length 16,282 with repeated `<strong>` wrappers around headings, labels, roles and brand names. | Failed intermediate state after op `op_b454fb38f6ad4d87`: stored content length 15,850 with malformed fragments such as `<h2 ...<strong ...Key Takeaways</strong</h2`. | Verification caught remaining `<strong` fragments and missing proper closing brackets. No cache purge was run after this failed attempt. |
+| 5612 | `/restaurant-jobs-in-dubai/` | `post_content` restore | Failed intermediate content length 15,850. | Restored from revision `44372`, returning stored content length to 16,282 and restoring valid heading HTML such as `<h2 data-start="872" data-end="892"><strong data-start="875" data-end="892">Key Takeaways</strong></h2>`. | WPVibe approval op `op_7df29858872f4fcc` executed with 1 affected row. Stored malformed-snippet search returned 0. Clean original heading search returned 1. |
+| 5612 | `/restaurant-jobs-in-dubai/` | `post_content` corrected strong-tag cleanup | Restored content length 16,282 with valid `<strong>` wrappers. | Content length 13,122 with `<strong>` and `</strong>` wrappers removed while preserving visible article text and normal HTML tags. | WPVibe approval op `op_a5396d63c06c4e44` executed with 1 affected row. Stored searches for `<strong` and `</strong>` returned 0. Clean heading search returned `<h2 data-start="872" data-end="892">Key Takeaways</h2>`. |
+
+Verification after D13: post `5612` was refreshed with `post update 5612 --post_status=publish`, then WP Rocket was purged and object cache flushed. Public cache-busted HTML returned 200 for `/restaurant-jobs-in-dubai/`, showed the clean `Key Takeaways` H2, and did not contain the malformed strong-tag fragment. The two remaining public `<strong>` tags were injected newsletter/tool-card text outside the stored article content.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
