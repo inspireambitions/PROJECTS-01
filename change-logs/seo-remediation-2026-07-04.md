@@ -1476,6 +1476,18 @@ The remaining duplicate-description groups were fixed with page-specific descrip
 
 Verification after D10: WPVibe approval op `op_76765da5d2aa404b` executed. Duplicate-description groups dropped to 0. Duplicate-title groups dropped to 9 total: one AIOSEO fallback placeholder group plus 8 actionable custom-title groups. All 10 posts were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged.
 
+### Phase A duplicate-title sample D11
+
+Three rows from the `How to Prepare for a Job Interview` duplicate-title group were updated as the sample before continuing the remaining title groups. The first sample write intentionally used unique, content-specific descriptions and short titles, but `24409` was corrected again after verification showed the title `How to Prepare for a Job Interview` already existed on post `26162`.
+
+| Post ID | URL | Field | Old value | New value | Verification |
+|---:|---|---|---|---|---|
+| 24409 | `/how-to-prepare-for-a-job-interview/` | AIOSEO title and description | Title `How to Prepare for a Job Interview – Step-by-Step Guide`; description `Learn a strategic 14-day interview prep plan, story-building methods, virtual interview mastery and global mobility tips to land your next job.` | Title `Job Interview Preparation Guide`; description `Prepare for a job interview with a 14-day plan, story practice, company research and follow-up steps that help you answer clearly.` | DB title length 31, description length 130. Public cache-busted HTML returned 200, title and description matched, canonical was `/how-to-prepare-for-a-job-interview/`. |
+| 26161 | `/how-can-you-prepare-for-a-job-interview/` | AIOSEO title and description | Title `How to Prepare for a Job Interview – Step-by-Step Guide`; description `Master interview preparation with proven strategies—research, storytelling, mock interviews, and confidence tips to turn anxiety into success.` | Title `Prepare for a Job Interview With Confidence`; description `Prepare for interviews with employer research, focused stories, mock practice and clear answers that build steady confidence.` | DB title length 43, description length 125. Public cache-busted request redirected to `/how-to-prepare-for-a-job-interview/`, so rendered metadata matched the canonical target rather than this source row. |
+| 27401 | `/how-you-prepare-for-a-job-interview/` | AIOSEO title and description | Title `How to Prepare for a Job Interview – Step-by-Step Guide`; description `Master interview preparation with research, storytelling, and strategy tips. Build confidence, craft strong answers, and land your dream job.` | Title `Job Interview Preparation Checklist`; description `Use this job interview preparation checklist to research the role, practise clear answers and show your value with confidence.` | DB title length 35, description length 126. Public cache-busted request redirected to `/how-to-prepare-for-a-job-interview/`, so rendered metadata matched the canonical target rather than this source row. |
+
+Verification after D11 sample: WPVibe approval op `op_621a82c9b9354125` executed with 3 affected rows, then correction op `op_16dece67a4c64c3f` executed with 1 affected row. All three rows were refreshed with `post update ... --post_status=publish`, then WP Rocket/object cache was purged. Duplicate-title groups dropped to 8 total: one AIOSEO fallback placeholder group plus 7 actionable custom-title groups.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
