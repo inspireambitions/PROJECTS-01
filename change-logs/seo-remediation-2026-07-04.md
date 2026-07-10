@@ -1704,6 +1704,149 @@ Ten more published article posts were cleaned after the D22 batch passed. Tool, 
 
 Verification after D23: WPVibe approval op `op_60f30f57707e4642` executed with 10 affected rows. Stored verification for all 10 rows returned no `<strong` openings and no `</strong>` closings. The posts were refreshed in five chunks: `28101 1210`, `18943 11747`, `9265 7087`, `19485 27057`, and `14305 6880`. WP Rocket was purged and object cache flushed. Public cache-busted checks returned 200 for `/what-makes-you-unique-job-interview-best-answer/`, `/dubai-marina-restaurants/`, and `/umrah-visa-from-uae/`; none contained escaped or broken strong-tag fragments. Core machine checks after the batch: missing descriptions 0, over-60 custom titles 0, out-of-range descriptions 2 (held language pages), duplicate-description groups 0, actionable duplicate-title groups 0, all duplicate-title groups 1 (known AIOSEO fallback placeholder).
 
+### Phase D audited H1 completion H1-6
+
+Five remaining vague or short English page-title H1s from the Seobility audit were expanded. URLs and page purposes were preserved.
+
+| Post ID | URL | Field | Old value | New value |
+|---:|---|---|---|---|
+| 38718 | `/books/` | `post_title` | `Books` | `Books by Kim Kiyingi` |
+| 22226 | `/interview-prep/` | `post_title` | `Interview Prep` | `Job Interview Preparation Guides` |
+| 22224 | `/job-search-hacks/` | `post_title` | `Job Search Hacks` | `UAE Job Search Strategies` |
+| 39234 | `/travel-tools/` | `post_title` | `Travel Tools` | `UAE Travel and Relocation Tools` |
+| 475 | `/living-in-the-uae/` | `post_title` | `Living in the UAE` | `Living in the UAE: Practical Expat Guide` |
+
+WPVibe `post update` succeeded for all five rows. Public verification and the final cache purge are recorded at the final Phase D gate.
+
+### Phase C glossary source and duplicate-boilerplate cleanup C3
+
+The live English glossary was checked against the audit. Seven distinct MOHRE URLs were present. Two guidance pages loaded successfully in Chrome. Five obsolete document links failed and were replaced with verified UAE Government or live MOHRE guidance pages.
+
+| Post ID | URL | Field | Old value | New value | Replacements |
+|---:|---|---|---|---|---:|
+| 46120 | `/glossary/` | Federal Decree-Law PDF URL, `8cd7cf08` asset | Dead MOHRE document URL | `https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/employment-laws-and-regulations-in-the-private-sector` | 36 |
+| 46120 | `/glossary/` | Federal Decree-Law PDF URL, `4224b3b5` asset | Dead MOHRE document URL | Same verified UAE Government employment-laws page | 6 |
+| 46120 | `/glossary/` | Wages Protection System PDF URL | Dead MOHRE document URL | `https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/payment-of-wages` | 3 |
+| 46120 | `/glossary/` | Ministerial Resolution 455 PDF URL | Dead MOHRE document URL | `https://mohre.gov.ae/en/guidance-and-awareness-portal-new/emiratisation-targets` | 2 |
+| 46120 | `/glossary/` | Cabinet Decision 43 PDF URL | Dead MOHRE document URL | Same verified MOHRE Emiratisation guidance page | 2 |
+| 46120 | `/glossary/` | Repeated career-guidance boilerplate paragraph | Same paragraph repeated 29 times | Removed; term definitions and citations preserved | 29 |
+| 46120 | `/glossary/` | Repeated translation-caution boilerplate paragraph | Same paragraph repeated 20 times | Removed; term definitions and citations preserved | 20 |
+| 46120 | `/glossary/` | Stored `<strong>` wrappers | 728 opening and 728 closing wrappers | Removed wrappers; visible text preserved | 1,456 tag replacements |
+
+Chrome verification on 10 July 2026 confirmed the UAE Government employment-laws page, UAE Government payment-of-wages page, MOHRE Alternative End-of-Service Benefits page, and MOHRE Emiratisation Targets page all loaded with relevant official content. The glossary content-edit endpoint reported successful exact replacements and reduced stored content from 189,029 bytes after citation fixes to 168,639 bytes after boilerplate and strong-wrapper cleanup.
+
+### Phase B redirect export and safe merge B5
+
+The current live AIOSEO redirect table was exported before any import and preserved at `redirects/backups/aioseo-redirects-export-2026-07-10.json`.
+
+- Live export: 351 rows and 351 unique sources.
+- Prepared remediation CSV: 208 rows and 208 unique sources.
+- Existing live/remediation source collisions: 202; the remediation version wins.
+- Safe combined output: `redirects/MERGED-live-plus-remediation-2026-07-10.csv`, 357 unique sources.
+- Seven redirect chains were flattened to their final targets.
+- Remaining redirect chains: 0.
+- Self redirects: 0.
+- The six sources not yet present live are the six English 404 mappings from the 3 July audit.
+- Import remains held until a same-day Rocket.net backup is confirmed in the hosting panel.
+
+### Phase D audited strong-tag completion D24
+
+The 15 still-unclean English pages named in the Seobility strong/bold top-20 list were cleaned after the earlier strong-tag batches. The delegated glossary was cleaned separately in C3. Previously cleaned named pages were not touched again.
+
+| Post ID | URL | Field | Old value | New value |
+|---:|---|---|---|---|
+| 289 | `/the-top-10-steps-to-a-successful-career-in-the-uae/` | `post_content` strong wrappers | Stored strong markup present | Strong wrappers removed; visible text preserved |
+| 1847 | `/the-definitive-guide-12-essential-skills-for-exceptional-leadership/` | Same | Same | Same |
+| 1940 | `/customer-service-skills/` | Same | Same | Same |
+| 2337 | `/remote-work-opportunities-in-dubai/` | Same | Same | Same |
+| 6327 | `/difference-between-a-job-and-a-career/` | Same | Same | Same |
+| 22212 | `/self-paced-course/` | Same | Same | Same |
+| 24409 | `/how-to-prepare-for-a-job-interview/` | Same | Same | Same |
+| 26201 | `/what-is-a-group-job-interview/` | Same | Same | Same |
+| 26205 | `/how-to-know-if-you-got-job-after-interview/` | Same | Same | Same |
+| 26409 | `/didnn-t-get-an-interview-for-internal-job-next-steps/` | Same | Same | Same |
+| 29120 | `/should-i-wear-jewelry-to-a-job-interview/` | Same | Same | Same |
+| 29163 | `/can-you-be-asked-your-age-in-a-job-interview/` | Same | Same | Same |
+| 32061 | `/how-to-become-a-people-operations-manager-step-by-step-guide/` | Same | Same | Same |
+| 32068 | `/what-is-an-ai-interview-ai-powered-hiring/` | Same | Same | Same |
+| 32075 | `/how-to-pass-an-ai-interview-strategies-and-essential-tips/` | Same | Same | Same |
+
+WPVibe approval op `op_f898cc349323431a` executed with 15 affected rows. Stored verification returned 0 target rows with `<strong` openings. Fourteen refresh hooks succeeded. `/self-paced-course/` retained its existing invalid page-template setting, so WordPress rejected its refresh hook; the database cleanup executed and the public cache-busted page returned 200 with no escaped or broken strong fragments. WP Rocket and object cache were purged.
+
+### Phase C image-alt completion C4
+
+All 55 image attachments without `_wp_attachment_image_alt` rows received descriptive alt values. WPVibe approval op `op_b85c72f84a72472a` executed with 55 affected rows. The full ID, old-value and new-value rollback map is `change-logs/image-alt-2026-07-10.csv`. Final database verification returned `missing_attachment_alts = 0` across 6,762 image attachments.
+
+### Phase C thin English hub completion C5
+
+The sample-first process was followed. Three pages received useful support copy, were refreshed, cache-purged and checked live before the remaining batch ran.
+
+| Post ID | URL | Added support sections | Final rendered check |
+|---:|---|---|---|
+| 22226 | `/interview-prep/` | Prepare for Each Stage; Build Natural Answers; Practical Details; Employer Questions | 362 words, one H1, support marker present |
+| 22224 | `/job-search-hacks/` | Focused UAE Search; Better Evidence; Useful Networking; Protect Time and Money | 349 words, one H1, support marker present |
+| 475 | `/living-in-the-uae/` | Plan Daily Life; City and Budget; First Month; Work and Community | 385 words, one H1, support marker present |
+
+WPVibe approval op `op_06277b951e4d4652` executed with 3 affected rows. Three exact content-edit extensions brought the sample into the intended support-copy range. All refresh hooks succeeded.
+
+After the sample passed, WPVibe approval op `op_008a05401d5049bf` executed with 12 affected rows:
+
+| Post ID | URL | Added support focus | Public result |
+|---:|---|---|---|
+| 392 | `/career-hub/` | Career routes and linked next-step tools | Support block present; stored duplicate H1 demoted to H2; public H1 count 1 |
+| 22214 | `/career-coaching/` | Coaching fit and preparation | 493 words, one H1 |
+| 45844 | `/salary-guides/` | Whole-package comparison and salary conversations | 397 words, one H1 |
+| 45602 | `/should-i-take-this-dubai-job/` | Written-offer, budget and resignation checks | 349 words, one H1 |
+| 46818 | `/how-to-prepare-for-a-job-interview-guide/` | One-week preparation plan | 368 words, one H1 |
+| 46817 | `/common-job-interview-questions-answers/` | Reusable interview evidence bank | 393 words, one H1 |
+| 46816 | `/what-to-wear-to-a-job-interview-guide/` | Role and setting based clothing choices | 531 words, one H1 |
+| 46819 | `/how-to-follow-up-after-a-job-interview-guide/` | Follow-up timing and stopping rules | 410 words, one H1 |
+| 46820 | `/after-the-interview-offers-and-decisions/` | Evidence-led offer decisions | 390 words, one H1 |
+| 46821 | `/job-interview-nerves-confidence-guide/` | Calm routine and answer recovery | 310 words, one H1 |
+| 46822 | `/industry-specific-interview-guides/` | Industry-fit evidence | 367 words, one H1 |
+| 46823 | `/uae-job-interview-guide/` | UAE timing, package and joining context | 395 words, one H1 |
+
+Eleven batch refresh hooks succeeded. `/career-coaching/` retained its existing invalid page-template setting, so its refresh hook was rejected without changing the template. The approved content was present in public HTML after cache purge. All 12 public checks returned 200, showed one support marker, and contained no escaped or broken strong fragments.
+
+### Phase C glossary structured-data source completion C6
+
+The active Code Snippets row `IA Glossary: Schema and Search` contained the same five dead legal-document URLs already removed from the glossary body. WPVibe approval op `op_65f0712a639c483c` updated snippet ID 90 to the verified UAE Government and MOHRE guidance URLs. Stored verification returned 0 stale schema rows. Public cache-busted glossary HTML returned 0 old asset hashes after the refresh and cache purge.
+
+### Phase B infrastructure gate B6
+
+- Rocket.net production site ID 252649 showed an automated `Platform Backup` with status `Available`, created `07/10/2026 10:22 AM`.
+- This satisfies the same-day host-backup requirement before the redirect import.
+- The combined AIOSEO file remains staged at `redirects/MERGED-live-plus-remediation-2026-07-10.csv`.
+- Chrome blocked the local file chooser because the ChatGPT Chrome Extension does not currently have `Allow access to file URLs` enabled. No import occurred and the live redirect table remains unchanged.
+- Cloudflare's official `Redirect from WWW to root` template was configured with query-string preservation, but Cloudflare warned that the `www` DNS record is not proxied through this account. The deploy was cancelled. No Cloudflare or DNS change occurred.
+- The current public www URL still returns a working 301 to the non-www site through WordPress. Moving it to the edge requires Rocket.net support or a deliberate DNS architecture change; proxying the record without that review could disrupt the Rocket.net edge path.
+
+### Phase B redirect completion B7
+
+The Chrome file chooser continued to reject the merged CSV after file-URL access was enabled. The whole AIOSEO table was not overwritten. The 351-row live export remained the rollback source, and only the six mappings absent from the live table were added.
+
+| Redirect ID | Source | Target | Final result |
+|---:|---|---|---|
+| 377 | `/hotel-night-auditor-salary-dubai/` | `/hotel-night-auditor-duties-what-the-role-really-involves/` | Live 301, `x-redirect-by: AIOSEO` |
+| 378 | `/job-interview-tips-guide/` | `/uae-job-interview-guide/` | Live 301, `x-redirect-by: AIOSEO` |
+| 379 | `/courses/career-confidence-blueprint/` | `/self-paced-course/` | Live 301, `x-redirect-by: AIOSEO` |
+| 380 | `/travel/tips/packing/` | `/digital-nomad-packing-list/` | Live 301, `x-redirect-by: AIOSEO` |
+| 381 | `/travel/tips/safety/` | `/safety-in-abu-dhabi/` | Live 301, `x-redirect-by: AIOSEO` |
+| 382 | `/travel/tips/budget/` | `/best-places-to-travel-on-a-budget/` | Live 301, `x-redirect-by: AIOSEO` |
+
+WPVibe approval op `op_e86eb91f12ce46d9` inserted six rows. Approval op `op_9988b4f349dc4cd8` aligned `post_id` with existing manual rows. Direct insertion did not call AIOSEO's server-rule rewrite, so bare trailing-slash URLs initially remained 404 even though cache-busted and no-slash requests matched. Each of the six rows was then resaved through AIOSEO's supported `/aioseo/v1/redirects/{id}` API. That invoked AIOSEO's `server->rewrite()` method. Final verification returned six correct 301 responses on the normal trailing-slash URLs. The live table contains 357 enabled redirects, matching the validated merged-file count.
+
+Closing cache work included WordPress object-cache flushes, WP Rocket purges, a successful custom CDN purge, Cloudflare URL purges, and Rocket.net host-cache purges. A sitemap warm requested 50 URLs: 48 returned 200, while `/internship-stipends-uae-what-companies-pay/` and `/hr-policy-template/` timed out during the warm request.
+
+Final database verification on 10 July returned: missing descriptions 0, custom titles over 60 characters 0, out-of-range descriptions 2 (held language pages), missing attachment alts 0, duplicate-description groups 0, enabled redirects 357, and one duplicate custom-title group. The only duplicate title value was the expected AIOSEO fallback placeholder `#post_title #separator_sa #site_title`, used by 19 rows, so actionable duplicate-title groups remain 0. The redirect merge script was rerun from the preserved export and remediation CSV; it reproduced 357 rows, seven flattened chains, zero remaining chains and zero self redirects, with the same SHA-256 hash as the staged merged file.
+
+### Independent review gate attempt
+
+- Gemini wrapper using its default preview model returned HTTP 400.
+- Retried with `gemini-2.5-pro` and `gemini-2.5-flash`; both returned HTTP 400.
+- Claude has no available tool, CLI or `ANTHROPIC_API_KEY` in this session.
+- No independent pass is claimed. The 10-item public review sample is ready, but the external reviewer gate remains blocked by unavailable model access.
+
 ## Open Decisions
 
 - `/tools/cake-day-gifts/` and language copies: Kim said to keep Cake Day Gifts. No deletion or redirect allowed. Language-copy handling remains held because all language pages are held.
