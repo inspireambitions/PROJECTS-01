@@ -87,6 +87,69 @@ Do these fixes LAST, and only after Kim answers. Everything else can proceed wit
    certainly safe to delete, but they're her custom plugins: confirm with her, then
    `wp plugin delete` the inactive copies only.
 
+## 2b. DECIDED by Kim (4 July) — CV builder consolidation. Execute, do not re-ask.
+
+**The canonical CV builder is the Vercel app at `https://cv.inspireambitions.com/`**
+("InspireAmbitions CV Builder", Next.js, deployed from her `cv-builder-for-blog` repo,
+verified live 4 Jul). Kim's exact instruction: *"everywhere it says resume or CV Builder,
+that link should be linking to this"* and *"make sure it should never break again, never."*
+
+Execute:
+1. **Redirects already added** to `MERGED-all-redirects.csv` (8 rows): `/dubai-cv-builder/`
+   and `/ai-powered-cv-builder/` plus their `/bn/` `/ar/` `/hi/` copies, all 301 →
+   `https://cv.inspireambitions.com/`. They ship with the single import in §B2.
+2. **Repoint every internal link site-wide.** Search `wpof_posts.post_content` for hrefs to
+   `/dubai-cv-builder/` and `/ai-powered-cv-builder/` and replace with
+   `https://cv.inspireambitions.com/` (dry-run first: `wp search-replace --dry-run`). ALSO
+   check nav menus, footer widgets, and any Kadence header/footer elements — links there are
+   not in post_content. Then sweep for any OTHER link whose anchor text mentions "CV builder",
+   "resume builder", or "resume creator" pointing anywhere else, and repoint those too.
+   (The 3 repo-side content files in `folder-05-cv-guide/` are already fixed and committed.)
+3. **Do NOT delete the two WordPress pages** — set them to draft AFTER confirming the 301s
+   resolve (a live 301 makes the page unreachable anyway; drafting them prevents AIOSEO
+   listing them in the sitemap). Anything on those pages worth keeping (guides/FAQ copy) can
+   be reviewed later; the redirects do not destroy the content.
+
+**"Never break again" safeguards — implement ALL of these:**
+1. **Uptime monitoring with an alert to Kim.** Set up a free uptime monitor (e.g.
+   UptimeRobot) on `https://cv.inspireambitions.com/` checking every 5 minutes, alerting
+   `sawerniphoto.ae@gmail.com`. This is the single most important guard: if the app ever
+   goes down, Kim knows in minutes, not months.
+2. **DNS documentation.** The `cv` subdomain must keep its DNS record pointing at Vercel
+   (managed in Cloudflare). Document the record (type/value) in the change-log so nobody
+   "cleans it up." Do not proxy it through Cloudflare if Vercel docs advise DNS-only for
+   custom domains — check Vercel's current guidance and record what was configured.
+3. **Redirect at the edge too.** Besides the AIOSEO redirects, add the two main redirects
+   (`/dubai-cv-builder/*` and `/ai-powered-cv-builder/*` → `https://cv.inspireambitions.com/`)
+   as Cloudflare Redirect Rules. Belt and braces: they then survive plugin changes, theme
+   changes, and WordPress itself breaking.
+4. **Protect the Vercel project.** In Vercel: keep the Git integration on the production
+   branch; do not let anyone delete the project or the custom domain. Note in the change-log
+   which Vercel team/project (`kim-ks-projects` / `cv-builder-for-blog-inspireambitions-com`,
+   project id `prj_AIfXZRQO63nPlcque7QQzpO4EO44`) serves it.
+5. **Record the decision in HANDOFF.md** so no future session "consolidates" or rebuilds CV
+   builder pages on WordPress again. One tool, one URL, everything points at it.
+6. **✅ DONE 4 Jul (Codex fixed, this session verified live).** ~~Fix the circular link inside the app itself — Kim has confirmed this fix (4 Jul):
+   every footer link in the app must point to a normal, working website page.** Full footer
+   audit done 4 Jul against the redirect table and the site inventory: of the app's six
+   website links, five are fine (`/`, `/career-tools/`, `/dubai-internship-eligibility-checker/`,
+   `/should-i-take-this-dubai-job/`, `/uae-resignation-letter-generator/`,
+   `/uae-salary-benchmarking-tool/` — all live, none will redirect). Exactly ONE is broken:
+   the footer link to `https://inspireambitions.com/dubai-cv-builder/`, which becomes
+   app → 301 → app once the redirect goes live.
+   **The one-line fix, in Kim's `cv-builder-for-blog.inspireambitions.com` GitHub repo**
+   (outside this repo's access scope — must be done by a session with access to it):
+   search the codebase for `dubai-cv-builder` (it will be in the footer component), replace
+   that href with `https://inspireambitions.com/career-tools/`, keep the anchor text
+   sensible (e.g. "More free career tools"), commit to the production branch, and Vercel
+   auto-deploys. Verify after deploy: fetch the app homepage and confirm zero occurrences
+   of `dubai-cv-builder` remain in its HTML.~~
+   **Verification (4 Jul, post-deploy):** production deployment `dpl_3pqjLLcR4ZdAZftnjxp9wD51PX9D`
+   (commit "Fix CV builder footer career tools link") confirmed serving the live page;
+   0 occurrences of `dubai-cv-builder` or `ai-powered-cv-builder` in the HTML; footer now
+   links homepage, /career-tools/ (×2, incl. "More free career tools"), and the four other
+   audited-good tool pages. Nothing else changed.
+
 ---
 
 ## 3. Safety rules (non-negotiable, in order of importance)
@@ -102,7 +165,7 @@ Do these fixes LAST, and only after Kim answers. Everything else can proceed wit
    caching (this bit a previous session: canonical changes didn't show until cache-bust).
 4. **AIOSEO redirect import REPLACES the whole redirect table, it does not merge.** Export
    existing redirects as backup FIRST, merge them into the import file, then import ONCE
-   using `redirects/MERGED-all-redirects.csv` (202 rows, already deduped, no chains — built
+   using `redirects/MERGED-all-redirects.csv` (210 rows, already deduped, no chains — built
    and verified in this repo). Do not import the 12 individual CSVs sequentially — only the
    last would survive.
 5. **Do not install/remove plugins without Kim's confirmation** (except as decided in §2.4).

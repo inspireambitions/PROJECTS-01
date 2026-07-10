@@ -56,6 +56,7 @@ This report maps every audit category to a completed action, a verified residual
 - The six missing mappings were inserted without replacing the existing 351 redirects, then resaved through AIOSEO's supported REST API so its server rules were rebuilt.
 - Final live AIOSEO table: 357 enabled redirects.
 - All six new source URLs were verified live as 301 responses with `x-redirect-by: AIOSEO` and the correct locations.
+- A later remote-branch merge added eight CV-builder proposals to `redirects/MERGED-all-redirects.csv`. Those proposals were not present in the 208-row audit input, are not part of the 357-row live table, and were not deployed by this close-out.
 
 ## Intentional Holds
 

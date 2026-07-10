@@ -1840,6 +1840,8 @@ Closing cache work included WordPress object-cache flushes, WP Rocket purges, a 
 
 Final database verification on 10 July returned: missing descriptions 0, custom titles over 60 characters 0, out-of-range descriptions 2 (held language pages), missing attachment alts 0, duplicate-description groups 0, enabled redirects 357, and one duplicate custom-title group. The only duplicate title value was the expected AIOSEO fallback placeholder `#post_title #separator_sa #site_title`, used by 19 rows, so actionable duplicate-title groups remain 0. The redirect merge script was rerun from the preserved export and remediation CSV; it reproduced 357 rows, seven flattened chains, zero remaining chains and zero self redirects, with the same SHA-256 hash as the staged merged file.
 
+After this close-out commit was created, four newer remote commits were merged into the branch. They added eight CV-builder proposals to `redirects/MERGED-all-redirects.csv`. Live verification returned 0 matching AIOSEO rows for those eight sources. They are outside this audit's 208-row input and 357-row live redirect set; no CV-builder redirect was deployed by this close-out.
+
 ### Independent review gate attempt
 
 - Gemini wrapper using its default preview model returned HTTP 400.

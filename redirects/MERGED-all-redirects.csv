@@ -207,3 +207,11 @@ Source URL,Target URL,Redirect Type,Ignore Slash,Ignore Case,Regex
 /travel/tips/packing/,/digital-nomad-packing-list/,301,Yes,Yes,No
 /travel/tips/safety/,/safety-in-abu-dhabi/,301,Yes,Yes,No
 /travel/tips/budget/,/best-places-to-travel-on-a-budget/,301,Yes,Yes,No
+/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/bn/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ar/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/hi/dubai-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/bn/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/ar/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
+/hi/ai-powered-cv-builder/,https://cv.inspireambitions.com/,301,Yes,Yes,No
