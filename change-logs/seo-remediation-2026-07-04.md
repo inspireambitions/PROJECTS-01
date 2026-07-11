@@ -1855,3 +1855,21 @@ After this close-out commit was created, four newer remote commits were merged i
 - `/car-auction-sharjah/` and `/car-auction-sharjah-2/`: answered by Kim. Kept one, moved it to `/car-auction-sharjah/`, and trashed the duplicate draft.
 - `/bn/`, `/ar/`, `/hi/` language pages: Kim said to leave language pages for now.
 - Inactive `ia-hospitality-career-map-{1..4}` plugin folders: Kim approved deletion. WPVibe uninstall completed after browser approval. Verification confirmed the active base `ia-hospitality-career-map/ia-hospitality-career-map.php` plugin remains active, and inactive duplicates `ia-hospitality-career-map-1` through `-4` no longer appear in the plugin list.
+
+### Phase C glossary child-page split C7
+
+Five focused child pages were created under the existing English glossary parent, post ID 46120. The source package, fact-check matrix, risk review, term allocation and generated HTML are stored in `glossary-child-pages/`.
+
+| Post ID | URL | SEO title | Meta description length | Live verification |
+|---:|---|---|---:|---|
+| 47991 | `/glossary/employment-contracts/` | UAE Employment Contract Terms Explained \| Glossary | 153 | Published; canonical correct; one H1; one exact CTA; no em dash |
+| 47993 | `/glossary/pay-benefits/` | UAE Pay and Benefits Glossary: Salary Terms Explained | 155 | Published; canonical correct; one H1; one exact CTA; no em dash |
+| 47994 | `/glossary/leave-working-hours/` | UAE Working Hours & Leave: Hospitality Guide (2026) | 155 | Published; canonical correct; one H1; one exact CTA; no em dash |
+| 47995 | `/glossary/termination-gratuity/` | UAE Termination and Gratuity Terms Explained | 156 | Published; canonical correct; one H1; one exact CTA; no em dash |
+| 47996 | `/glossary/emiratisation-compliance/` | Emiratisation and UAE Labour Compliance Glossary 2026 | 143 | Published; canonical correct; one H1; one exact CTA; no em dash |
+
+The main `/glossary/` page received one new `Explore the glossary by topic` section after its opening paragraph. It links to all five child pages. The existing A-to-Z definitions remain in place to preserve useful content and anchored links.
+
+WPVibe approval op `op_df4eef28155c4b6d` updated four AIOSEO rows after the sample page passed. Approval op `op_65504b16e06a4fa5` made no change because MySQL rejected a collation mismatch. Approval op `op_1290bba4e65449c9` corrected the four transferred CTA emoji byte sequences and affected four rows. Direct database verification returned the valid UTF-8 sequence `F09F9189` for all five CTAs. WPVibe's rendered-HTML reader still displays that valid sequence as mojibake on four pages, which is a reader-decoding artefact rather than stored-content corruption.
+
+WordPress object cache and WP Rocket cache were purged after publishing and again after the encoding correction. Legal and policy wording was checked against the official UAE Government, MOHRE, UAE Legislation, DIFC and ADGM sources listed in the source package. This is not recorded as an independent legal review.
