@@ -1873,3 +1873,19 @@ The main `/glossary/` page received one new `Explore the glossary by topic` sect
 WPVibe approval op `op_df4eef28155c4b6d` updated four AIOSEO rows after the sample page passed. Approval op `op_65504b16e06a4fa5` made no change because MySQL rejected a collation mismatch. Approval op `op_1290bba4e65449c9` corrected the four transferred CTA emoji byte sequences and affected four rows. Direct database verification returned the valid UTF-8 sequence `F09F9189` for all five CTAs. WPVibe's rendered-HTML reader still displays that valid sequence as mojibake on four pages, which is a reader-decoding artefact rather than stored-content corruption.
 
 WordPress object cache and WP Rocket cache were purged after publishing and again after the encoding correction. Legal and policy wording was checked against the official UAE Government, MOHRE, UAE Legislation, DIFC and ADGM sources listed in the source package. This is not recorded as an independent legal review.
+
+### Edge www redirect follow-up B8
+
+Rocket.net's control panel exposes no self-service edge redirect rule for site ID 252649. A verified support request was therefore submitted from the account email on 11 July 2026:
+
+- Rocket.net request: `109607`
+- Subject: `Move www redirect to Rocket.net edge for inspireambitions.com`
+- Requested rule: permanent `https://www.inspireambitions.com/{path}` to `https://inspireambitions.com/{path}`, preserving the full path and query string
+- Safety boundary: no change to the apex site or its existing Rocket.net routing
+- Current status: received by Rocket.net and awaiting agent action
+
+The existing origin-level redirect remains active until Rocket.net confirms the edge rule. The edge move is not marked complete until a public response-header check proves the redirect is served before WordPress.
+
+### Independent review gate follow-up
+
+The configured Gemini wrapper was retried on 11 July 2026 with its default `gemini-3.1-pro-preview` model and the stable `gemini-2.0-flash` model. Both returned HTTP 400 before accepting even a one-line readiness prompt. No Claude tool, CLI or Anthropic API route is available in this session. No independent review result is claimed. The gate remains blocked pending a working external reviewer.
