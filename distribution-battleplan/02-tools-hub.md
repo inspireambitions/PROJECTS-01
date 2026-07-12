@@ -33,6 +33,33 @@ JobStrike customers) even with modest volume.
 - Capture: "email me this JD (Word)" → Resend `employer-leads` (a NEW, separately valuable list).
 - Circulate: "hiring? candidates use our CV builder" + soft JobStrike mention when Kim green-lights.
 
+## 2.2b STAR Interview Question Generator (confirmed on the hub, previously unplanned)
+
+Serves BOTH sides: hiring teams (employer-leads, like the JD generator) and candidates prepping
+for interviews (job-seeker side). Distribution formula:
+- `[CODE]` Programmatic `/interview-questions/[role]` pages from the shared `occupations.json` —
+  "interview questions for restaurant manager in Dubai" queries are high-intent and weakly
+  contested; include the GCC-context questions and the "questions to avoid" angle (that's the
+  differentiator no generic generator has).
+- Capture: "email me this question set (PDF)" → audience by declared side (employer-leads /
+  the candidate list). Circulate: candidates → CV builder ("get the interview first") + decision
+  tool; employers → JD generator.
+
+## 2.2c Career Path Tool (⚠️ unverified — confirm with Kim before building)
+
+Kim reports a career-path tool exists; it does NOT appear in search on any property and was not
+findable during the audit — meaning whatever it is, Google can't see it either. Step 0 for
+Codex: **get the URL/implementation from Kim**, then apply the standard formula:
+- If it's an interactive tool: first-class page (or app) with its own indexable URL, then
+  programmatic `/career-path/[role]` pages ("career path for a hotel receptionist in the UAE" —
+  the blog already has ranking career-path *articles* to interlink), a shareable "my 12-month
+  roadmap" card, capture ("email me my roadmap"), and circulate CTAs (roadmap step 1 is almost
+  always "upgrade the CV" → CV builder; risk-check the target role → AI Risk Calculator).
+- If it's currently a framework/quiz inside the coaching pages: productize it as the micro-tool
+  factory's next build — it's the natural anchor for the blog's existing "Career Planning &
+  Roadmaps" category and for Kim's 5Es Career Capital framework (a branded, ownable methodology
+  no competitor can copy).
+
 ## 2.3 The micro-tool factory (the "lottery ticket" machine)
 
 Formula proven by the gratuity play: **high-volume UAE query + simple calculator + share card +
@@ -56,6 +83,10 @@ prop, grouped (For job seekers / For employers), each linking onward. `ItemList`
 - [ ] 40+ gratuity scenario pages live with pre-configured calculator, worked example, FAQ schema
 - [ ] Gratuity + salary share cards render (WhatsApp OG-image test passes)
 - [ ] JD generator live with role pages from the shared occupations.json; employer-leads capture works
+- [ ] STAR generator live with /interview-questions/[role] pages; capture routes by declared side
+- [ ] Career path tool located (URL confirmed with Kim), made indexable, and shipped with the
+      standard formula (own pages, share card, capture, circulate) or explicitly scheduled as a
+      new build
 - [ ] Every tool result screen has ≥ 2 contextual circulate CTAs + the network strip
 - [ ] PostHog: `tool_used` (tool, scenario), `tool_shared`, `tool_email_captured` (list)
 
@@ -66,6 +97,10 @@ prop, grouped (For job seekers / For employers), each linking onward. `ItemList`
 > and flag DNS cutover for Kim). Then implement per this brief: the gratuity calculator rebuilt
 > to cv-battleplan/06 standards with scenario-programmatic pages, share cards, PDF-email capture
 > into Resend tools-leads; the JD generator with role pages from calculator-battleplan's
-> occupations.json and employer-leads capture; the salary and notice-period micro-tools by the
-> same formula; and the hub directory page with ItemList schema. All gratuity/labor-law logic in
+> occupations.json and employer-leads capture; the STAR interview-question generator with
+> /interview-questions/[role] pages and side-routed capture; the career path tool — get its URL
+> and current implementation from Kim FIRST (it was unfindable in search), then make it
+> indexable and apply the standard formula, or scope it as a new micro-tool if it is not yet
+> interactive; the salary and notice-period micro-tools by the same formula; and the hub
+> directory page with ItemList schema. All gratuity/labor-law logic in
 > a reviewed rules file marked for Kim's verification before launch — legal accuracy is the moat.
