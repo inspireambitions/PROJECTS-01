@@ -1,0 +1,109 @@
+name: Tool uptime monitor
+
+# Replaces the Codex "InspireAmbitions Tool Uptime" automation (which spawned a
+# new Codex session per run and produced false FAILs when Vercel bot protection
+# dropped its probes). This runs every 15 minutes from the default branch,
+# opens a GitHub issue on real failures, and closes it on recovery.
+#
+# NOTE: scheduled workflows only run from the DEFAULT branch — this activates
+# once PR #1 is merged. Use "Run workflow" (workflow_dispatch) to test before then.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe endpoints
+        id: probe
+        shell: bash
+        run: |
+          set -u
+          failures=""
+          notes=""
+
+          check_url () {
+            local url="$1" expect_json="$2" attempt out code body hdrs
+            for attempt in 1 2; do
+              hdrs="$(mktemp)"
+              body="$(curl -sS -o /dev/stdout -D "$hdrs" -w '\n%{http_code}' \
+                        --max-time 30 -A 'InspireAmbitions-UptimeMonitor/1.0 (github-actions)' \
+                        "$url" 2>&1)" && true
+              code="${body##*$'\n'}"
+              body="${body%$'\n'*}"
+              # Vercel bot-challenge: edge answered, app presumed up but probe blocked.
+              if [ "$code" = "403" ] && grep -qi 'vercel' "$hdrs" 2>/dev/null; then
+                notes="${notes}NOTE ${url}: 403 from Vercel edge (bot protection blocked the probe; site presumed up — consider a firewall bypass rule for this path).\n"
+                rm -f "$hdrs"; return 0
+              fi
+              rm -f "$hdrs"
+              if [ "$code" = "200" ]; then
+                if [ "$expect_json" = "health" ]; then
+                  echo "$body" | grep -q '"status"[[:space:]]*:[[:space:]]*"ok"' && return 0
+                  failures="${failures}FAIL ${url}: HTTP 200 but health JSON not ok (got: $(echo "$body" | head -c 120)).\n"
+                  return 1
+                fi
+                return 0
+              fi
+              [ "$attempt" = "1" ] && sleep 10
+            done
+            failures="${failures}FAIL ${url}: HTTP ${code:-no-response} after 2 attempts.\n"
+            return 1
+          }
+
+          check_url "https://calculator.inspireambitions.com/api/health" "health" || true
+          check_url "https://calculator.inspireambitions.com/"           ""       || true
+          check_url "https://calculator.inspireambitions.com/jobs"       ""       || true
+          check_url "https://cv.inspireambitions.com/"                   ""       || true
+
+          {
+            echo "failures<<EOF"
+            printf '%b' "$failures"
+            echo "EOF"
+            echo "notes<<EOF"
+            printf '%b' "$notes"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ -n "$failures" ]; then
+            printf 'DOWN:\n%b' "$failures"
+            exit 1
+          fi
+          printf 'All endpoints healthy.\n%b' "$notes"
+
+      - name: Open incident issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FAILURES: ${{ steps.probe.outputs.failures }}
+        run: |
+          open_issue="$(gh issue list --repo "$GITHUB_REPOSITORY" --label uptime --state open --json number --jq '.[0].number' || true)"
+          ts="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          if [ -n "$open_issue" ]; then
+            gh issue comment "$open_issue" --repo "$GITHUB_REPOSITORY" \
+              --body "Still failing at ${ts}:"$'\n\n'"\`\`\`"$'\n'"${FAILURES}"$'\n'"\`\`\`"
+          else
+            gh label create uptime --repo "$GITHUB_REPOSITORY" --color D93F0B --force >/dev/null 2>&1 || true
+            gh issue create --repo "$GITHUB_REPOSITORY" --label uptime \
+              --title "🔴 Tool uptime failure (${ts})" \
+              --body "Automated monitor detected failures:"$'\n\n'"\`\`\`"$'\n'"${FAILURES}"$'\n'"\`\`\`"$'\n\n'"Checks run every 15 minutes; this issue auto-closes on recovery. Diagnostics: check the Vercel deployment status and runtime logs for the affected project, and confirm the failure is not Vercel bot protection blocking the probe (those are reported as notes, not failures)."
+          fi
+
+      - name: Close incident issue on recovery
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          open_issue="$(gh issue list --repo "$GITHUB_REPOSITORY" --label uptime --state open --json number --jq '.[0].number' || true)"
+          if [ -n "$open_issue" ]; then
+            gh issue close "$open_issue" --repo "$GITHUB_REPOSITORY" \
+              --comment "✅ All endpoints healthy again at $(date -u '+%Y-%m-%d %H:%M UTC'). Auto-closing."
+          fi
