@@ -13,15 +13,12 @@ Queue 10 posts using LinkedIn's native post scheduler (clock icon on the
 post composer). One post per day, starting tomorrow. All content is in this
 repo folder (`linkedin/`). Do not edit the copy. Do not add hashtags or links.
 
-## Step 0 — Prepare assets (once)
+## Step 0 — Assets (already prepared)
 
-Three posts are PDF carousels. Download each PDF first:
-
-1. Open https://www.canva.com/d/hGJXrlwk6eqkiMv  → Share → Download → PDF Standard → save as `post-001.pdf`
-2. Open https://www.canva.com/d/FBLItPE5LNJ1NXR → Share → Download → PDF Standard → save as `post-006.pdf`
-3. Open https://www.canva.com/d/k4V-su8zAtmFCds  → Share → Download → PDF Standard → save as `post-010.pdf`
-
-(Canva must be logged in as the owner; if not, stop and ask them to log in.)
+Everything is finished and committed in `linkedin/ready-to-upload/`:
+the three carousel PDFs (`post-001.pdf`, `post-006.pdf`, `post-010.pdf`) and one
+paste-ready `.txt` per post. Use those files directly — no Canva access, no
+downloads, no edits. `ready-to-upload/README.md` is the authoritative manifest.
 
 Two posts are native videos that require HeyGen renders (scripts 002 and 022).
 If the owner has not provided `post-004.mp4` / `post-009.mp4`, SKIP those two
@@ -32,18 +29,20 @@ scheduling slots and apply the swap rule in the schedule below.
 All times are Gulf Standard Time (UTC+4). When LinkedIn's scheduler shows a
 different timezone, convert so the local wall-clock time in Dubai matches.
 
-| # | Date | Time GST | Type | Copy source (in `linkedin/`) | Attachment |
-|---|------|----------|------|------------------------------|------------|
-| 001 | Sat 25 Jul 2026 | 09:00 | Document | `post-001-visa-fee-red-flag.md` → "Post copy" section | post-001.pdf, document title: "The 5-minute job offer check" |
-| 002 | Sun 26 Jul | 09:00 | Text | `week-1-posts.md` → Post 002 | none |
-| 003 | Mon 27 Jul | 07:45 | Text | `week-1-posts.md` → Post 003 | none |
-| 004 | Tue 28 Jul | 07:45 | Video | `week-1-posts.md` → Post 004 (copy only, not the instruction line) | post-004.mp4 if provided; else swap: schedule Post 005 here |
-| 005 | Wed 29 Jul | 07:45 | Text | `week-1-posts.md` → Post 005 | none |
-| 006 | Thu 30 Jul | 07:45 | Document | `week-2-posts.md` → Post 006 post copy | post-006.pdf, title: "Stop saying I don't know" |
-| 007 | Fri 31 Jul | 09:00 | Text | `week-2-posts.md` → Post 007 (main post only, NOT the follow-up block) | none |
-| 008 | Sat 1 Aug | 09:00 | Text | `week-2-posts.md` → Post 008 | none |
-| 009 | Sun 2 Aug | 09:00 | Video | `week-2-posts.md` → Post 009 | post-009.mp4 if provided; else swap: schedule Post 010 here |
-| 010 | Mon 3 Aug | 07:45 | Document | `week-2-posts.md` → Post 010 post copy | post-010.pdf, title: "Stop saying you have to wait" |
+All copy sources and attachments below live in `linkedin/ready-to-upload/`.
+
+| # | Date | Time GST | Type | Paste (verbatim) | Attachment |
+|---|------|----------|------|------------------|------------|
+| 001 | Sat 25 Jul 2026 | 09:00 | Document | post-001.txt | post-001.pdf, document title: "The 5-minute job offer check" |
+| 002 | Sun 26 Jul | 09:00 | Text | post-002.txt | none |
+| 003 | Mon 27 Jul | 07:45 | Text | post-003.txt | none |
+| 004 | Tue 28 Jul | 07:45 | Video | post-004-video-caption.txt | owner-provided post-004.mp4; if absent, apply swap rule |
+| 005 | Wed 29 Jul | 07:45 | Text | post-005.txt | none |
+| 006 | Thu 30 Jul | 07:45 | Document | post-006.txt | post-006.pdf, title: "Stop saying I don't know" |
+| 007 | Fri 31 Jul | 09:00 | Text | post-007.txt (post-007-pinned-comment.txt is a comment for the owner later, NOT a post) | none |
+| 008 | Sat 1 Aug | 09:00 | Text | post-008.txt | none |
+| 009 | Sun 2 Aug | 09:00 | Video | post-009-video-caption.txt | owner-provided post-009.mp4; if absent, apply swap rule |
+| 010 | Mon 3 Aug | 07:45 | Document | post-010.txt | post-010.pdf, title: "Stop saying you have to wait" |
 
 SWAP RULE (missing video): shift every later post up one day, keeping each
 post's original time-of-day rule (weekday 07:45, Sat/Sun/Fri 09:00). Leave no
