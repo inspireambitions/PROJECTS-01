@@ -28,6 +28,11 @@ live UAE vacancies → track the applications — all free, with the email list 
 | 3 | `03-language-packs.md` | UI + section headings in EN / AR / HI / UR / TL | Nobody covers all five — near blue ocean | ~1 wk |
 | 4 | `04-jobstrike-bridge.md` | Application tracker on live UAE jobs + trackable CV share links | Teal ($13/wk, US-only), VisualCV analytics | ~2–3 wks |
 | 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, email-gated PDF/Word export (list building via Resend) | The entire category's trust problem | ~1–2 wks |
+| 7 | `07-anyone-can-build-it.md` | **October 2026 audit follow-up.** Fixes found on the live code, plain language, Talk Mode (build a CV by tapping and speaking, no writing), full translation, read-aloud, WhatsApp-first, and a real-user test that decides when it is done | Enhancv and every builder that assumes users can write a CV | Phase A–B: days. Talk Mode: ~2–3 wks |
+
+**October 2026 update:** brief 07 Phases A and B (bug fixes and plain language) ship first,
+because they fix problems real users hit today. Brief 07 is complete only when its Phase G
+real-user test passes.
 
 **Sequencing rule:** brief 06's audit + token/mobile refactor pass comes first, then ship
 1 → 2 → 3 → 5 → 4 with 06's budgets enforced throughout. The Match Score is the demo-able wow feature;
