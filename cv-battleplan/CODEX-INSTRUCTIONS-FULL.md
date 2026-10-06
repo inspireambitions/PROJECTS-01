@@ -1,8 +1,8 @@
 # CODEX BUILD INSTRUCTIONS — InspireAmbitions CV Builder (consolidated)
 
 > Single-file handoff. Contains the master plan + all 7 build briefs.
-> October 2026: start with Brief 07 Phases A and B (fixes and plain language), then follow
-> the build order in the master plan. Brief 07 is done only when its real-user test passes.
+> October 2026: Brief 07 is the finish-line brief. It lists what is already built, then
+> builds everything left in 10 steps. Start there and follow its build order.
 > The product is 100% FREE — no Stripe, no payment code anywhere.
 > The only gate in the product: PDF/Word export asks for an email once; JPEG never does.
 
@@ -38,11 +38,13 @@ live UAE vacancies → track the applications — all free, with the email list 
 | 3 | `03-language-packs.md` | UI + section headings in EN / AR / HI / UR / TL | Nobody covers all five — near blue ocean | ~1 wk |
 | 4 | `04-jobstrike-bridge.md` | Application tracker on live UAE jobs + trackable CV share links | Teal ($13/wk, US-only), VisualCV analytics | ~2–3 wks |
 | 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, email-gated PDF/Word export (list building via Resend) | The entire category's trust problem | ~1–2 wks |
-| 7 | `07-anyone-can-build-it.md` | **October 2026 audit follow-up.** Fixes found on the live code, plain language, Talk Mode (build a CV by tapping and speaking, no writing), full translation, read-aloud, WhatsApp-first, and a real-user test that decides when it is done | Enhancv and every builder that assumes users can write a CV | Phase A–B: days. Talk Mode: ~2–3 wks |
+| 7 | `07-anyone-can-build-it.md` | **Finish line (Oct 2026).** Status of briefs 01 to 06 and everything left to build, all roast fixes, plain language, Talk Mode (build a CV by tapping and speaking), full translation, read-aloud and voice, WhatsApp sharing, Arabic PDF and Word | Enhancv and every builder that assumes users can write a CV | ~6 to 8 wks in 10 steps |
 
-**October 2026 update:** brief 07 Phases A and B (bug fixes and plain language) ship first,
-because they fix problems real users hit today. Brief 07 is complete only when its Phase G
-real-user test passes.
+**October 2026 update (Kim, 6 Oct):** brief 07 is now the finish-line brief. It lists what
+briefs 01 to 06 already shipped, builds everything left (except the JobStrike bridge in
+brief 04, which is paused), fixes everything from the October roast, and adds Talk Mode.
+Follow brief 07's own build order. The real-user test comes after the build, when Kim
+chooses; it does not block completion.
 
 **Sequencing rule:** brief 06's audit + token/mobile refactor pass comes first, then ship
 1 → 2 → 3 → 5 → 4 with 06's budgets enforced throughout. The Match Score is the demo-able wow feature;
@@ -115,28 +117,55 @@ Each brief has its own acceptance criteria. Globally, nothing ships unless:
 
 ---
 
-# Brief 07 — "Anyone can build it": Talk Mode, plain language and real-user proof
+# Brief 07 — Finish line: every CV builder enhancement, Talk Mode and the roast fixes
 
 **Target repo:** `inspireambitions/cv-builder-for-blog.inspireambitions.com`
 (audited at `main` @ `1bc5a49`, 15 Aug 2026). Live product: cv.inspireambitions.com.
-**Priority:** Phases A and B ship first (days). Phases C to F follow. Phase G is the gate
-that decides whether this brief is done.
+**Scope (Kim, 6 Oct 2026):** build **everything**. That means the remaining work from
+briefs 01 to 06 (Part 0 below), every fix from the October roast (Phases A and B), and every
+enhancement (Phases C to F). The real-user test (Phase G) happens **after** the build, when
+Kim chooses. It is not a gate for this brief.
 **Governing standards:** brief 06 (design tokens, mobile budgets, accessibility) applies to
 every screen here. Where this brief and brief 03 (language packs) disagree about the
 builder UI, this brief wins.
 
 ---
 
-## 1. Kim's goals (what "done" must prove)
+## 1. Kim's goals and how the build shows them
 
-| # | Goal | How this brief proves it |
+| # | Goal | How the build shows it (now) | Confirmed later by |
+|---|---|---|---|
+| G1 | Better than Enhancv | Section 6 comparison is true at launch, feature by feature | Re-checking Enhancv before publishing comparisons |
+| G2 | The most user-friendly CV builder | Section 4 automated tests, plain-language CI check, Talk Mode as default, all fixes in Phases A and B | PostHog completion rate vs today's baseline; Phase G when Kim runs it |
+| G3 | Usable by people with little schooling or little English | Every question 12 words or fewer at reading grade 6, tap-first answers, full translation, read-aloud, voice answers, works when AI is down | Phase G when Kim runs it |
+| G4 | Stays free, mobile-first and premium | `npm run check:free` stays green; brief 06 budgets stay green; JPEG stays ungated | CI on every PR |
+
+**This brief is done when** every phase below is shipped to production, every checkbox in
+Section 4 is green in CI, Talk Mode is the default path, and Codex has delivered
+screenshots at 360 px in English, Arabic and Urdu for every Talk Mode screen.
+
+---
+
+## Part 0 — What is already built (briefs 01 to 06) and what is left
+
+Checked against `main` @ `1bc5a49` on 6 Oct 2026. Codex: verify each "left" item before
+building; do not rebuild anything marked done.
+
+| Brief | Already on `main` | Left to build |
 |---|---|---|
-| G1 | Better than Enhancv | Section 6 comparison is true at launch, feature by feature |
-| G2 | The most user-friendly CV builder | Phase G real-user test passes; funnel completion beats today's baseline |
-| G3 | Usable by people with little schooling or little English | Phase G participants are exactly this group, on their own phones, in their own language, with no help |
-| G4 | Stays free, mobile-first and premium | `npm run check:free` stays green; brief 06 budgets stay green; JPEG stays ungated |
+| 01 Gulf Match Score | Deterministic scorer `lib/gulf-match.ts` with score, verdict, gap list and GCC compliance strip | **R1** It is only reachable inside the "Premium beta" tailoring box. Make "Match my CV to a job advert" a free, first-class section on the review screen and the last optional Talk Mode step. Each gap gets a **Fix** button that jumps to the right step. **R2** Add `POST /api/match/extract` (fast, low-cost Claude model, JSON via tool use, temperature 0, cached by job-advert hash, IP rate limit, accepts Arabic adverts) feeding the existing deterministic scorer. Scoring against live JobStrike jobs stays deferred. |
+| 02 Templates, RTL, export | 10 templates (8 sector, Classic GCC, ATS Clean); text-based PDF export with image fallback; Word export; English and Arabic CV language in templates | **R3** Arabic in PDF: `lib/export-pdf.ts` writes text with jsPDF and embeds no Arabic font, so Arabic CVs are likely to export as broken characters. Verify first, then fix (embedded subset Arabic font with correct shaping and right-to-left order, or route Arabic CVs through the HTML capture path). **R4** Word export right-to-left paragraphs for Arabic CVs (`lib/export-word.ts`). **R5** Bilingual export: Arabic page then English page from one CV. **R6** Visual QA page rendering every template in English and Arabic, with and without photo. |
+| 03 Language packs | Five interface languages exist (`lib/i18n.ts`) | Full coverage is Phase D. **R7** AI rewrite accepts input in any of the five languages and writes English (Arabic optional). `lib/ai-improve.ts` has no language handling today. |
+| 04 JobStrike bridge | Not started (no accounts, no database). The encrypted resume link already covers "continue on another device". | **Deferred.** Kim paused JobStrike work. Not part of this build. |
+| 05 Trust | Email unlock for PDF and Word (JPEG free), Trustpilot ask in the download dialog, `/why-free`, `/vs/` pages for Zety, Resume.io, Enhancv, Kickresume and Canva, honest "no trap" homepage copy | **R8** Review and merge branch `codex/ia-cloudflare-transactional-email-20261003` (3 Oct, rewrites `app/api/subscribe/route.ts`) before touching the download flow. **R9** Update the Enhancv entry in `lib/comparison-data.ts` with the verified facts in Section 6. **R10** Add `/best-cv-builder-uae` and `/dubai-cv-format` landing pages from brief 05 (not present today). |
+| 06 Design and performance | Token contract (`docs/design-tokens.md`), dark mode, performance budget script, Lighthouse and Playwright in CI | **R11** Analytics is Google Analytics only (`lib/analytics.ts`). Add PostHog (org "Job Strike") with every event in this brief, run alongside GA for 30 days. **R12** In the Full form on mobile, replace the single "Preview CV" toggle with the Edit / Preview / Score switch from brief 06. |
+| Distribution plan, CV items | Not done | **R13** Shared "Free GCC career tools" link strip (distribution brief 01), as a single quiet line inside the builder. **R14** Redirect every `resume.inspireambitions.com` URL to `cv.inspireambitions.com` (needs access to wherever that app is hosted). |
 
-This brief is **not done** when the code merges. It is done when Phase G passes.
+**Repository housekeeping (R0):** branches `codex/tool-growth-2026-08-14`,
+`agent/photo-workflow`, `agent/photo-template-labels` and `codex/ats-clean-results-journey`
+are older than `main` and mostly delete newer work. Confirm nothing unique remains, then
+delete them. **Deployment:** the CV builder is no longer in the "Kim K's projects" Vercel
+team (checked 5 Oct 2026); confirm where production deploys from before release.
 
 ## 2. What the audit found (evidence for every change below)
 
@@ -318,16 +347,22 @@ draft-migration that maps old `state.step` indices to the new order.
 
 ---
 
-## Phase D — Full translation or hide it
+## Phase D — Full translation in all five languages
 
 - Every string in the builder, Talk Mode, Download dialog and review screen goes through
   `lib/i18n.ts` keys. No hardcoded English in `components/steps/*`, `components/modals/*`,
   `components/tailoring/*` or new Talk Mode components.
 - CI check: fail on untranslated string literals in those folders, and fail if any key is
   missing from `ar`, `hi`, `ur` or `tl`.
-- Machine translation is acceptable as a first pass, clearly marked. A language is listed
-  in the public switcher only after a native-speaker review by Kim's network. Until then it
-  is reachable only with `?lang=xx`.
+- Translate every key into `ar`, `hi`, `ur` and `tl` in this build. Machine translation is
+  acceptable as the first pass; mark machine-translated strings in the locale files so a
+  native-speaker review can follow later. A language appears in the public switcher once
+  100% of its keys are present. Keep a per-language kill switch
+  (`NEXT_PUBLIC_HIDDEN_LANGUAGES`) so Kim can hide one quickly if speakers report poor
+  wording.
+- Placeholder examples and Talk Mode answer options are **localised, not just
+  translated**: a Tagalog hospitality example should read like a real Filipino hotel worker's
+  line.
 - RTL (`ar`, `ur`): logical CSS properties only, direction-aware icons, brand stays LTR
   (A5), numbers, phone numbers and emails wrapped so they never reorder.
 - UI language and CV language stay separate settings (existing `cvLanguage`). The CV itself
@@ -343,10 +378,13 @@ draft-migration that maps old `state.step` indices to the new order.
   button is hidden where unsupported. The transcript appears as editable text before it is
   sent to `/api/talk/bullets`. Privacy line next to the mic: "Your phone's speech service
   turns your voice into text."
-- **Voice v2 (needs Kim's decision, do not build without it):** server-side transcription
-  for browsers without speech recognition (notably iOS in some languages). This adds a new
-  paid speech-to-text vendor and API key. Ship v1 first and measure `talk_voice_used`
-  before deciding.
+- **Voice v2 (build it, switched off):** `POST /api/talk/transcribe` for browsers without
+  speech recognition (notably iOS in some languages). Record with `MediaRecorder`, send the
+  clip, return editable text. Write it against a small provider interface so any
+  speech-to-text service can plug in. It stays off until two settings exist:
+  `SPEECH_TO_TEXT_PROVIDER` and that provider's API key. Kim chooses the provider (it is a
+  paid service). Audio is never stored; delete it after transcription. Show the mic only
+  when v1 or an enabled v2 is available.
 
 ## Phase F — WhatsApp-first
 
@@ -356,39 +394,41 @@ draft-migration that maps old `state.step` indices to the new order.
   short message.
 - **Continue on another phone:** share the existing resume link
   (`lib/resume-link.ts`) through the share sheet instead of "copy encrypted link".
-- **Option for Kim (built behind a flag, off by default):** unlock PDF and Word with a
-  WhatsApp number instead of email, for users who tap "I do not use email". Requires Kim to
-  approve (a) consent wording under UAE PDPL and (b) where numbers are stored, because the
-  current Resend list only holds emails. Flag: `NEXT_PUBLIC_UNLOCK_WITH_WHATSAPP`.
+- **Unlock with WhatsApp instead of email (build it, switched off):** for users who tap
+  "I do not use email", accept a WhatsApp number to unlock PDF and Word. Build the full flow:
+  number field with country code, consent checkbox (unticked by default) with plain wording
+  ready for Kim to approve, and a storage adapter interface. The current Resend list only
+  holds emails, so the number needs a separate store. It stays off until Kim sets the flag
+  `NEXT_PUBLIC_UNLOCK_WITH_WHATSAPP` and configures the storage adapter
+  (`WHATSAPP_LEAD_STORE`). Until then, "I do not use email" points to the free picture
+  download and "Send to my WhatsApp".
 
 ---
 
-## Phase G — Prove it with real people (the done gate)
+## Measurement (build now)
 
-**Moderated test, before public launch of Talk Mode**
+- PostHog (org "Job Strike", added in R11). New events: `talk_mode_started`,
+  `talk_question_answered` (question id), `talk_question_skipped`, `talk_voice_used`
+  (lang), `read_aloud_used` (lang), `talk_bullets_accepted` / `talk_bullets_changed`,
+  `talk_mode_completed`, `match_score_run`, `match_gap_fixed`, `whatsapp_share_used`, plus
+  the existing `cv_exported`.
+- Record today's start-to-download completion rate for the existing form **before** Talk
+  Mode becomes the default. That baseline is what later results are compared against.
+- A simple PostHog funnel per Talk Mode question, so the question where people drop off
+  most is visible from day one.
+
+## Phase G — Real-user test (later, Kim's choice, not part of this build)
+
+When Kim is ready, this is the protocol. Nothing in this brief waits for it.
+
 - 5 participants from Kim's network: a housekeeper, a driver, a security guard and two
-  kitchen staff. At least two must use a language other than English.
-- Their own phones, their own data or Wi-Fi, their chosen language. Observer stays silent
-  unless the participant is stuck for 2 minutes.
+  kitchen staff. At least two use a language other than English.
+- Their own phones and their chosen language. The observer stays silent unless someone is
+  stuck for 2 minutes.
 - Record per person: finished yes/no, time to download, every point stuck for more than 30
   seconds, every word they did not understand.
-
-**Pass bar**
-- 5 of 5 finish a CV they say they would send to an employer.
-- Median time from start to download: 10 minutes or less.
-- No observer help needed by anyone.
-- Every stuck point and unknown word is fixed, then re-tested with at least 2 new
-  participants.
-
-**Live measurement (PostHog, org "Job Strike")**
-- New events: `talk_mode_started`, `talk_question_answered` (question id),
-  `talk_question_skipped`, `talk_voice_used` (lang), `read_aloud_used` (lang),
-  `talk_bullets_accepted` / `talk_bullets_changed`, `talk_mode_completed`, plus the
-  existing `cv_exported`.
-- Record the current start-to-download completion rate for the existing form **before**
-  launch as the baseline. Success: Talk Mode completion beats the baseline within 30 days of
-  launch, and drop-off on every question is visible so the worst question can be fixed
-  first. Kim sets the numeric target once the baseline is known.
+- A good result: all 5 finish a CV they would send, median time 10 minutes or less, no help
+  needed. Anything that trips someone up becomes a fix for Codex.
 
 ## 4. Automated acceptance tests (add to `tests/`)
 
@@ -405,16 +445,38 @@ draft-migration that maps old `state.step` indices to the new order.
 - [ ] Old saved drafts load into the correct step after the step-order change.
 - [ ] Switching from Talk Mode to Full form and back loses no data.
 - [ ] Every interactive element in Talk Mode is at least 48 px tall.
+- [ ] An Arabic CV exports to PDF and Word with correct Arabic letters, joined correctly and
+      reading right to left (compare against the on-screen preview).
+- [ ] Bilingual export produces an Arabic page and an English page from one CV.
+- [ ] "Match my CV to a job advert" works with no AI available (deterministic score), with
+      AI available (extracted requirements), and with an Arabic advert; each gap's Fix button
+      opens the right step.
+- [ ] AI rewrite: Urdu, Hindi and Tagalog input produce English output (fixtures).
+- [ ] Voice v2 and WhatsApp unlock are invisible and their endpoints return "not enabled"
+      when their settings are missing.
+- [ ] Every event in the Measurement section reaches PostHog (mocked in tests).
+- [ ] `/vs/enhancv` shows only verified facts from Section 6.
+- [ ] Every `resume.inspireambitions.com` URL in the inventory redirects with a 301 to its
+      `cv.inspireambitions.com` equivalent.
 - [ ] `npm run ci` green, including `check:free`, performance budget and Lighthouse.
 
-## 5. Build order
+## 5. Build order (one PR per step, each with its tests)
 
-1. Phase A (all), B1, B3, B4, B6 — ship as one release.
-2. B5 check, C5 step order and migration.
-3. Talk Mode C1 to C4, English first, behind flag `NEXT_PUBLIC_TALK_MODE`.
-4. Phase D translations, then native review.
-5. Phase E v1, Phase F.
-6. Phase G moderated test, fixes, re-test. Then turn Talk Mode on as the default.
+1. **R0 and R8:** clean up stale branches; review and merge the 3 Oct email branch.
+2. **Roast fixes:** Phase A (all) plus B1, B3, B4, B6. Ship.
+3. **B5** plain-language CI check, **C5** step order with draft migration, **R11** PostHog
+   with the baseline recorded.
+4. **Talk Mode** C1 to C4 in English, behind `NEXT_PUBLIC_TALK_MODE`.
+5. **Phase D** translations for every screen, Talk Mode included, plus **R7** AI language
+   handling.
+6. **Phase E** (read-aloud, browser voice, voice v2 switched off) and **Phase F** (WhatsApp
+   sharing, WhatsApp unlock switched off).
+7. **R1, R2** Match Score made free and first-class, with job-advert extraction.
+8. **R3 to R6** Arabic PDF and Word, bilingual export, template QA page.
+9. **R9, R10, R12, R13, R14** comparison data, landing pages, mobile Edit / Preview / Score
+   switch, link strip, `resume.` redirects.
+10. **Switch Talk Mode on as the default** once every Section 4 test is green. Full form stays
+    one tap away.
 
 ## 6. Comparison that must be true at launch
 
@@ -442,18 +504,18 @@ publishing any public comparison page.
 
 > Work in `inspireambitions/cv-builder-for-blog.inspireambitions.com`. Read
 > `cv-battleplan/07-anyone-can-build-it.md` and `cv-battleplan/06-premium-design-performance.md`
-> first. Implement in the build order in section 5. Start with Phase A plus B1, B3, B4 and B6
-> as one PR, with the matching tests from section 4. Then add the plain-language CI check
-> (B5) and the Summary step move with a draft migration (C5). Build Talk Mode (C1 to C4)
-> behind `NEXT_PUBLIC_TALK_MODE`, reusing `CVState`, `lib/role-suggestions.ts`,
-> `lib/evidence.ts`, `lib/template-recommendation.ts`, `PhotoEditor` and the existing export
-> pipeline, with the deterministic fallback summary so it works when AI is down. Then
-> complete translations (D), read-aloud and browser voice input (E v1), and WhatsApp sharing
-> (F). Build the WhatsApp unlock option only behind its flag, off by default. Do not build
-> server-side speech-to-text. Never show AI vendor names to users, never add payment code,
-> never gate JPEG. Keep the existing form available as "Full form". Stop and report after
-> each phase with screenshots at 360 px in English and Urdu. Do not mark the brief complete:
-> Kim runs the Phase G test, and completion depends on it passing.
+> first. Build **everything** in this brief, in the order in Section 5, one PR per step with
+> its Section 4 tests. Part 0 lists what already exists on `main`: verify it and do not
+> rebuild it. Reuse `CVState`, `lib/role-suggestions.ts`, `lib/evidence.ts`,
+> `lib/gulf-match.ts`, `lib/template-recommendation.ts`, `PhotoEditor` and the existing
+> export pipeline. Talk Mode must work when AI is down (sentence library plus the
+> deterministic summary). Build voice v2 and the WhatsApp unlock in full but switched off
+> until their settings exist. Leave the JobStrike bridge (brief 04) out. Never show AI
+> vendor names to users, never add payment code, never gate the picture (JPEG) download, and
+> keep the existing form available as "Full form". After each step, report what shipped with
+> screenshots at 360 px in English, Arabic and Urdu. When step 10 is done, report the
+> completion baseline and the Section 6 comparison as true or not. The real-user test
+> (Phase G) is not part of this build.
 
 ---
 

@@ -28,11 +28,13 @@ live UAE vacancies → track the applications — all free, with the email list 
 | 3 | `03-language-packs.md` | UI + section headings in EN / AR / HI / UR / TL | Nobody covers all five — near blue ocean | ~1 wk |
 | 4 | `04-jobstrike-bridge.md` | Application tracker on live UAE jobs + trackable CV share links | Teal ($13/wk, US-only), VisualCV analytics | ~2–3 wks |
 | 5 | `05-trust-and-monetization.md` | Review flywheel, "no trap" positioning, comparison pages, email-gated PDF/Word export (list building via Resend) | The entire category's trust problem | ~1–2 wks |
-| 7 | `07-anyone-can-build-it.md` | **October 2026 audit follow-up.** Fixes found on the live code, plain language, Talk Mode (build a CV by tapping and speaking, no writing), full translation, read-aloud, WhatsApp-first, and a real-user test that decides when it is done | Enhancv and every builder that assumes users can write a CV | Phase A–B: days. Talk Mode: ~2–3 wks |
+| 7 | `07-anyone-can-build-it.md` | **Finish line (Oct 2026).** Status of briefs 01 to 06 and everything left to build, all roast fixes, plain language, Talk Mode (build a CV by tapping and speaking), full translation, read-aloud and voice, WhatsApp sharing, Arabic PDF and Word | Enhancv and every builder that assumes users can write a CV | ~6 to 8 wks in 10 steps |
 
-**October 2026 update:** brief 07 Phases A and B (bug fixes and plain language) ship first,
-because they fix problems real users hit today. Brief 07 is complete only when its Phase G
-real-user test passes.
+**October 2026 update (Kim, 6 Oct):** brief 07 is now the finish-line brief. It lists what
+briefs 01 to 06 already shipped, builds everything left (except the JobStrike bridge in
+brief 04, which is paused), fixes everything from the October roast, and adds Talk Mode.
+Follow brief 07's own build order. The real-user test comes after the build, when Kim
+chooses; it does not block completion.
 
 **Sequencing rule:** brief 06's audit + token/mobile refactor pass comes first, then ship
 1 → 2 → 3 → 5 → 4 with 06's budgets enforced throughout. The Match Score is the demo-able wow feature;
